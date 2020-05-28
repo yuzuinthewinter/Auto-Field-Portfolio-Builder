@@ -1,0 +1,92 @@
+#stepProgressBar  {
+	display:  flex;
+	justify-content:  space-between;
+	align-items:  flex-end;
+    width:  100%;
+    padding-top: 5%;
+	margin:  0  auto;
+}
+.step  {
+    text-align:  center;
+}
+.step i{
+    font-size: 35px;
+}
+#stepProgressBar .step .step-text  {
+    font-size: 35px;
+    margin-bottom:  10px;
+    font-size: medium;
+}
+
+
+.bullet {
+    background: url(https://image.freepik.com/free-icon/x-circle_318-2105.jpg);
+    background-size: cover;
+    background-color: rgb(0, 255, 0);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+	color: #28a745;
+	display: inline-block;
+	position: relative;
+	transition: background-color 500ms;
+    line-height:20px;
+}
+
+
+.bullet.completed  {
+    background: linear-gradient(to right, rgba(0, 255, 13, 0.3), rgba(0, 255, 13, 0.3)), url(https://image.flaticon.com/icons/png/512/14/14946.png);
+    background-size: cover;
+	color:  white;
+	background-color:  #28a745;
+}
+
+.bullet.completed::after {
+	content: '';
+	position: absolute;
+	right: -800%;
+	bottom: 40%;
+	height: 20%;
+	width: 800%;
+    background-color: #28a745;
+}
+
+/* Base styles and helper stuff */
+.hidden  {
+	display:  none;
+}
+ 
+button  {
+	padding:  5px  10px;
+	border:  1px  solid  black;
+	transition:  250ms background-color;
+}
+
+button:hover  {
+	cursor:  pointer;
+	background-color:  black;
+	color:  white;
+}
+
+button:disabled:hover  {
+	opacity:  0.6;
+	cursor:  not-allowed;
+}
+
+.text-center  {
+	text-align:  center;
+}
+  
+.container  {
+	max-width:  400px;
+	margin:  0  auto;
+	margin-top:  20px;
+	padding:  40px;
+}
+
+#profile-form{
+    padding-bottom: 7%;
+}
+
+
+

@@ -26,7 +26,6 @@
                             <a href="about.html"><li>ABOUT</li></a>
                             <a href="homepage.html"><li>PROJECT</li></a>
                             <a href="template.html"><li>TEMPLATE</li></a>
-                            <a href="explore.html"><li>EXPLORE</li></a>
                             <a href="contact.html"><li>CONTACT</li></a>
                         </ul>  
                     </div>
@@ -50,79 +49,88 @@
         </header>
         <div class="content">
             <div class="form">
-                <div class="main-head">
-                    <!--ปักหมุด processing-->
-                </div>
-                <div class="singleform forpersonal">
-                    <table>
-                        <h1>PERSONAL PARTICULARS</h1>
-                        <tr>
-                            <th>NAME</th>
-                            <td class="form-box"> 
-                                <div class="input-group">
-                                    <input type="text" placeholder="Firstname" required>&nbsp;&nbsp;
-                                    <input type="text" placeholder="Lastname" required>
-                                </div>
-                             </td>
-                        </tr> 
-                        <tr>
-                            <th>AGE</th>
+                <div class="singleform">
+                    <div id="heading2" hidden><p>PROFILE PARTICULARS</p></div>
+                    <form method=GET" id="profile-form" hidden>
+                        <table>
+                            <p>PART : 1</p>
+                            <tr>
+                                <th>NAME</th>
+                                <td class="form-box"> 
+                                    <div class="input-group">
+                                        <input type="text" placeholder="Firstname">&nbsp;&nbsp;
+                                        <input type="text" placeholder="Lastname">
+                                    </div>
+                                </td>
+                            </tr> 
+                            <tr>
+                                <th>AGE</th>
+                                <td class="form-box">
+                                    <input type="number" placeholder="Age">
+                                </td>
+                            </tr>
+                            <tr>
+                            <th>DATE OF BIRTH</th>
                             <td class="form-box">
-                                <input type="number" placeholder="Age">
-                            </td>
-                        </tr>
-                        <tr>
-                           <th>DATE OF BIRTH</th>
-                           <td class="form-box">
-                               <input type="date" placeholder="Date of Birth">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>NATIONALITY</th>
-                            <td class="form-box">
-                                <input type="text" placeholder="Nationality">
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>GENDER</th>
-                            <td class="form-radio">
-                                <label class="container-form">Male
-                                    <input type="radio" checked="checked" name="gender" value="male">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label class="container-form">Female
-                                    <input type="radio" name="gender" value="female">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label class="container-form">Other
-                                    <input type="radio" name="gender" value="other">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th>MARITAL STATUS</th>
-                            <td class="form-radio">
-                                <label class="container-form">Single
-                                    <input type="radio" checked="checked" name="status" value="single">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label class="container-form">Married
-                                    <input type="radio" name="status" value="married">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label class="container-form">Other
-                                    <input type="radio" name="status" value="other">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </td>
-                        </tr>
-                    </table> 
-                    <div class="footer-form">
-                        <button class="btn-rsm">SAVE</button>
-                        <button class="btn-rsm">NEXT <i class='fas fa-angle-right'></i></button>
-                    </div>
+                                <input type="date" placeholder="Date of Birth">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>NATIONALITY</th>
+                                <td class="form-box">
+                                    <input type="text" placeholder="Nationality">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>GENDER</th>
+                                <td class="radio-inline">
+                                    <label class="container-form">Male
+                                        <input type="radio" checked="checked" name="gender" value="male">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="container-form">Female
+                                        <input type="radio" name="gender" value="female">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="container-form">Other
+                                        <input type="radio" name="gender" value="other">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>MARITAL STATUS</th>
+                                <td class="form-radio">
+                                    <label class="container-form">Single
+                                        <input type="radio" checked="checked" name="status" value="single">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="container-form">Married
+                                        <input type="radio" name="status" value="married">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <label class="container-form">Other
+                                        <input type="radio" name="status" value="other">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table>
+                            <p>PART : 2</p>
+                        </table>
+
+                        <div class="btn">
+                            <input type="submit"><br><br>
+                        </div>
+                    </form> 
+                
                 </div>
+            </div>
+        </div>
+
+                <!--
                 <div class="singleform form-edu">
                 <h1>EDUCATIONAL BACKGROUND</h1>
                     <table>
@@ -147,11 +155,11 @@
                             <td></td>
                         </tr>
                     </table>
-                    <!--/ระดับชั้น
+                    /ระดับชั้น
                     /มหาวิทยาลัย
                     /โรงเรียน
                         /major
-                        /จบด้วยเกรด-->
+                        /จบด้วยเกรด
                     <div class="footer-form">
                         <button class="btn-rsm"><i class='fas fa-angle-left'></i> BACK</button>
                         <button class="btn-rsm">SAVE</button>
@@ -166,8 +174,8 @@
                             <td></td>
                         </tr>
                     </table>
-                    <!--/ช่องใหญ่ๆ เขียนยาวๆ
-                    /เลือกเป็นข้อกับเขียนยาว-->
+                    /ช่องใหญ่ๆ เขียนยาวๆ
+                    /เลือกเป็นข้อกับเขียนยาว
                     <div class="footer-form">
                         <button class="btn-rsm"><i class='fas fa-angle-left'></i> BACK</button>
                         <button class="btn-rsm">SAVE</button>
@@ -198,11 +206,11 @@
                             <td></td>
                         </tr>
                     </table>
-                    <!--for working
+                    for working
                     /ปสก...ปี
                     /ทำอะไรมา
                         /*for studying
-                        /ผลงานอื่นๆ-->
+                        /ผลงานอื่นๆ
                     <div class="footer-form">
                         <button class="btn-rsm"><i class='fas fa-angle-left'></i> BACK</button>
                         <button class="btn-rsm">SAVE</button>
@@ -225,9 +233,9 @@
                             <td></td>
                        </tr>
                     </table>
-                    <!--/address
+                    /address
                     /social
-                    /email-->
+                    /email
                     <div class="footer-form">
                         <button class="btn-rsm"><i class='fas fa-angle-left'></i> BACK</button>
                         <button class="btn-rsm">SAVE</button>
@@ -235,7 +243,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
 
         <footer class="copyright">
             <div class="up">

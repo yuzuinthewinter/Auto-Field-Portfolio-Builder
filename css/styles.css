@@ -104,7 +104,7 @@ html{
     font-family: 'Francois One', sans-serif;
     padding: 15px 15px;
 
-    border-width: 2px;
+    border-width: 1px;
     border-radius: 10px;
 }
 .dropdown-menu .dropdown-item{
@@ -229,7 +229,14 @@ html{
     text-align: center;
     font-size: 22px;
     font-weight: bold;
-    padding: 5%  0%;
+    padding-top: 7%;
+}
+.content .singleform p{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: #111c35;
+    padding-top: 5%;
 }
 .content .singleform{
     font-size: 18px;
@@ -259,22 +266,22 @@ html{
     padding: 1.5% 0%;
     width: 70%;
 }
-.singleform input{
+#profile-form input{
     padding: 1% 3%;
 
-    border-radius: 10px;
+    border-radius: 3px;
     border-style: solid;
     border-width: 0.5px;
     border-color: #111c35;
     width: 45%;
 }
-.singleform input{
+#profile-form input{
     cursor: pointer;
 }
-
 /*radio input*/
 .form-radio{
-    display: inline-block;
+    display: inline;
+    position: relative;
 }
 .container-form {
     display: block;
@@ -353,14 +360,17 @@ html{
     background: transparent;
     padding: 7px 20px;
     width: 20%;
-    border-width: 2px;
+    border-width: 1.5px;
     border-radius: 10px;
     border-style: solid;
     border-color: #152750;
+    color: #152750;
+    text-decoration: none;
   }
   .singleform .footer-form .btn-rsm:hover{
     background: #152750;
     color: #eee;
+    text-decoration: none;
   }
 
 /*EDIT PROFILE PAGE*/
@@ -400,17 +410,24 @@ html{
     margin: auto;
     justify-content: center;
     text-align: center;
+    align-items: center;
+    padding: 5% 10%;
 }
 .purpose .pp{
+    display: inline-block;
     font-size: 14px;
     color: #152750;
     background: transparent;
-    padding: 7% 20%;
-    width: 15%;
-    border-width: 2px;
-    border-radius: 10px;
+    width: 45%;
+    height: 120%;
+    border-width: 1px;
     border-style: solid;
     border-color: #152750;
+    line-height: 400%;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
 }
 .purpose .pp:hover{
     background: #152750;
@@ -497,7 +514,7 @@ html{
     background: transparent;
     padding: 7px 20px;
     width: 15%;
-    border-width: 2px;
+    border-width: 1px;
     border-radius: 10px;
     border-style: solid;
     border-color: #152750;
@@ -564,6 +581,8 @@ html{
 }
 .manage-heading h1{
     padding-bottom: 5%;
+    padding-left: 3%;
+    text-align: left;
 }
 .single-manage{
     width: 100%;
@@ -587,3 +606,94 @@ html{
     font-size: 24px;
     padding: 4% 0%;
 }
+
+#upload-form{
+    font-size: 15px;
+    margin: auto;
+    line-height: 200%;
+    padding: 1.5% 4%;
+    background-color: transparent;
+}
+
+#upload-form p{
+    padding-bottom: 4%;
+}
+
+#upload-form input{
+    padding: 1.5% 4%;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 50px;
+    background-color: transparent;
+}
+#upload-form input #myFlie{
+    width: 40%;
+}
+#upload-form .btn{
+    width: 100%;
+    padding: 4% 20%;
+}   
+#upload-form button{
+    font-size: 16px;
+    background: transparent;
+    padding: 0% 4%;
+    border-width: 1px;
+    border-radius: 2px;
+    border-style: solid;
+    border-color: #152750;
+    color: #152750;
+    text-decoration: none;
+}
+#upload-form .btn #moreBtn{
+    width: 50%;
+    padding: 2% 4%;
+}
+#upload-form button .delete{
+    width: 20%;
+}
+#upload-form button:hover{
+    background: #152750;
+    color: #eee;
+    text-decoration: none;
+}
+
+#profile-form .btn{
+    font-size: 16px;
+    width: 100%;
+    padding: 0% 20%;
+    padding-top: 4%;
+    padding-bottom: 0%;
+}
+#profile-form .btn input{
+    width: 50%;
+    padding: 2% 4%;
+}
+#profile-form .btn input:hover{
+    background: #152750;
+    color: #eee;
+    text-decoration: none;
+}
+
+#main{
+    margin: auto;
+    padding-top: 7%;
+    padding-left: 20%;
+    padding-bottom: 4%;
+    justify-content: center;
+}
+
+#main button{
+    border-radius: 3px;
+    border-color: #152750;
+    color: #152750;
+    background-color: transparent;
+    padding: 1% 5%;
+}
+#main button:hover{
+    background: #152750;
+    color: #eee;
+    text-decoration: none;
+}
+
+
+
