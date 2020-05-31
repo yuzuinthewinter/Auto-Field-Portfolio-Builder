@@ -134,24 +134,62 @@ finishBtn.addEventListener('click',  ()  =>  {
 });
 
 $(document).ready(function() {
-    var max_fields = 2;
-    var wrapper = $("#add-upload-form");
-    var add_button = $("#moreBtn");
+    var wrapper1 = $("#add-upload-form");
+    var wrapper2 = $("#add-skill");
+    var wrapper3 = $("#add-exp");
+
+    var add_button1 = $("#moreBtn");
+    var add_button2 = $("#addskillBtn");
+    var add_button3 = $("#addexpBtn");
 
     var x = 1;
-    $(add_button).click(function(e) {
+    $(add_button1).click(function(e) {
         e.preventDefault();
-        if (x <= max_fields) {
+        if (x <= 2) {
             x++;
-            $(wrapper).append('<div><input type="file" id="myFile" name="filename"><input type="submit"><button class="delete">Delete</button></div><br>'); //add input box
+            $(wrapper1).append('<div><input type="file" id="myFile" name="filename"><input type="submit"><button class="delete">Delete</button></div><br>'); //add input box
         } else {
             alert('You Reached the limits')
         }
     });
 
-    $(wrapper).on("click", ".delete", function(e) {
+    var y = 1;
+    $(add_button2).click(function(e) {
+        e.preventDefault();
+        if (y <= 4) {
+            y++;
+            $(wrapper2).append('<div><tr><th>('+ y +')</th><td class="form-box"><input type="text" placeholder="skill">&nbsp;&nbsp;<input type="number" placeholder="level (max : 5)"><button class="delete">Delete</button></td></tr></div>'); //add input box
+        } else {
+            alert('You Reached the limits')
+        }
+    });
+
+    var z = 1;
+    $(add_button3).click(function(e) {
+        e.preventDefault();
+        if (z <= 4) {
+            z++;
+            $(wrapper3).append('<div><tr><td class="form-box"><input type="text" placeholder="experience">&nbsp;&nbsp;<input type="text" placeholder="place"></td><td class="form-box"><input type="text" placeholder="year"><button class="delete">Delete</button></td></tr></div>'); //add input box
+        } else {
+            alert('You Reached the limits')
+        }
+    });
+
+    $(wrapper1).on("click", ".delete", function(e) {
         e.preventDefault();
         $(this).parent('div').remove();
         x--;
+    })
+
+    $(wrapper2).on("click", ".delete", function(e) {
+        e.preventDefault();
+        $(this).parent('div').remove();
+        y--;
+    })
+
+    $(wrapper3).on("click", ".delete", function(e) {
+        e.preventDefault();
+        $(this).parent('div').remove();
+        z--;
     })
 });
