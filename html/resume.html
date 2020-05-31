@@ -49,201 +49,36 @@
         </header>
         <div class="content">
             <div class="form">
-                <div class="singleform">
-                    <div id="heading2" hidden><p>PROFILE PARTICULARS</p></div>
-                    <form method=GET" id="profile-form" hidden>
-                        <table>
-                            <p>PART : 1</p>
-                            <tr>
-                                <th>NAME</th>
-                                <td class="form-box"> 
-                                    <div class="input-group">
-                                        <input type="text" placeholder="Firstname">&nbsp;&nbsp;
-                                        <input type="text" placeholder="Lastname">
-                                    </div>
-                                </td>
-                            </tr> 
-                            <tr>
-                                <th>AGE</th>
-                                <td class="form-box">
-                                    <input type="number" placeholder="Age">
-                                </td>
-                            </tr>
-                            <tr>
-                            <th>DATE OF BIRTH</th>
-                            <td class="form-box">
-                                <input type="date" placeholder="Date of Birth">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>NATIONALITY</th>
-                                <td class="form-box">
-                                    <input type="text" placeholder="Nationality">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>GENDER</th>
-                                <td class="radio-inline">
-                                    <label class="container-form">Male
-                                        <input type="radio" checked="checked" name="gender" value="male">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container-form">Female
-                                        <input type="radio" name="gender" value="female">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container-form">Other
-                                        <input type="radio" name="gender" value="other">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>MARITAL STATUS</th>
-                                <td class="form-radio">
-                                    <label class="container-form">Single
-                                        <input type="radio" checked="checked" name="status" value="single">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container-form">Married
-                                        <input type="radio" name="status" value="married">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container-form">Other
-                                        <input type="radio" name="status" value="other">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </td>
-                            </tr>
-                        </table>
-
-                        <table>
-                            <p>PART : 2</p>
-                        </table>
-
-                        <div class="btn">
-                            <input type="submit"><br><br>
-                        </div>
-                    </form> 
-                
+                <div class="profile-heading">
+                    <br><br>
+                    <h1>MY PROFILE</h1> 
+                    <img src="https://cdn0.iconfinder.com/data/icons/professional-avatar-5/48/manager_male_avatar_men_character_professions-512.png" alt="Avatar">
+                    <br> <br> <br>
+                    <input type="file" id="myFile" name="filename">
+                    <input type="submit" id="submitBtn"><br><br>
+                    
+                    <table class="my-profile">
+                        <tr>
+                            <th>Status</th>
+                            <td id="pf-status">USER</td>
+                        </tr>
+                        <tr>
+                            <th>Name</th>
+                            <td><span id="pf-first">Firstname</span>&nbsp;&nbsp;<span id="pf-last">Lastname</span></td>
+                        </tr>
+                        <tr>
+                            <th>Username</th>
+                            <td id="pf-username">username</td>
+                        </tr>
+                        <tr>
+                            <th>Email address</th>
+                            <td id="pf-email">example@mail.com</td>
+                        </tr>
+                    </table>
+                    <br><br><br>
                 </div>
             </div>
         </div>
-
-                <!--
-                <div class="singleform form-edu">
-                <h1>EDUCATIONAL BACKGROUND</h1>
-                    <table>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                    </table>
-                    /ระดับชั้น
-                    /มหาวิทยาลัย
-                    /โรงเรียน
-                        /major
-                        /จบด้วยเกรด
-                    <div class="footer-form">
-                        <button class="btn-rsm"><i class='fas fa-angle-left'></i> BACK</button>
-                        <button class="btn-rsm">SAVE</button>
-                        <button class="btn-rsm">NEXT <i class='fas fa-angle-right'></i></button>
-                    </div>
-                </div>
-                <div class="singleform form-skill">
-                    <h1>SKILL</h1>
-                    <table>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                    </table>
-                    /ช่องใหญ่ๆ เขียนยาวๆ
-                    /เลือกเป็นข้อกับเขียนยาว
-                    <div class="footer-form">
-                        <button class="btn-rsm"><i class='fas fa-angle-left'></i> BACK</button>
-                        <button class="btn-rsm">SAVE</button>
-                        <button class="btn-rsm">NEXT <i class='fas fa-angle-right'></i></button>
-                    </div>
-                </div>
-                <div class="singleform form-exp">
-                    <h1>EXPERIENCE</h1>
-                    <table>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th></th>
-                            <td></td>
-                        </tr>
-                    </table>
-                    for working
-                    /ปสก...ปี
-                    /ทำอะไรมา
-                        /*for studying
-                        /ผลงานอื่นๆ
-                    <div class="footer-form">
-                        <button class="btn-rsm"><i class='fas fa-angle-left'></i> BACK</button>
-                        <button class="btn-rsm">SAVE</button>
-                        <button class="btn-rsm">NEXT <i class='fas fa-angle-right'></i></button>
-                    </div>
-                </div>
-                <div class="singleform form-contact">
-                    <h1>CONTACT</h1>
-                    <table>
-                        <tr>
-                            <th>EMAIL</th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th>ADDRESS</th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th>SOCIAL MEDIA</th>
-                            <td></td>
-                       </tr>
-                    </table>
-                    /address
-                    /social
-                    /email
-                    <div class="footer-form">
-                        <button class="btn-rsm"><i class='fas fa-angle-left'></i> BACK</button>
-                        <button class="btn-rsm">SAVE</button>
-                        <button class="btn-rsm"><i class="fas fa-plus-circle"></i> WORK</button>
-                    </div>
-                </div>
-            </div>
-        </div>-->
 
         <footer class="copyright">
             <div class="up">
@@ -254,7 +89,7 @@
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="../js/main.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="../js/main.js"></script>
     </body>
 </html>
