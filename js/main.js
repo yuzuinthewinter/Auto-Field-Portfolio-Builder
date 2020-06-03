@@ -5,6 +5,13 @@ $(document).ready(function(){
     });
 });
 
+$(document).ready(function(){
+  $('.menu-mini').on('click', function(){
+      $(this).toggleClass('open');
+      $('.mini-nav').toggleClass('open');
+  });
+});
+
 buttonUp = document.getElementById("up");
 
 window.onscroll = function() {scrollFunction()};

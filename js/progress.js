@@ -134,7 +134,7 @@ finishBtn.addEventListener('click',  ()  =>  {
 });
 
 $(document).ready(function() {
-    var wrapper1 = $("#add-upload-form");
+    var wrapper1 = $(".upload-item");
     var wrapper2 = $("#add-skill");
     var wrapper3 = $("#add-exp");
 
@@ -147,7 +147,7 @@ $(document).ready(function() {
         e.preventDefault();
         if (x <= 2) {
             x++;
-            $(wrapper1).append('<div><input type="file" id="myFile" name="filename"><input type="submit"><button class="delete">Delete</button></div><br>'); //add input box
+            $(wrapper1).append('<div><input type="file" id="myFile" name="filename" accept="image/*"><input type="submit"><button class="delete">Delete</button></div><br>'); //add input box
         } else {
             alert('You Reached the limits')
         }
