@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title><%= title %> | The Portfolio</title>
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Francois+One&family=Signika:wght@600&family=Galada&family=Martel:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel="stylesheet" href="/stylesheets/styles.css">
+        <link rel="stylesheet" href="/stylesheets/template-user.css">
+        <link rel="stylesheet" href="/stylesheets/progress.css">
+        
+    </head>
+    <body>
+        <div id="page-container">
+            <div class="header">
+                <div class="nav-bar">
+                    <!--navbar-->
+                    <div class="nav-logo">
+                        <h1>Portfolio</h1>
+                    </div>
+
+                    <div class="nav-links">
+                        <ul>
+                            <a href="/"><li>HOME</li></a>
+                            <a href="/portfolio/about"><li>ABOUT</li></a>
+                            <a href="/portfolio/"><li>PROJECT</li></a>
+                            <a href="/portfolio/template"><li>TEMPLATE</li></a>
+                            <a href="/portfolio/contact"><li>CONTACT</li></a>
+                        </ul>  
+                    </div>
+
+                    <div class="greet">
+                        <p>WELCOME, <%= currentUser.username %></p> 
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="/portfolio/">My Project</a>
+                                <a class="dropdown-item" href="/portfolio/edit-profile">Edit Profile</a>
+                                <a class="dropdown-item" href="/portfolio/setting">Setting</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="/signout">Sign Out</a>
+                            </div>
+                    </div>
+
+                    <div class="menu-mini">
+                        <div class="bar half start"></div>
+                        <div class="bar"></div>
+                        <div class="bar half end"></div>
+                    </div>
+
+                    <nav class="mini-nav">
+                        <div class="nav-list container">
+                            <div class="col">
+                                <div class="col">
+                                    <img src="https://cdn0.iconfinder.com/data/icons/professional-avatar-5/48/manager_male_avatar_men_character_professions-512.png" alt="Avatar" style="width:50%">
+                                </div>
+                                <div class="col">
+                                    <br><br><a href="/portfolio/edit-profile" class="nav-link"><i class="fas fa-edit"></i>&nbsp;<%= currentUser.username %></a><br>
+                                </div>
+                                <div class="col">
+                                    <a href="/" class="nav-link">Home</a>
+                                </div>
+                                <div class="col">
+                                    <a href="/portfolio/about" class="nav-link">About</a>
+                                </div>
+                                <div class="col">
+                                    <a href="/portfolio/template" class="nav-link">Template</a>
+                                </div>
+                                <div class="col">
+                                    <a href="/portfolio/contact" class="nav-link">Contact</a>
+                                </div>
+                                <div class="col">
+                                    <a href="/portfolio/edit-profile" class="nav-link">Edit Profile</a>
+                                </div>
+                                <div class="col">
+                                    <a href="/portfolio/setting" class="nav-link">Setting</a>
+                                </div>
+                                <div class="col">
+                                    <a href="/" class="nav-link">Sign Out</a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                    <!--navbar-->
+                </div> 
+            </div>        
+       

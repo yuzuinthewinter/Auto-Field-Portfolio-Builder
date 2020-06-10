@@ -1,0 +1,36 @@
+<%- include("../partials/userheader") %>
+        <div class="content">
+            <div class="form">
+                <div class="profile-heading">
+                    <br><br>
+                    <h1>MY PROFILE</h1> 
+                    <img src="https://cdn0.iconfinder.com/data/icons/professional-avatar-5/48/manager_male_avatar_men_character_professions-512.png" alt="Avatar">
+                    <br> <br> <br>
+                    <input type="file" id="myFile" name="filename">
+                    <input type="submit" id="submitBtn"><br><br>
+                    
+                    <table class="my-profile">
+                        <tr>
+                            <th>Status</th>
+                            <td id="pf-status">USER</td>
+                        </tr>
+                        <tr>
+                            <th>Name</th>
+                            <td><span id="pf-first">Firstname</span>&nbsp;&nbsp;<span id="pf-last">Lastname</span></td>
+                        </tr>
+                        <tr>
+                            <th>Username</th>
+                            <td id="pf-username">username</td>
+                        </tr>
+                        <tr>
+                            <th>Email address</th>
+                            <td id="pf-email">example@mail.com</td>
+                        </tr>
+                    </table>
+                    <br><br><br>
+                </div>
+            </div>
+        </div>
+
+        <%- include("../partials/copyright") %>
+<%- include("../partials/indexfooter") %>
