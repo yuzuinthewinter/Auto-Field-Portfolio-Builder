@@ -27,14 +27,13 @@ body{
 /*header*/
 .nav-logo{
     padding-top: 2.5%;
-    padding-left: 7%;
+    padding-left: 8%;
     padding-right: 2%;
     padding-bottom: 1.5%;
     z-index: 1;
-    
 }
 .nav-logo h1{
-    width: 25vh;
+    width: fit-content;
     font-family: 'Galada', cursive;
     background: linear-gradient(to top, #ffe838, #fd57bf);
     -webkit-background-clip: text;
@@ -55,7 +54,7 @@ body{
     width: fit-content;
     flex: 1;
     padding-top: 2.5%;
-    padding-left: 0%;
+    padding-left: 2%;
     padding-right: 0%;
     padding-bottom: 1.5%;
 }
@@ -87,20 +86,60 @@ body{
 .nav-links .btn{
     float: right;
 }
-.nav-bar .greet{
-    padding-top: 1%;
+.greet{
     position: absolute;
-    padding-top: 3%;
-    padding-left: 0%;
-    padding-right: 1.5%;
-    padding-bottom: 1%;
-    right: 15%;
+    margin-top: 3%;
+    margin-left: 0%;
+    margin-right: 1.2%;
+    margin-bottom: 2%;
+    right: 18%;
     font-size: 16px;
     color: rgb(255, 255, 255);
     letter-spacing: 1px;
     text-transform: uppercase;
 }
-.dropdown{
+/*header*/
+
+.menu {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: 200px;
+  }
+  
+  .menu > li > a {
+    background: #000;
+    color: #fff;
+    display: block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .menu ul {
+    background: #ddd;
+    height: 0;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    transition: all .5s ease;
+    top: 35px;
+    width: 100%;
+  }
+  
+  .menu li:hover ul {
+    height: 200px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .menu ul a {
+    color: #000;
+    display: block;
+    padding: 5px 20px;
+  }
+
+ .dropdown{
     right: 10%;
     padding-top: 2.5%;
     padding-left: 0%;
@@ -132,13 +171,13 @@ body{
 .dropdown-menu{
     font-size: 16px;
     color: #16162d;
-    background: rgba(255, 255, 255, 1);
+    background: white;
 
     font-family: 'Francois One', sans-serif;
     padding: 15px 15px;
 
     border-width: 1px;
-    border-radius: 10px;
+    border-radius: 2px;
     z-index: 2000;
 }
 .dropdown-menu .dropdown-item{
@@ -148,22 +187,20 @@ body{
 }
 .dropdown-menu .dropdown-item:hover{
     font-size: 16px;
-    color: rgb(255, 255, 255);
-    background: #313164;
+    color: #16162d;
+    background: #eee;
     font-family: 'Francois One', sans-serif;
-    border-radius: 10px;
+    border-radius: 2px;
 }
-/*header*/
 
-/*footer*/
+/* footer*/
 .copyright{
+    position: absolute;
     bottom: 0;
-    
     width: 100%;
     text-align: center;
-    background-color: #16162d;
+    background-image: linear-gradient(#333358,#16162d);
     padding: 2rem 0;
-    position: relative;
 }
 
 .up #up{
@@ -259,6 +296,7 @@ body{
     font-size: 16px;
 }
 .content .form h1{
+    font-family: 'Francois One', sans-serif;
     text-align: center;
     font-size: 22px;
     font-weight: bold;
@@ -757,9 +795,7 @@ body{
     padding: 1% 3%;
 
     border-radius: 10px;
-    border-style: solid;
     border-width: 0.5px;
-    border-color: #16162d;
     width: 70%;
     cursor: pointer;
 }
@@ -777,6 +813,169 @@ body{
     padding: 1.5% 0%;
     text-align: left;
 }
+.profile-heading a{
+    background: transparent;
+    padding: 1% 5%;
+    border-width: 1px;
+    border-radius: 2px;
+    border-style: solid;
+    border-color: #16162d;
+    color: #16162d;
+    text-decoration: none;
+}
+.profile-heading a:hover{
+    color: #eee;
+    background: #16162d;
+}
+.table-input th{
+    width: 80%;
+}
+.table-input td{
+    width: 15%;
+}
+
+
+
+.purpose {
+    width: 100%;
+    text-align: center;
+}
+.purpose input {
+    display: none;
+}
+.purpose input:checked + .pp{
+    background-color: #16162d;
+}
+.purpose input:checked + .pp span{
+    color: white;
+    transform: translateY(70px);
+}
+.purpose input:checked + .pp span:before{
+    transform: translateY(0px);
+    opacity: 1;
+}
+.purpose .pp {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    transition: all 250ms ease;
+    will-change: transition;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    font-weight: 900;
+}
+.purpose .pp:active{
+    transform: translateY(10px);
+}
+.purpose .pp span {
+    position: absolute;
+    transform: translate(0, 60px);
+    left: 0;
+    right: 0;
+    transition: all 300ms ease;
+    font-size: 1em;
+    user-select: none;
+    color: #16162d;
+}
+.purpose .pp span:before {
+    display: block;
+    transform: translateY(-80px);
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+    font-weight: normal;
+    color: white;
+}
+
+
+.template{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 5% 10%;
+    text-align: center;
+}
+.template input {
+    display: none;
+}
+.template .summer input :checked + .pp{
+    background: url(http://www.baltana.com/files/wallpapers-20/Beautiful-Pixel-Art-HD-Wallpapers-49302.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+}
+.template .spring input:checked + .pp{
+    color: #eee;
+    background: url(http://www.baltana.com/files/wallpapers-20/Aesthetic-Pixel-Art-Wallpapers-Full-HD-49288.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+}
+.template .summer input:checked + .pp {
+    color: #eee;
+    background: url(http://www.baltana.com/files/wallpapers-20/Beautiful-Pixel-Art-Widescreen-Wallpaper-49308.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+}
+.template .autumn input:checked + .pp{
+    color: #eee;
+    background: url(http://www.baltana.com/files/wallpapers-20/Aesthetic-Pixel-Art-High-Definition-Wallpaper-49284.gif);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+}
+.template input:checked + .pp span{
+    color: white;
+    transform: translateY(70px);
+}
+.template input:checked + .pp span:before{
+    transform: translateY(0px);
+    opacity: 1;
+}
+.template .pp {
+    width: 200px;
+    height: 200px;
+    background-color: transparent;
+    transition: all 250ms ease;
+    will-change: transition;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    font-weight: 900;
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: #16162d;
+}
+.template .pp:active{
+    transform: translateY(10px);
+}
+.template .pp span {
+    position: absolute;
+    transform: translate(0, 60px);
+    left: 0;
+    right: 0;
+    transition: all 300ms ease;
+    font-size: 1em;
+    user-select: none;
+    color: #16162d;
+}
+.template .pp span:before {
+    font-size: 1.2em;
+    display: block;
+    transform: translateY(-80px);
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+    font-weight: normal;
+    color: white;
+}
+
 
 @media screen and (max-width: 20000px){
     
@@ -790,10 +989,14 @@ body{
         content: '';
         width: 45%;
     }
-    .nav-link{
-        padding-right: 3%;
+    .nav-links{
+        width: fit-content;
+        flex: 1;
+        padding-top: 2.5%;
+        padding-left: 2%;
+        padding-right: 0%;
+        padding-bottom: 1.5%;
     }
-    
 }
 
 @media screen and (max-width: 1250px) {
@@ -820,7 +1023,7 @@ body{
         height: 100vh;
         top: -200vh;
         z-index: 50;
-        position: fixed;
+        position: absolute;
         background: #16162d;
         border-bottom-right-radius: 100%;
         border-bottom-left-radius: 100%;
@@ -941,19 +1144,29 @@ body{
     .single-contact{
         width: 350px;
     }
+    .nav-logo h1{
+        width: fit-content;
+        font-family: 'Galada', cursive;
+        background: linear-gradient(to top, #ffe838, #fd57bf);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 2.5rem;
+    
+        text-decoration: none;
+        letter-spacing: 2px;
+    }
 }
 
 @media screen and (max-width: 800px) {
-    .nav-links, .greet, .dropdown{
+    .nav-links, .greet{
         display: none;
     }
     .nav-logo h1::after{
         content: '';
         width: 30%;
     }
-    
     .menu-mini{
-        top: 3.5%;
+        top: 3%;
         width: 3.5rem;
         height: 2.625rem;
     }

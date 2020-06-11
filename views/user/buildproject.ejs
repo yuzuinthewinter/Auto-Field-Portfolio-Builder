@@ -32,26 +32,33 @@
                     </div>
                     
                     <div class="purpose" id="purpose-form">
-                        <a href="">
-                            <div class="pp">
-                                PICTURE GALLERY
+                        <label>
+                            <input type="radio" name="radio" checked/>
+                            <div class="gallery pp">
+                              <span>PICTURE GALLERY</span>
                             </div>
-                        </a>
-                        <a href="">
-                            <div class="pp">
-                                PERSONAL PORTFOLIO
+                        </label>
+                          
+                        <label>
+                            <input type="radio" name="radio"/>
+                            <div class="personal pp">
+                              <span>PERSONAL PORTFOLIO</span>
                             </div>
-                        </a>
-                        <a href="">
-                            <div class="pp">
-                                WORKING PORTFOLIO
+                        </label>
+
+                        <label>
+                            <input type="radio" name="radio"/>
+                            <div class="working pp">
+                              <span>WORKING PORTFOLIO</span>
                             </div>
-                        </a>
-                        <a href="">
-                            <div class="pp">
-                                STUDYING PORTFOLIO
+                        </label>
+
+                        <label>
+                            <input type="radio" name="radio"/>
+                            <div class="studying pp">
+                              <span>STUDYING PORTFOLIO</span>
                             </div>
-                        </a>
+                        </label>
                     </div>
                     
                 <form action="/portfolio/build-a-project" method="POST" id="profile-form" hidden>
@@ -264,27 +271,35 @@
                             <button id="moreBtn">UPLOAD MORE</button>
                         </div>
                     </form>
-                    <div class="slide" id="template-form" hidden>
-                        <a href="">
-                            <div class="season" id="winter">
-                                WINTER
+
+                    <div class="template" id="template-form" hidden>
+                        <label>
+                            <input type="radio" name="season" checked/>
+                            <div class="winter pp">
+                              <span>WINTER</span>
                             </div>
-                        </a>
-                        <a href="">
-                            <div class="season" id="spring">
-                                SPRING
+                        </label>
+                          
+                        <label>
+                            <input type="radio" name="season"/>
+                            <div class="spring pp">
+                              <span>SPRING</span>
                             </div>
-                        </a>
-                        <a href="">
-                            <div class="season" id="summer">
-                                SUMMER
+                        </label>
+
+                        <label>
+                            <input type="radio" name="season"/>
+                            <div class="summer pp">
+                              <span>SUMMER</span>
                             </div>
-                        </a>
-                        <a href="">
-                            <div class="season" id="autumn">
-                                AUTUMN
+                        </label>
+
+                        <label>
+                            <input type="radio" name="season"/>
+                            <div class="autumn pp">
+                              <span>AUTUMN</span>
                             </div>
-                        </a>
+                        </label>
                     </div>
 
                     <div id="main"> 

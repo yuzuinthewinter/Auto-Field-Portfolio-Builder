@@ -71,7 +71,6 @@ app.use('/portfolio',portfolioRouter);
 app.use('/user',userRouter);
 // app.use('/template',templateRouter);
 
-
 //start server
 app.listen(3000,function(req,res){
     console.log('Portfolio has started!');
