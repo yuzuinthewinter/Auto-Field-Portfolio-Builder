@@ -169,7 +169,7 @@ $(document).ready(function() {
         e.preventDefault();
         if (z <= 4) {
             z++;
-            $(wrapper3).append('<div><input type="text" placeholder="experience">&nbsp;&nbsp;<input type="text" placeholder="place"><input type="text" placeholder="year" id="yearexp">&nbsp;&nbsp;<button class="delete">Delete</button></td></div>'); //add input box
+            $(wrapper3).append('<div id="exp'+z+'"><input type="text" placeholder="experience('+z+')">&nbsp;&nbsp;<input type="text" placeholder="place"><input type="text" placeholder="year" id="yearexp">&nbsp;&nbsp;<button class="delete">Delete</button></td></div>'); //add input box
         } else {
             alert('You Reached the limits')
         }
