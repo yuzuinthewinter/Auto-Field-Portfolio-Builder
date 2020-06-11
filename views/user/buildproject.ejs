@@ -52,39 +52,40 @@
                                 STUDYING PORTFOLIO
                             </div>
                         </a>
-                    </div> 
-
-                    <form method=GET" id="profile-form" hidden>
+                    </div>
+                    
+                <form action="/portfolio/build-a-project" method="POST" id="profile-form" hidden>
                        <table>
                             <p>(PART : 1) PERSONAL</p>
                             <tr>
                                 <th>NAME</th>
                                 <td class="form-box"> 
                                      <div class="input-group">
-                                        <input type="text" placeholder="Firstname">&nbsp;&nbsp;
-                                         <input type="text" placeholder="Lastname">
+                                        <input type="text" name="Fname" placeholder="Firstname">&nbsp;&nbsp;
+                                         <input type="text" name="Lname" placeholder="Lastname">
                                     </div>
                                 </td>
                             </tr> 
                             <tr>
                                 <th>AGE</th>
                                 <td class="form-box">
-                                    <input type="number" placeholder="Age">
+                                    <input type="number" name="age"placeholder="Age">
                                 </td>
                             </tr>
                             <tr>
                                 <th>DATE OF BIRTH</th>
                                 <td class="form-box">
-                                    <input type="date" placeholder="Date of Birth">
+                                    <input type="date" name="date" placeholder="Date of Birth">
                                 </td>
                             </tr>
                             <tr>
                                 <th>NATIONALITY</th>
                                 <td class="form-box">
-                                    <input type="text" placeholder="Nationality">
+                                    <input type="text" name="nationality" placeholder="Nationality">
                                 </td>
                             </tr>
                             <tr>
+
                                 <th>GENDER</th>
                                 <td class="radio-inline">
                                     <label class="container-form">Male
@@ -102,6 +103,7 @@
                                 </td>
                             </tr>
                             <tr>
+
                                 <th>MARITAL STATUS</th>
                                 <td class="form-radio">
                                     <label class="container-form">Single
@@ -126,26 +128,26 @@
                                 <th>HIGH SCHOOL</th>
                                 <td class="form-box"> 
                                      <div class="input-group">
-                                        <input type="text" placeholder="Firstname">
+                                        <input type="text" name="highschool" placeholder="HIGH SCHOOL">
                                     </div>
                                 </td>
                             </tr> 
                             <tr>
                                 <th>COLLEGE</th>
                                 <td class="form-box">
-                                    <input type="text" placeholder="College">
+                                    <input type="text" name="college" placeholder="College">
                                 </td>
                             </tr>
                             <tr>
                                 <th>MAJOR</th>
                                 <td class="form-box">
-                                    <input type="text" placeholder="Major">
+                                    <input type="text" name="major" placeholder="Major">
                                 </td>
                             </tr>
                             <tr>
                                 <th>GPAX</th>
                                 <td class="form-box">
-                                    <input type="text" placeholder="GPAX (max : 4.00)">
+                                    <input type="text" name="gpax" placeholder="GPAX (max : 4.00)">
                                 </td>
                             </tr>
                         </table><br>
@@ -155,7 +157,7 @@
                             <tr>
                                 <td class="form-box"> 
                                     <div class="input-group">
-                                        <input type="text" placeholder="skill">&nbsp;&nbsp;
+                                        <input type="text"name="skill" placeholder="skill">&nbsp;&nbsp;
                                         <input type="number" min="1" max="5" placeholder="level (max : 5)">
                                     </div>
                                 </td>
@@ -173,12 +175,12 @@
                                 <td class="form-box"> 
                                     <div class="input-group">
                                         <input type="text" placeholder="experience">&nbsp;&nbsp;
-                                        <input type="text" placeholder="place">
+                                        <input type="text" name="exp" placeholder="place">
                                     </div>
                                 </td>
                                 <td class="form-box"> 
                                     <div class="input-group">
-                                        <input type="text" placeholder="year">
+                                        <input type="text" name="year" placeholder="year">
                                     </div>
                                 </td>                                
                             </tr> 
@@ -207,7 +209,7 @@
                                 <th>FACEBOOK</th>
                                 <td class="form-box"> 
                                      <div class="input-group">
-                                        <input type="url" placeholder="url">
+                                        <input type="url" name="fb" placeholder="url">
                                     </div>
                                 </td>
                             </tr> 
@@ -215,7 +217,7 @@
                                 <th>LINE</th>
                                 <td class="form-box"> 
                                      <div class="input-group">
-                                        <input type="url" placeholder="url">
+                                        <input type="url" name="ig" placeholder="url">
                                     </div>
                                 </td>
                             </tr> 
@@ -223,7 +225,7 @@
                                 <th>INSTAGRAM</th>
                                 <td class="form-box"> 
                                      <div class="input-group">
-                                        <input type="url" placeholder="url">
+                                        <input type="url"name="line" placeholder="url">
                                     </div>
                                 </td>
                             </tr> 
@@ -231,7 +233,7 @@
                                 <th>TWITTER</th>
                                 <td class="form-box"> 
                                      <div class="input-group">
-                                        <input type="url" placeholder="url">
+                                        <input type="url" name="twitter" placeholder="url">
                                     </div>
                                 </td>
                             </tr> 
@@ -241,7 +243,7 @@
                         <div class="btn">
                             <input type="submit"><br><br>
                         </div>
-                    </form> 
+                    </form>
                     
                     <form action="GET" id="upload-form" hidden>
                         <div id="add-upload-form">

@@ -12,11 +12,12 @@ const   express = require("express"),
         indexRouter = require('./routes/index');
         portfolioRouter = require('./routes/portfolio');
         userRouter = require('./routes/user');
+        // templateRouter = require('./routes/template');
         
 
 let app = express();
 
-mongoose.connect('mongodb://localhost:27017/portfolio', {useNewUrlParser: true,useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost:27017/portfolio', {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.set('useUnifiedTopology',true);
 mongoose.set('useCreateIndex',true);
 mongoose.set('useFindAndModify',false);
@@ -35,8 +36,14 @@ app.use(require('express-session')({
 
 app.use(passport.initialize());
 app.use(passport.session());
+
 app.use(function(req,res,next){
     res.locals.currentUser = req.user;
+    next();
+});
+
+app.use(function(req,res,next){
+    res.locals.portfolio = req.resume;
     next();
 });
 
@@ -54,14 +61,18 @@ passport.deserializeUser(User.deserializeUser());
 
 app.get("*",function(req,res,next){
     res.locals.user = req.user || null;
+    res.locals.portfolio = req.resume || null;
     next();
 });
 
+//routes
 app.use('/',indexRouter);
 app.use('/portfolio',portfolioRouter);
 app.use('/user',userRouter);
+// app.use('/template',templateRouter);
 
 
+//start server
 app.listen(3000,function(req,res){
     console.log('Portfolio has started!');
 });

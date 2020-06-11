@@ -158,7 +158,7 @@ $(document).ready(function() {
         e.preventDefault();
         if (y <= 4) {
             y++;
-            $(wrapper2).append('<div><tr><td class="form-box"><input type="text" placeholder="skill">&nbsp;&nbsp;<input type="number" placeholder="level (max : 5)"><button class="delete">Delete</button></td></tr></div>'); //add input box
+            $(wrapper2).append('<div id="skill'+y+'"><tr><td class="form-box"><input type="text" placeholder="skill('+y+')">&nbsp;&nbsp;<input type="number" placeholder="level (max : 5)"><button class="delete">Delete</button></td></tr></div>'); //add input box
         } else {
             alert('You Reached the limits')
         }

@@ -16,17 +16,18 @@
                         </tr>
                         <tr>
                             <th>Name</th>
-                            <td><span id="pf-first">Firstname</span>&nbsp;&nbsp;<span id="pf-last">Lastname</span></td>
+                            <td><span id="pf-first"><%= currentUser.firstname %></span>&nbsp;&nbsp;<span id="pf-last"><%= currentUser.lastname %></span></td>
                         </tr>
                         <tr>
                             <th>Username</th>
-                            <td id="pf-username">username</td>
+                            <td id="pf-username"><%= currentUser.username %></td>
                         </tr>
                         <tr>
                             <th>Email address</th>
-                            <td id="pf-email">example@mail.com</td>
+                            <td id="pf-email"><%= currentUser.email %></td>
                         </tr>
                     </table>
+                    <a href="/portfolio/setting">Edit you profile</a>
                     <br><br><br>
                 </div>
             </div>
