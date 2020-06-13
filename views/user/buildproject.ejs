@@ -1,315 +1,301 @@
 <%- include("../partials/userheader") %>
-        <div class="content">
-            <div class="form">
-                <div class="singleform">
-                    <div id="heading1"><p>CHOOSE YOUR PURPOSE WEBSITE</p></div>
-                    <div id="heading2" hidden><p>PROFILE PARTICULARS</p></div>
-                    <div id="heading3" hidden><p>UPLOAD YOUR FILE</p></div>
-                    <div id="heading4" hidden><p>CHOOSE YOUR TEMPLATE WEBSITE</p></div>
+    <div class="content">
+        <div class="form">
+            <div class="singleform">
+                <div id="heading1"><p>CHOOSE YOUR PURPOSE WEBSITE</p></div>
+                <div id="heading2" hidden><p>PROFILE PARTICULARS</p></div>
+                <div id="heading3" hidden><p>UPLOAD YOUR FILE</p></div>
+                <div id="heading4" hidden><p>CHOOSE YOUR TEMPLATE WEBSITE</p></div>
 
-                    <div id="stepProgressBar">
-                        <div class="step">
-                            <i class="fas fa-shapes"></i>
-                            <p class="step-text">PURPOSE</p>
-                            <div class="bullet"></div>
-                        </div>
-                        <div class="step">
-                            <i class="fas fa-edit"></i>
-                            <p class="step-text">PROFILE</p>
-                            <div class="bullet"></div>
-                        </div>
-                        <div class="step">
-                            <i class="fas fa-file-upload"></i>
-                            <p class="step-text">UPLOAD</p>
-                            <div class="bullet"></div>
-                        </div>
-                        <div class="step">
-                            <i class="far fa-window-restore"></i>
-                            <p class="step-text">TEMPLATE</p>
-                            <div class="bullet "></div>
-                        </div>
-                        <br> 
+                <div id="stepProgressBar">
+                    <div class="step">
+                        <i class="fas fa-shapes"></i>
+                        <p class="step-text">PURPOSE</p>
+                        <div class="bullet"></div>
                     </div>
-                    
-                    <div class="purpose" id="purpose-form">
-                        <label>
-                            <input type="radio" name="radio" checked/>
-                            <div class="gallery pp">
-                              <span>PICTURE GALLERY</span>
-                            </div>
-                        </label>
-                          
-                        <label>
-                            <input type="radio" name="radio"/>
-                            <div class="personal pp">
-                              <span>PERSONAL PORTFOLIO</span>
-                            </div>
-                        </label>
-
-                        <label>
-                            <input type="radio" name="radio"/>
-                            <div class="working pp">
-                              <span>WORKING PORTFOLIO</span>
-                            </div>
-                        </label>
-
-                        <label>
-                            <input type="radio" name="radio"/>
-                            <div class="studying pp">
-                              <span>STUDYING PORTFOLIO</span>
-                            </div>
-                        </label>
+                    <div class="step">
+                        <i class="fas fa-edit"></i>
+                        <p class="step-text">PROFILE</p>
+                        <div class="bullet"></div>
                     </div>
-                    
-                <form action="/portfolio/build-a-project" method="POST" id="profile-form" hidden>
-                       <table>
-                            <p>(PART : 1) PERSONAL</p>
-                            <tr>
-                                <th>NAME</th>
-                                <td class="form-box"> 
-                                     <div class="input-group">
-                                        <input type="text" name="Fname" placeholder="Firstname">&nbsp;&nbsp;
-                                         <input type="text" name="Lname" placeholder="Lastname">
-                                    </div>
-                                </td>
-                            </tr> 
-                            <tr>
-                                <th>AGE</th>
-                                <td class="form-box">
-                                    <input type="number" name="age"placeholder="Age">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>DATE OF BIRTH</th>
-                                <td class="form-box">
-                                    <input type="date" name="date" placeholder="Date of Birth">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>NATIONALITY</th>
-                                <td class="form-box">
-                                    <input type="text" name="nationality" placeholder="Nationality">
-                                </td>
-                            </tr>
-                            <tr>
-
-                                <th>GENDER</th>
-                                <td class="radio-inline">
-                                    <label class="container-form">Male
-                                        <input type="radio" checked="checked" name="gender" value="male">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container-form">Female
-                                        <input type="radio" name="gender" value="female">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container-form">Other
-                                        <input type="radio" name="gender" value="other">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr>
-
-                                <th>MARITAL STATUS</th>
-                                <td class="form-radio">
-                                    <label class="container-form">Single
-                                        <input type="radio" checked="checked" name="status" value="single">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container-form">Married
-                                        <input type="radio" name="status" value="married">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                    <label class="container-form">Other
-                                        <input type="radio" name="status" value="other">
-                                        <span class="checkmark"></span>
-                                    </label>
-                                </td>
-                            </tr>
-                        </table><br>
-
-                        <table>
-                            <p>(PART : 2) EDUCATIONAL</p>
-                            <tr>
-                                <th>HIGH SCHOOL</th>
-                                <td class="form-box"> 
-                                     <div class="input-group">
-                                        <input type="text" name="highschool" placeholder="HIGH SCHOOL">
-                                    </div>
-                                </td>
-                            </tr> 
-                            <tr>
-                                <th>COLLEGE</th>
-                                <td class="form-box">
-                                    <input type="text" name="college" placeholder="College">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>MAJOR</th>
-                                <td class="form-box">
-                                    <input type="text" name="major" placeholder="Major">
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>GPAX</th>
-                                <td class="form-box">
-                                    <input type="text" name="gpax" placeholder="GPAX (max : 4.00)">
-                                </td>
-                            </tr>
-                        </table><br>
-
-                        <table>
-                            <p>(PART : 3) SKILLS</p>
-                            <tr>
-                                <td class="form-box"> 
-                                    <div class="input-group">
-                                        <input type="text"name="skill" placeholder="skill">&nbsp;&nbsp;
-                                        <input type="number" min="1" max="5" placeholder="level (max : 5)">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr id="add-skill"></tr>
-                        </table>
-
-                        <div class="btn">
-                            <button id="addskillBtn">ADD SKILL</button>
-                        </div><br>
-
-                        <table>
-                            <p>(PART : 4) EXPERIENCE</p>
-                            <tr>
-                                <td class="form-box"> 
-                                    <div class="input-group">
-                                        <input type="text" placeholder="experience">&nbsp;&nbsp;
-                                        <input type="text" name="exp" placeholder="place">
-                                    </div>
-                                </td>
-                                <td class="form-box"> 
-                                    <div class="input-group">
-                                        <input type="text" name="year" placeholder="year">
-                                    </div>
-                                </td>                                
-                            </tr> 
-                            <tr id="add-exp">
-                                <td class="form-box" id="expfield"></td> 
-                                <td class="form-box" id="yearfield"></td> 
-                            </tr>
-                        </table>   
-                        
-                        <div class="btn">
-                            <button id="addexpBtn">ADD EXPERIENCE</button>
-                        </div><br>
-                        
-
-                        <table>
-                            <p>(PART : 5) CONTACT ME</p>
-                            <tr>
-                                <th>EMAIL</th>
-                                <td class="form-box"> 
-                                     <div class="input-group">
-                                        <input type="email" placeholder="example@mail.com">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>FACEBOOK</th>
-                                <td class="form-box"> 
-                                     <div class="input-group">
-                                        <input type="url" name="fb" placeholder="url">
-                                    </div>
-                                </td>
-                            </tr> 
-                            <tr>
-                                <th>LINE</th>
-                                <td class="form-box"> 
-                                     <div class="input-group">
-                                        <input type="url" name="ig" placeholder="url">
-                                    </div>
-                                </td>
-                            </tr> 
-                            <tr>
-                                <th>INSTAGRAM</th>
-                                <td class="form-box"> 
-                                     <div class="input-group">
-                                        <input type="url"name="line" placeholder="url">
-                                    </div>
-                                </td>
-                            </tr> 
-                            <tr>
-                                <th>TWITTER</th>
-                                <td class="form-box"> 
-                                     <div class="input-group">
-                                        <input type="url" name="twitter" placeholder="url">
-                                    </div>
-                                </td>
-                            </tr> 
-                            
-                        </table><br>
-
-                        <div class="btn">
-                            <input type="submit"><br><br>
-                        </div>
-                    </form>
-                    
-                    <form action="GET" id="upload-form" hidden>
-                        <div id="add-upload-form">
-                            <p>MAXIMUM : 5</p>
-                            <div class="upload-item">
-                                <input type="file" id="myFile" name="filename" accept="image/*">
-                                <input type="submit" id="submitBtn"><br><br>
-
-                                <input type="file" id="myFile" name="filename" accept="image/*">
-                                <input type="submit" id="submitBtn"><br><br>
-
-                                <input type="file" id="myFile" name="filename" accept="image/*">
-                                <input type="submit" id="submitBtn"><br><br>
-                            
-                            </div>
-                        </div>
-                        <div class="btn">
-                            <button id="moreBtn">UPLOAD MORE</button>
-                        </div>
-                    </form>
-
-                    <div class="template" id="template-form" hidden>
-                        <label>
-                            <input type="radio" name="season" checked/>
-                            <div class="winter pp">
-                              <span>WINTER</span>
-                            </div>
-                        </label>
-                          
-                        <label>
-                            <input type="radio" name="season"/>
-                            <div class="spring pp">
-                              <span>SPRING</span>
-                            </div>
-                        </label>
-
-                        <label>
-                            <input type="radio" name="season"/>
-                            <div class="summer pp">
-                              <span>SUMMER</span>
-                            </div>
-                        </label>
-
-                        <label>
-                            <input type="radio" name="season"/>
-                            <div class="autumn pp">
-                              <span>AUTUMN</span>
-                            </div>
-                        </label>
+                    <div class="step">
+                        <i class="fas fa-file-upload"></i>
+                        <p class="step-text">UPLOAD</p>
+                        <div class="bullet"></div>
                     </div>
-
-                    <div id="main"> 
-                        <button id="previousBtn"><i class="fas fa-angle-left"></i> <span>Previous</span></button>
-                        <button id="finishBtn">Finish</button>
-                        <button id="nextBtn"><span>Next</span> <i class="fas fa-angle-right"></i></button>
+                    <div class="step">
+                        <i class="far fa-window-restore"></i>
+                        <p class="step-text">TEMPLATE</p>
+                        <div class="bullet "></div>
                     </div>
-                    
+                    <br> 
                 </div>
+                
+                <div class="purpose" id="purpose-form">
+                    <label>
+                        <input type="radio" name="radio"/>
+                        <div class="working pp">
+                        <span>WORKING PORTFOLIO</span>
+                        </div>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="radio"/>
+                        <div class="studying pp">
+                        <span>STUDYING PORTFOLIO</span>
+                        </div>
+                    </label>
+                </div>
+                
+            <form action="/portfolio/build-a-project" method="POST" id="profile-form" hidden>
+                <table>
+                        <p>(PART : 1) PERSONAL</p>
+                        <tr>
+                            <th>NAME</th>
+                            <td class="form-box"> 
+                                <div class="input-group">
+                                    <input type="text" name="Fname" placeholder="Firstname">&nbsp;&nbsp;
+                                    <input type="text" name="Lname" placeholder="Lastname">
+                                </div>
+                            </td>
+                        </tr> 
+                        <tr>
+                            <th>AGE</th>
+                            <td class="form-box">
+                                <input type="number" name="age"placeholder="Age">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>DATE OF BIRTH</th>
+                            <td class="form-box">
+                                <input type="date" name="date" placeholder="Date of Birth">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>NATIONALITY</th>
+                            <td class="form-box">
+                                <input type="text" name="nationality" placeholder="Nationality">
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <th>GENDER</th>
+                            <td class="radio-inline">
+                                <label class="container-form">Male
+                                    <input type="radio" checked="checked" name="gender" value="male">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container-form">Female
+                                    <input type="radio" name="gender" value="female">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container-form">Other
+                                    <input type="radio" name="gender" value="other">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <th>MARITAL STATUS</th>
+                            <td class="form-radio">
+                                <label class="container-form">Single
+                                    <input type="radio" checked="checked" name="status" value="single">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container-form">Married
+                                    <input type="radio" name="status" value="married">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="container-form">Other
+                                    <input type="radio" name="status" value="other">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </td>
+                        </tr>
+                    </table><br>
+
+                    <table>
+                        <p>(PART : 2) EDUCATIONAL</p>
+                        <tr>
+                            <th>HIGH SCHOOL</th>
+                            <td class="form-box"> 
+                                <div class="input-group">
+                                    <input type="text" name="highschool" placeholder="HIGH SCHOOL">
+                                </div>
+                            </td>
+                        </tr> 
+                        <tr>
+                            <th>COLLEGE</th>
+                            <td class="form-box">
+                                <input type="text" name="college" placeholder="College">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>MAJOR</th>
+                            <td class="form-box">
+                                <input type="text" name="major" placeholder="Major">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>GPAX</th>
+                            <td class="form-box">
+                                <input type="text" name="gpax" placeholder="GPAX (max : 4.00)">
+                            </td>
+                        </tr>
+                    </table><br>
+
+                    <table>
+                        <p>(PART : 3) SKILLS</p>
+                        <tr>
+                            <td class="form-box"> 
+                                <div class="input-group">
+                                    <input type="text"name="skill" placeholder="skill">&nbsp;&nbsp;
+                                    <input type="number" min="1" max="5" placeholder="level (max : 5)">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr id="add-skill"></tr>
+                    </table>
+
+                    <div class="btn">
+                        <button id="addskillBtn">ADD SKILL</button>
+                    </div><br>
+
+                    <table>
+                        <p>(PART : 4) EXPERIENCE</p>
+                        <tr>
+                            <td class="form-box"> 
+                                <div class="input-group">
+                                    <input type="text" placeholder="experience">&nbsp;&nbsp;
+                                    <input type="text" name="exp" placeholder="place">
+                                </div>
+                            </td>
+                            <td class="form-box"> 
+                                <div class="input-group">
+                                    <input type="text" name="year" placeholder="year">
+                                </div>
+                            </td>                                
+                        </tr> 
+                        <tr id="add-exp">
+                            <td class="form-box" id="expfield"></td> 
+                            <td class="form-box" id="yearfield"></td> 
+                        </tr>
+                    </table>   
+                    
+                    <div class="btn">
+                        <button id="addexpBtn">ADD EXPERIENCE</button>
+                    </div><br>
+                    
+
+                    <table>
+                        <p>(PART : 5) CONTACT ME</p>
+                        <tr>
+                            <th>EMAIL</th>
+                            <td class="form-box"> 
+                                <div class="input-group">
+                                    <input type="email" placeholder="example@mail.com">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>FACEBOOK</th>
+                            <td class="form-box"> 
+                                <div class="input-group">
+                                    <input type="url" name="fb" placeholder="url">
+                                </div>
+                            </td>
+                        </tr> 
+                        <tr>
+                            <th>LINE</th>
+                            <td class="form-box"> 
+                                <div class="input-group">
+                                    <input type="url" name="ig" placeholder="url">
+                                </div>
+                            </td>
+                        </tr> 
+                        <tr>
+                            <th>INSTAGRAM</th>
+                            <td class="form-box"> 
+                                <div class="input-group">
+                                    <input type="url"name="line" placeholder="url">
+                                </div>
+                            </td>
+                        </tr> 
+                        <tr>
+                            <th>TWITTER</th>
+                            <td class="form-box"> 
+                                <div class="input-group">
+                                    <input type="url" name="twitter" placeholder="url">
+                                </div>
+                            </td>
+                        </tr> 
+                        
+                    </table><br>
+
+                    <div class="btn">
+                        <input type="submit"><br><br>
+                    </div>
+                </form>
+                
+                <form action="GET" id="upload-form" hidden>
+                    <div id="add-upload-form">
+                        <p>MAXIMUM : 5</p>
+                        <div class="upload-item">
+                            <input type="file" id="myFile" name="filename" accept="image/*">
+                            <input type="submit" id="submitBtn"><br><br>
+
+                            <input type="file" id="myFile" name="filename" accept="image/*">
+                            <input type="submit" id="submitBtn"><br><br>
+
+                            <input type="file" id="myFile" name="filename" accept="image/*">
+                            <input type="submit" id="submitBtn"><br><br>
+                        
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <button id="moreBtn">UPLOAD MORE</button>
+                    </div>
+                </form>
+
+                <div class="template" id="template-form" hidden>
+                    <label>
+                        <input type="radio" name="season" checked/>
+                        <div class="winter pp">
+                        <span>WINTER</span>
+                        </div>
+                    </label>
+                    
+                    <label>
+                        <input type="radio" name="season"/>
+                        <div class="spring pp">
+                        <span>SPRING</span>
+                        </div>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="season"/>
+                        <div class="summer pp">
+                        <span>SUMMER</span>
+                        </div>
+                    </label>
+
+                    <label>
+                        <input type="radio" name="season"/>
+                        <div class="autumn pp">
+                        <span>AUTUMN</span>
+                        </div>
+                    </label>
+                </div>
+
+                <div id="main"> 
+                    <button id="previousBtn"><i class="fas fa-angle-left"></i> <span>Previous</span></button>
+                    <button id="finishBtn">Finish</button>
+                    <button id="nextBtn"><span>Next</span> <i class="fas fa-angle-right"></i></button>
+                </div>
+                
             </div>
         </div>
+    </div>
         <%- include("../partials/copyright") %>
 <%- include("../partials/indexfooter") %>
