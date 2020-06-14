@@ -5,32 +5,39 @@
                         <table>
                             <h1>SETTING</h1> <br>
                             <tr>
+                                <th>Firstname</th>
+                                <td class="form-box">
+                                    <input type="text" placeholder="Firstname" value="<%= currentUser.firstname %>">
+                                 </td>
+                            </tr> 
+                            <tr>
+                                <th>Lastname</th>
+                                <td class="form-box">
+                                    <input type="text" placeholder="Lastname" value="<%= currentUser.lastname %>">
+                                 </td>
+                            </tr> 
+                            <tr>
                                 <th>Username</th>
                                 <td class="form-box">
-                                    <input type="text" placeholder="Username">
+                                    <input type="text" placeholder="Username" value="<%= currentUser.username %>">
                                  </td>
                             </tr> 
                             <tr>
-                                <th>Change Username</th>
-                                <td class="form-box"> 
-                                    <input type="text" placeholder="New Username">
-                                 </td>
-                            </tr> 
-                            <tr>
-                                <th>Password</th>
+                                <th>Email</th>
                                 <td class="form-box">
-                                    <input type="text" placeholder="Password">
+                                    <input type="text" placeholder="Email" value="<%= currentUser.email %>">
                                 </td>
                             </tr>
                             <tr>
-                                <th>Change Password</th>
+                                <th>Password</th>
                                 <td class="form-box">
-                                    <input type="text" placeholder="New Password">
+                                    <input type="text" placeholder="new password" value="<%= currentUser.password %>">
                                 </td>
                             </tr>
                         </table> 
                         <div class="footer-form">
-                            <a href="/portfolio/setting" class="btn-setting">SAVE CHANGE</a>
+                            <a href="/portfolio/edit-profile" class="btn-setting">SAVE CHANGE</a>
+                            <a href="/portfolio/edit-profile" class="btn-setting">CANCEL</a>
                         </div>
                 </div>
             </div>

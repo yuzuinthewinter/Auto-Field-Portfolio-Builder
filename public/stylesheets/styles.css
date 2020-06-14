@@ -255,6 +255,7 @@ body{
     border-radius: 10px;
     justify-content: center;
     text-align: center;
+   max-height: fit-content;
 }
 .project .single-blog img{
     width: 200px;
@@ -269,9 +270,8 @@ body{
     border-color: #16162d;
 }
 .project .single-blog .btn:hover{
-    background: #16162d;
     color: #eee;
-    
+    background: #16162d;
 }
 .project .single-blog p{
     padding-top: 5px;
@@ -439,8 +439,8 @@ body{
     text-decoration: none;
   }
   .singleform .footer-form .btn-rsm:hover{
-    background: #16162d;
     color: #eee;
+    background: #16162d;
     text-decoration: none;
   }
 
@@ -503,7 +503,6 @@ body{
     margin: auto;
 }
 .purpose .pp:hover{
-    background: #16162d;
     color: #eee;
 }
 
@@ -592,8 +591,8 @@ body{
     text-decoration: none;
   }
   .settingform .footer-form .btn-setting:hover{
-    background: #16162d;
     color: #eee;
+    background: #16162d;
     text-decoration: none;
   }
 
@@ -723,9 +722,9 @@ body{
 #upload-form button .delete{
     width: 20%;
 }
-#upload-form button:hover{
-    background: #16162d;
+#upload-form button:hover, #profile-form .btn input:hover{
     color: #eee;
+    background: #16162d;
     text-decoration: none;
 }
 
@@ -740,11 +739,6 @@ body{
     width: 50%;
     padding: 2% 4%;
 }
-#profile-form .btn input:hover{
-    background: #16162d;
-    color: #eee;
-    text-decoration: none;
-}
 
 #main{
     margin: auto;
@@ -756,14 +750,16 @@ body{
 
 #main button{
     border-radius: 3px;
+    border-width: 0.5px;
     border-color: #16162d;
     color: #16162d;
     background-color: transparent;
     padding: 1% 5%;
+    
 }
 #main button:hover{
-    background: #16162d;
     color: #eee;
+    background: #16162d;
     text-decoration: none;
 }
 .content .profile-heading{
@@ -888,7 +884,6 @@ body{
     color: white;
 }
 
-
 .template{
     width: 100%;
     height: 100%;
@@ -902,32 +897,41 @@ body{
 .template input {
     display: none;
 }
-.template .summer input :checked + .pp{
+
+.template .winter:hover{
+    color: #eee;
     background: url(http://www.baltana.com/files/wallpapers-20/Beautiful-Pixel-Art-HD-Wallpapers-49302.jpg);
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
+    transition: 0.1s;
 }
-.template .spring input:checked + .pp{
+.template .spring:hover{
     color: #eee;
     background: url(http://www.baltana.com/files/wallpapers-20/Aesthetic-Pixel-Art-Wallpapers-Full-HD-49288.jpg);
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
+    transition: 0.1s;
 }
-.template .summer input:checked + .pp {
+.template .summer:hover{
     color: #eee;
     background: url(http://www.baltana.com/files/wallpapers-20/Beautiful-Pixel-Art-Widescreen-Wallpaper-49308.jpg);
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
+    transition: 0.1s;
 }
-.template .autumn input:checked + .pp{
+.template .autumn:hover{
     color: #eee;
     background: url(http://www.baltana.com/files/wallpapers-20/Aesthetic-Pixel-Art-High-Definition-Wallpaper-49284.gif);
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
+    transition: 0.1s;
+}
+.template input:checked + .pp{
+    background-color: #16162d;
 }
 .template input:checked + .pp span{
     color: white;
@@ -964,7 +968,6 @@ body{
     transition: all 300ms ease;
     font-size: 1em;
     user-select: none;
-    color: #16162d;
 }
 .template .pp span:before {
     font-size: 1.2em;
@@ -975,7 +978,6 @@ body{
     font-weight: normal;
     color: white;
 }
-
 
 @media screen and (max-width: 20000px){
     
@@ -1109,7 +1111,7 @@ body{
         height: 4px;
         border-radius: .8rem;
     }
-    
+
     .bar.half{
         width: 50%;
     }
@@ -1155,6 +1157,9 @@ body{
         text-decoration: none;
         letter-spacing: 2px;
     }
+    .project .single-blog{
+        height: 90%;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -1169,6 +1174,9 @@ body{
         top: 3%;
         width: 3.5rem;
         height: 2.625rem;
+    }
+    .project .single-blog{
+        height: 95%;
     }
 }
 @media screen and (max-width: 650px){

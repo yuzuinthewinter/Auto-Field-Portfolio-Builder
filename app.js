@@ -42,11 +42,6 @@ app.use(function(req,res,next){
     next();
 });
 
-app.use(function(req,res,next){
-    res.locals.portfolio = req.resume;
-    next();
-});
-
 passport.use(new passportLocal(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
@@ -61,7 +56,6 @@ passport.deserializeUser(User.deserializeUser());
 
 app.get("*",function(req,res,next){
     res.locals.user = req.user || null;
-    res.locals.portfolio = req.resume || null;
     next();
 });
 

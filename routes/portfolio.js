@@ -1,3 +1,5 @@
+const { create } = require('../models/user');
+
 const express = require('express'),
       router = express.Router(),
       passport = require('passport'),
@@ -6,8 +8,21 @@ const express = require('express'),
       Resume = require('../models/resume')
 
 
-router.get('/', middleware.isLoggedIn, function(req,res){    
-    res.render('user/project', { title: 'My Project' });
+router.get('/', middleware.isLoggedIn, function(req,res) {    
+    const projects = [{
+        nameproject: 'Test project',
+        createdAt: new Date()
+    },
+    {
+        nameproject: 'Test project2',
+        createdAt: new Date()
+    },
+    {
+        nameproject: 'Test project3',
+        createdAt: new Date()
+    }
+    ]
+    res.render('user/project', { projects: projects, title: 'Project'});
 });
 
 //=========================================================
@@ -16,9 +31,6 @@ router.get('/', middleware.isLoggedIn, function(req,res){
 /* GET users listing. */
 router.get('/about', middleware.isLoggedIn, function(req, res, next) {
     res.render('user/about', { title: 'About Us' });
-});
-router.get('/', middleware.isLoggedIn, function(req, res, next) {
-    res.render('user/project', { title: 'My Project' });
 });
 router.get('/template', middleware.isLoggedIn, function(req, res, next) {
     res.render('user/template', { title: 'Template' });

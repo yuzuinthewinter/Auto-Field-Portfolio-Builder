@@ -55,19 +55,19 @@
 	display:  none;
 }
  
-button  {
+#addexpBtn, #addskillBtn  {
 	padding:  5px  10px;
 	border:  1px  solid  black;
 	transition:  250ms background-color;
 }
 
-button:hover  {
+#addexpBtn:hover, #addskillBtn:hover  {
+	color:  white;
 	cursor:  pointer;
 	background-color:  black;
-	color:  white;
+	
 }
-
-button:disabled:hover  {
+#addexpBtn:hover:disabled:hover , #addskillBtn:hover:disabled:hover  {
 	opacity:  0.6;
 	cursor:  not-allowed;
 }

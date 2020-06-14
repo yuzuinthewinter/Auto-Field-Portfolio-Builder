@@ -3,51 +3,59 @@
             <div class="project row">
                 <div class="col-12 col-md-4">
                     <div class="single-blog">
-                        <form action="/addnewresume"></form>
-                        <a href="/portfolio/build-a-project" class="build-project" >
-                            <i class="fas fa-plus-circle"></i>
-                        </a>
+                            <div id="btn-plus">
+                                <button type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
+                                    <i class="fas fa-plus-circle"></i>
+                                </button>
+                            </div>
+                        <form action="/addnewresume">    
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+
+                                        <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLabel">New Project : Name Project</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+
+                                        <div class="modal-body">
+                                          <form>
+                                            <div class="form-group">
+                                              <input type="text" class="form-control" id="recipient-name" style="font-size: 14px;">
+                                            </div>
+                                          </form>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-dismiss="modal" style="color: #16162d;">Close</button>
+                                          <button type="button" class="btn btn-primary" style="color: #16162d;"><a href="/portfolio/build-a-project" class="build-project" >Save</a></button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
                     </div>
                 </div>
-
-                <div class="col-12 col-md-4">
-                    <div class="single-blog">
-                        <div class="projectfield">
-                            <img src="http://www.baltana.com/files/wallpapers-20/Pixel-Art-Background-Wallpapers-49560.jpg" alt="Avatar" style="width:80%">
-                            <p>Name Project : Work1</p><!--name project will set before into input resume page-->
-                            <a href="/portfolio/" class="btn">Open</a> <!--if have project can click this button-->
-                            <a href="/portfolio/build-a-project" class="btn">Edit</a>
-                            <a class="btn">Delete</a>
+                <% projects.forEach(function(project){ %>
+                    <div class="col-12 col-md-4">
+                        <div class="single-blog">
+                            <div class="projectfield">
+                                <img src="http://www.baltana.com/files/wallpapers-20/Pixel-Art-Background-Wallpapers-49560.jpg" alt="Avatar" style="width:80%">
+                                <p>Name Project : <%= project.nameproject %></p>
+                                <p style="font-size: 12px; color: lightslategray;">Create at : <%= project.createdAt.toLocaleDateString('en-GB') %></p>
+                                <a href="/portfolio/" class="btn">Open</a> 
+                                <a href="/portfolio/build-a-project" class="btn">Edit</a>
+                                <a class="btn">Delete</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="single-blog">
-                        <img src="http://www.baltana.com/files/wallpapers-20/Aesthetic-Pixel-Art-High-Definition-Wallpaper-49284.gif" alt="Avatar" style="width:80%">
-                        <p>Name Project : Work2</p>
-                        <a href="/portfolio/" class="btn">Open</a> <!--if have project can click this button-->
-                            <a href="/portfolio/build-a-project" class="btn">Edit</a>
-                            <a class="btn">Delete</a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="single-blog">
-                        <img src="http://www.baltana.com/files/wallpapers-20/Aesthetic-Pixel-Art-Wallpapers-Full-HD-49288.jpg" alt="Avatar" style="width:80%">
-                        <p>Name Project : Work3</p>
-                        <a href="/portfolio/" class="btn">Open</a> <!--if have project can click this button-->
-                            <a href="/portfolio/build-a-project" class="btn">Edit</a>
-                            <a class="btn">Delete</a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <div class="single-blog">
-                        <img src="http://www.baltana.com/files/wallpapers-20/Beautiful-Pixel-Art-Widescreen-Wallpaper-49308.jpg" alt="Avatar" style="width:80%">
-                        <p>Name Project : Work4</p>
-                        <a href="/portfolio/" class="btn">Open</a> <!--if have project can click this button-->
-                            <a href="/portfolio/build-a-project" class="btn">Edit</a>
-                            <a class="btn">Delete</a>
-                    </div>
-                </div>
+                <% }) %>
+                <!--
+                    -->
             </div>
         </div>
         <%- include("../partials/copyright") %>
