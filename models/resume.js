@@ -4,11 +4,9 @@ const   mongoose = require('mongoose'),
 let resumeSchema = new mongoose.Schema({
     Fname: String,
     Lname: String,
-    age: String,
-    date: String,   
+    position: String, 
     nationality: String,
-    gender: String,
-    status: String,
+    introduce: String,
     
     highschool: String,
     college: String,

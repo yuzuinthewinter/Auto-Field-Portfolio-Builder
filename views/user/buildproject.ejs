@@ -58,17 +58,11 @@
                                     <input type="text" name="Lname" placeholder="Lastname">
                                 </div>
                             </td>
-                        </tr> 
-                        <tr>
-                            <th>AGE</th>
-                            <td class="form-box">
-                                <input type="number" name="age"placeholder="Age">
-                            </td>
                         </tr>
                         <tr>
-                            <th>DATE OF BIRTH</th>
+                            <th>Position</th>
                             <td class="form-box">
-                                <input type="date" name="date" placeholder="Date of Birth">
+                                <input type="text" name="position" placeholder="Student, Designer etc.">
                             </td>
                         </tr>
                         <tr>
@@ -78,10 +72,9 @@
                             </td>
                         </tr>
                         <tr>
-
                             <th><label for="introduce">Introduce</label></th>
                             <td class="form-radio">
-                                <textarea id="introduce" name="introduce" rows="4" cols="60" style="font-size: 14px; padding: 2% 2%;"></textarea>
+                                <textarea id="introduce" name="introduce" rows="4" cols="60" style="font-size: 14px; padding: 2% 2%;" placeholder="Applied Computer Science, &#10;Department of Mathematics, &#10;Faculty of Science, KMUTT"></textarea>
                             </td>
                         </tr>
                     </table><br>
@@ -97,9 +90,9 @@
                             </td>
                         </tr> 
                         <tr>
-                            <th>COLLEGE</th>
+                            <th>COLLEGE / UNIVERSITY</th>
                             <td class="form-box">
-                                <input type="text" name="college" placeholder="College">
+                                <input type="text" name="college" placeholder="College / University">
                             </td>
                         </tr>
                         <tr>
@@ -211,21 +204,45 @@
                 
                 <form action="GET" id="upload-form" hidden>
                     <div id="add-upload-form">
-                        <p>MAXIMUM : 5</p>
                         <div class="upload-item">
-                            <input type="file" id="myFile" name="filename" accept="image/*">
-                            <input type="submit" id="submitBtn"><br><br>
-
-                            <input type="file" id="myFile" name="filename" accept="image/*">
-                            <input type="submit" id="submitBtn"><br><br>
-
-                            <input type="file" id="myFile" name="filename" accept="image/*">
-                            <input type="submit" id="submitBtn"><br><br>
-                        
+                            <table>
+                                <tr>
+                                    <th><p>Profile</p></th>
+                                    <td>
+                                        <input type="file" id="myFile" name="filename" accept="image/*">
+                                        <input type="submit" id="submitBtn"><br><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><p>Part 2</p></th>
+                                    <td>
+                                        <input type="file" id="myFile" name="filename" accept="image/*">
+                                        <input type="submit" id="submitBtn"><br><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><p>Part 3</p></th>
+                                    <td>
+                                        <input type="file" id="myFile" name="filename" accept="image/*">
+                                        <input type="submit" id="submitBtn"><br><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><p>Part 4</p></th>
+                                    <td>
+                                        <input type="file" id="myFile" name="filename" accept="image/*">
+                                        <input type="submit" id="submitBtn"><br><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><p>Part 5</p></th>
+                                    <td>
+                                        <input type="file" id="myFile" name="filename" accept="image/*">
+                                        <input type="submit" id="submitBtn"><br><br>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
-                    </div>
-                    <div class="btn">
-                        <button id="moreBtn">UPLOAD MORE</button>
                     </div>
                 </form>
 

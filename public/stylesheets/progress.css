@@ -93,10 +93,12 @@
 	font-size: 14px;
 }
 #upload-form p{
-	font-size: 26px;
+	font-size: 16px;
+	text-align: left;
+	width: 50%;
 }
-.upload-item{
-	padding: 0% 15%;
+#upload-form input{
+	width: 100%;
 }
 
 @media screen and (max-width: 1500px){

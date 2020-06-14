@@ -8,9 +8,10 @@ const   express = require("express"),
         path = require('path'),
         // ----------------Model----------------------
         User = require('./models/user'),
+        Resume = require('./models/resume'),
         // ------------------------------------------------
-        indexRouter = require('./routes/index');
-        portfolioRouter = require('./routes/portfolio');
+        indexRouter = require('./routes/index'),
+        portfolioRouter = require('./routes/portfolio'),
         userRouter = require('./routes/user');
         // templateRouter = require('./routes/template');
         

@@ -57,16 +57,15 @@ router.get('/build-a-project', middleware.isLoggedIn, function(req, res, next) {
 router.post('/build-a-project', middleware.isLoggedIn, async function(req,res)
 {
     try {
-      const resume = await Resume.create(req.body)
-      let result = {
-        ...resume
+        const resume = await Resume.create(req.body)
+        let result = {
+          ...resume
+        }
+        // console.log(result)
+        res.redirect('/portfolio/myproject');
+      } catch(err) {
+        console.log(err)
       }
-      // console.log(result)
-      res.redirect('/portfolio/myproject');
-    } catch(err) {
-      console.log(err)
-    }
-
 });
 
 
@@ -75,3 +74,26 @@ router.post('/build-a-project', middleware.isLoggedIn, async function(req,res)
 //=========================================================
 
 module.exports = router;
+
+/*,
+age: req.body.username,
+date: req.body.username,   
+nationality: req.body.username,
+gender: req.body.username,
+status: req.body.username,
+
+highschool: req.body.username,
+college: req.body.username,
+major: req.body.username,
+gpax: req.body.username,
+
+skill: req.body.username,
+
+exp: req.body.username,
+year: req.body.username,
+
+email: req.body.username,
+fb: req.body.username,
+ig: req.body.username,
+line: req.body.username,
+twitter: req.body.username*/

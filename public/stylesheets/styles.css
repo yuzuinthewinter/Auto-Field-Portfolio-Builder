@@ -978,6 +978,14 @@ body{
     font-weight: normal;
     color: white;
 }
+.single-blog #btn-plus button{
+    padding: 16% 0;
+    border-style: hidden;
+}
+.modal-footer button:hover{
+    color: #eee;
+    text-decoration: none;
+}
 
 @media screen and (max-width: 20000px){
     
