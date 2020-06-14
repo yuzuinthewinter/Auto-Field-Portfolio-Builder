@@ -30,7 +30,7 @@ app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(require('express-session')({
-    secret: 'CSS227',
+    secret: 'portfolio',
     resave: false,
     saveUninitialized: false
 }));

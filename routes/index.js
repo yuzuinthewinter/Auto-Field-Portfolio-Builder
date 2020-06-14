@@ -34,6 +34,10 @@ router.get('/signup',function(req,res){
 
 router.post('/signup',function(req,res)
 {
+    if(req.body.password != req.body.cfpassword){
+        return res.redirect('signup');
+    }
+
     User.register(new User({
         username: req.body.username,
         email: req.body.email,
@@ -43,7 +47,7 @@ router.post('/signup',function(req,res)
     {
         if(err){
             console.log(err);
-            return res.redirect('signup');
+            return res.redirect('/signup');
         }
 
         passport.authenticate('local')(req,res,function(){
