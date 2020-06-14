@@ -595,6 +595,12 @@ body{
     background: #16162d;
     text-decoration: none;
   }
+  .settingform .footer-form .btn-setting button:hover{
+    color: #eee;
+    background: #16162d;
+    text-decoration: none;
+  }
+  
 
 /*ABOUT PAGE*/
 /*content*/
