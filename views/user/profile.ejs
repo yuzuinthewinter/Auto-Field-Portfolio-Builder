@@ -17,24 +17,24 @@
                     
                     <table class="my-profile">
                         <tr>
-                            <th>Status</th>
-                            <td id="pf-status" style="text-transform: uppercase;"><%= currentUser.status %></td>
+                            <th>Name</th>
+                            <td style="text-transform: uppercase;"><span id="pf-first"><%= currentUser.firstname %></span>&nbsp;&nbsp;<span id="pf-last"><%= currentUser.lastname %></span></td>
                         </tr>
                         <tr>
-                            <th>Name</th>
-                            <td><span id="pf-first"><%= currentUser.firstname %></span>&nbsp;&nbsp;<span id="pf-last"><%= currentUser.lastname %></span></td>
+                            <th>Status</th>
+                            <td id="pf-status" style="text-transform: uppercase;"><% if(locals.user.status == 'membership') { %> <i class="fas fa-crown"></i> <% } %><% if(locals.user.status != 'membership') { %> <i class="fas fa-user"></i> <% } %>&nbsp;&nbsp;<%= currentUser.status %></td>
                         </tr>
                         <tr>
                             <th>Username</th>
-                            <td id="pf-username"><%= currentUser.username %></td>
+                            <td id="pf-username" style="text-transform: uppercase;"><%= currentUser.username %></td>
                         </tr>
                         <tr>
                             <th>Email address</th>
-                            <td id="pf-email"><%= currentUser.email %></td>
+                            <td id="pf-email" style="text-transform: uppercase;"><%= currentUser.email %></td>
                         </tr>
                     </table><br><br>
                     
-                    <a href="/portfolio/membership"><% if(locals.user.status != 'member') { %> <i class="fas fa-crown"></i> To be Membership<% } %><% if(locals.user.status == 'member') { %> <i class="fas fa-user"></i> To be General User<% } %></a>
+                    <a href="/portfolio/membership"><% if(locals.user.status != 'membership') { %> <i class="fas fa-crown"></i> To be Membership<% } %><% if(locals.user.status == 'membership') { %> <i class="fas fa-user"></i> To be General User<% } %></a>
                     <a href="/portfolio/setting"><i class="fas fa-edit"></i>  Edit you profile</a>
                     
                     <br><br><br>

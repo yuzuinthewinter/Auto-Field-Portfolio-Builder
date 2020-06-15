@@ -73,7 +73,7 @@ body{
     transition: 0.1s;
 }
 .slide ul li:nth-child(3):hover ~ .box{
-    background: url(http://www.baltana.com/files/wallpapers-20/Beautiful-Pixel-Art-Widescreen-Wallpaper-49308.jpg);
+    background: url(http://www.designlovefest.com/wp-content/uploads/downloads/2016/08/tropical.jpg);
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;

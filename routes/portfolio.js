@@ -3,9 +3,11 @@ const { create } = require('../models/user');
 const express = require('express'),
       router = express.Router(),
       passport = require('passport'),
-      User = require('../models/user'),
+
       middleware = require('../middleware'),
+      User = require('../models/user'),
       Resume = require('../models/resume'),
+
       multer = require('multer'),
       fs = require('fs-extra'),
       bcrypt = require('bcryptjs');
@@ -58,11 +60,11 @@ router.get('/changetomember/:id', middleware.isLoggedIn, function(req, res){
 });
 router.post('/changetomember/:id', middleware.isLoggedIn, function(req, res){
     let user = {};
-    user.status = 'member'
-  
+    user.status = 'membership'
+
     let query = {_id:req.params.id}
-  
-    User.update(query, user, function(err){
+
+    User.updateOne(query, user, function(err){
       if(err){
         console.log(err);
         return;
@@ -82,11 +84,11 @@ router.get('/changetouser/:id', middleware.isLoggedIn, function(req, res){
 });
 router.post('/changetouser/:id', middleware.isLoggedIn, function(req, res){
     let user = {};
-    user.status = 'general user';
-  
+    user.status = 'general user'
+
     let query = {_id:req.params.id}
-  
-    User.update(query, user, function(err){
+
+    User.updateOne(query, user, function(err){
       if(err){
         console.log(err);
         return;
@@ -95,7 +97,6 @@ router.post('/changetouser/:id', middleware.isLoggedIn, function(req, res){
       }
     });
 });
-
 //-----------------------------------------------------------------------
 //-----------------------------------------------------------------------
 
@@ -136,7 +137,7 @@ router.post('/edit-profile/:id', middleware.isLoggedIn, function(req, res){
   
     let query = {_id:req.params.id}
   
-    User.update(query, user, function(err){
+    User.updateMany(query, user, function(err){
       if(err){
         console.log(err);
         return;
@@ -146,6 +147,8 @@ router.post('/edit-profile/:id', middleware.isLoggedIn, function(req, res){
     });
 });
 //--------------------------------update user profile---------------------------------
+
+
 //--------------------------------------------------------------------------------------
 router.get('/myproject', middleware.isLoggedIn, function(req, res, next) {
     res.render('user/port-comp', { title: 'Portfolio Website' });

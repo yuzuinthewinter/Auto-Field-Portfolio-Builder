@@ -1001,6 +1001,19 @@ body{
     border-width: 0.5px;
     border-style: solid;
 }
+.benefit-member table{
+    width: 100%;
+}
+.benefit-member table th{
+    text-align: left;
+    width: 30%;
+    padding: 1% 0%;
+}
+.benefit-member table td h2{
+    font-size: 15px;
+    font-family: 'Francois One', sans-serif;
+    padding: 3% 0%;
+}
 @media screen and (max-width: 20000px){
     
     .menu-mini, .mini-nav{

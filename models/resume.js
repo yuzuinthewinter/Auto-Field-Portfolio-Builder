@@ -2,7 +2,6 @@ const   mongoose = require('mongoose'),
         passportLocalMongoose = require('passport-local-mongoose');
 
 let resumeSchema = new mongoose.Schema({
-    _iduser: String,
     nameproject: String,
     Fname: String,
     Lname: String,

@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="greet">
-                        <p><% if(locals.user.status == 'member') { %> <i class="fas fa-crown"></i> <% } %><% if(locals.user.status != 'member') { %> <i class="fas fa-user"></i> <% } %>&nbsp;<%= currentUser.username %> </p> 
+                        <p><% if(locals.user.status == 'membership') { %> <i class="fas fa-crown"></i> <% } %><% if(locals.user.status != 'membership') { %> <i class="fas fa-user"></i> <% } %>&nbsp;<%= currentUser.username %> </p> 
                     </div>
                     
                     <div class="dropdown">
@@ -44,8 +44,8 @@
                                 <a class="dropdown-item" href="/portfolio/">My Project</a>
                                 <a class="dropdown-item" href="/portfolio/membership">Membership</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/portfolio/profile">Edit Profile</a>
-                                <a class="dropdown-item" href="/portfolio/setting">Setting</a>
+                                <a class="dropdown-item" href="/portfolio/profile">My Profile</a>
+                                <a class="dropdown-item" href="/portfolio/setting">Edit Profile</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/signout">Sign Out</a>
                             </div>
@@ -64,7 +64,7 @@
                                     <img src="https://cdn0.iconfinder.com/data/icons/professional-avatar-5/48/manager_male_avatar_men_character_professions-512.png" alt="Avatar" style="width:50%">
                                 </div>
                                 <div class="col">
-                                    <br><br><a href="/portfolio/profile" class="nav-link"><% if(locals.user.status == 'member') { %> <i class="fas fa-crown"></i> <% } %><% if(locals.user.status != 'member') { %> <i class="fas fa-user"></i> <% } %>&nbsp;&nbsp;<%= currentUser.username %></a><br>
+                                    <br><br><a href="/portfolio/profile" class="nav-link"><% if(locals.user.status == 'membership') { %> <i class="fas fa-crown"></i> <% } %><% if(locals.user.status != 'membership') { %> <i class="fas fa-user"></i> <% } %>&nbsp;&nbsp;<%= currentUser.username %></a><br>
                                 </div>
                                 <div class="col">
                                     <a href="/" class="nav-link">Home</a>
@@ -79,10 +79,10 @@
                                     <a href="/portfolio/contact" class="nav-link">Contact</a>
                                 </div>
                                 <div class="col">
-                                    <a href="/portfolio/profile" class="nav-link">Edit Profile</a>
+                                    <a href="/portfolio/profile" class="nav-link">My Profile</a>
                                 </div>
                                 <div class="col">
-                                    <a href="/portfolio/setting" class="nav-link">Setting</a>
+                                    <a href="/portfolio/setting" class="nav-link">Edit Profile</a>
                                 </div>
                                 <div class="col">
                                     <a href="/" class="nav-link">Sign Out</a>
