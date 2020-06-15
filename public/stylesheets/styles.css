@@ -992,7 +992,15 @@ body{
     color: #eee;
     text-decoration: none;
 }
-
+#statusbtn{
+    width: 50%;
+    height: 10vh;
+    background: transparent;
+    border-radius: 3px;
+    border-color: #16162d;
+    border-width: 0.5px;
+    border-style: solid;
+}
 @media screen and (max-width: 20000px){
     
     .menu-mini, .mini-nav{

@@ -35,13 +35,15 @@
                     </div>
 
                     <div class="greet">
-                        <p>WELCOME, <%= currentUser.username %></p> 
+                        <p><% if(locals.user.status == 'member') { %> <i class="fas fa-crown"></i> <% } %><% if(locals.user.status != 'member') { %> <i class="fas fa-user"></i> <% } %>&nbsp;<%= currentUser.username %> </p> 
                     </div>
                     
                     <div class="dropdown">
                         <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></button>
                             <div class="dropdown-menu dropdown-menu-right">
                                 <a class="dropdown-item" href="/portfolio/">My Project</a>
+                                <a class="dropdown-item" href="/portfolio/membership">Membership</a>
+                                <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/portfolio/profile">Edit Profile</a>
                                 <a class="dropdown-item" href="/portfolio/setting">Setting</a>
                                 <div class="dropdown-divider"></div>
@@ -62,7 +64,7 @@
                                     <img src="https://cdn0.iconfinder.com/data/icons/professional-avatar-5/48/manager_male_avatar_men_character_professions-512.png" alt="Avatar" style="width:50%">
                                 </div>
                                 <div class="col">
-                                    <br><br><a href="/portfolio/edit-profile" class="nav-link"><i class="fas fa-edit"></i>&nbsp;<%= currentUser.username %></a><br>
+                                    <br><br><a href="/portfolio/profile" class="nav-link"><% if(locals.user.status == 'member') { %> <i class="fas fa-crown"></i> <% } %><% if(locals.user.status != 'member') { %> <i class="fas fa-user"></i> <% } %>&nbsp;&nbsp;<%= currentUser.username %></a><br>
                                 </div>
                                 <div class="col">
                                     <a href="/" class="nav-link">Home</a>

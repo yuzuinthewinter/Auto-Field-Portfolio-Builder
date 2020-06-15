@@ -42,6 +42,65 @@ router.get('/contact', middleware.isLoggedIn, function(req, res, next) {
     res.render('user/contact', { title: 'Contact us' });
 });
 
+
+//-------------------------------------------------------------------------
+//----------------------------change status--------------------------------
+router.get('/membership', middleware.isLoggedIn, function(req, res, next) {
+    res.render('user/membership', { title: 'Membership' });
+});
+router.get('/changetomember/:id', middleware.isLoggedIn, function(req, res){
+    User.findById(req.params.id, function(err, user){
+        if(user._id != req.params.id){
+            res.redirect('/portfolio/profile/');
+        }
+        res.render('/changetomember', {user:user});
+    });
+});
+router.post('/changetomember/:id', middleware.isLoggedIn, function(req, res){
+    let user = {};
+    user.status = 'member'
+  
+    let query = {_id:req.params.id}
+  
+    User.update(query, user, function(err){
+      if(err){
+        console.log(err);
+        return;
+      } else {
+        res.redirect('/portfolio/profile');
+      }
+    });
+});
+
+router.get('/changetouser/:id', middleware.isLoggedIn, function(req, res){
+    User.findById(req.params.id, function(err, user){
+        if(user._id != req.params.id){
+            res.redirect('/portfolio/profile/');
+        }
+        res.render('/changetouser', {user:user});
+    });
+});
+router.post('/changetouser/:id', middleware.isLoggedIn, function(req, res){
+    let user = {};
+    user.status = 'general user';
+  
+    let query = {_id:req.params.id}
+  
+    User.update(query, user, function(err){
+      if(err){
+        console.log(err);
+        return;
+      } else {
+        res.redirect('/portfolio/profile');
+      }
+    });
+});
+
+//-----------------------------------------------------------------------
+//-----------------------------------------------------------------------
+
+
+
 //----------------------update profile picture---------------------------
 router.get('/profile', middleware.isLoggedIn, function(req, res, next) {
     res.render('user/profile', { title: 'Edit Profile' });
@@ -65,9 +124,7 @@ router.get('/edit-profile/:id', middleware.isLoggedIn, function(req, res){
         if(user._id != req.params.id){
             res.redirect('/portfolio/profile/');
         }
-        res.render('/edit-profile', {
-            user:user
-        });
+        res.render('/edit-profile', {user:user});
     });
 });
 router.post('/edit-profile/:id', middleware.isLoggedIn, function(req, res){

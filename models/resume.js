@@ -25,4 +25,5 @@ let resumeSchema = new mongoose.Schema({
     twitter: String,
 
 });
+
 module.exports = mongoose.model('resume', resumeSchema);
