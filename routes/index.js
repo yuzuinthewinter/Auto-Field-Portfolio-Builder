@@ -20,10 +20,13 @@ router.get('/signin',function(req,res){
 });
 
 router.post('/signin',passport.authenticate('local',{
-    successRedirect: '/portfolio',
-    failureRedirect: '/signin'
-}),function(req,res){
-
+        failureRedirect: '/signin'
+    }),function(req,res){
+        if (req.user.status == 'admin') {
+            res.redirect('/admin');
+        } else {
+            res.redirect('/portfolio');
+        }
 });
 
 //--------------------------------------------------------------

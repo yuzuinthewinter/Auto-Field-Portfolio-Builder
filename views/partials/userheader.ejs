@@ -3,7 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title><%= title %> | The Portfolio</title>
+        <title>
+            <%= title %> | The Portfolio
+        </title>
         <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <link href="https://fonts.googleapis.com/css2?family=Francois+One&family=Signika:wght@600&family=Galada&family=Martel:wght@700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -28,24 +30,35 @@
                         <ul>
                             <a href="/"><li>HOME</li></a>
                             <a href="/portfolio/about"><li>ABOUT</li></a>
-                            <a href="/portfolio/"><li>PROJECT</li></a>
+                            <% if(locals.user.status != 'admin') { %>
+                                <a href="/portfolio/"><li>PROJECT</li></a>
+                            <% } %>
                             <a href="/portfolio/template"><li>TEMPLATE</li></a>
                             <a href="/portfolio/contact"><li>CONTACT</li></a>
                         </ul>  
                     </div>
 
                     <div class="greet">
-                        <p><% if(locals.user.status == 'membership') { %> <i class="fas fa-crown"></i> <% } %><% if(locals.user.status != 'membership') { %> <i class="fas fa-user"></i> <% } %>&nbsp;<%= currentUser.username %> </p> 
+                        <p><% if(locals.user.status == 'membership') { %> <i class="fas fa-crown"></i> <% } %>
+                            <% if(locals.user.status == 'general user') { %> <i class="fas fa-user"></i> <% } %>
+                            <% if(locals.user.status == 'admin') { %> <i class="fas fa-user-cog"></i> <% } %>&nbsp;<%= currentUser.username %> </p> 
                     </div>
                     
                     <div class="dropdown">
                         <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></button>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <a class="dropdown-item" href="/portfolio/">My Project</a>
-                                <a class="dropdown-item" href="/portfolio/membership">Membership</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="/portfolio/profile">My Profile</a>
-                                <a class="dropdown-item" href="/portfolio/setting">Edit Profile</a>
+                                <% if(locals.user.status != 'admin') { %>
+                                    <a class="dropdown-item" href="/portfolio/">My Project</a>
+                                    <a class="dropdown-item" href="/portfolio/membership">Membership</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="/portfolio/profile">My Profile</a>
+                                    <a class="dropdown-item" href="/portfolio/setting">Edit Profile</a>
+                                <% } %>
+                                <% if(locals.user.status == 'admin') { %>
+                                    <a class="dropdown-item" href="/admin/">Menu</a>
+                                    <a class="dropdown-item" href="/admin/manage-user">Manage User</a>
+                                    <a class="dropdown-item" href="/admin/manage-template">Manage Template</a>
+                                <% } %>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/signout">Sign Out</a>
                             </div>
@@ -63,27 +76,48 @@
                                 <div class="col">
                                     <img src="https://cdn0.iconfinder.com/data/icons/professional-avatar-5/48/manager_male_avatar_men_character_professions-512.png" alt="Avatar" style="width:50%">
                                 </div>
-                                <div class="col">
-                                    <br><br><a href="/portfolio/profile" class="nav-link"><% if(locals.user.status == 'membership') { %> <i class="fas fa-crown"></i> <% } %><% if(locals.user.status != 'membership') { %> <i class="fas fa-user"></i> <% } %>&nbsp;&nbsp;<%= currentUser.username %></a><br>
+                                <div class="col"><br><br>
+                                    <% if(locals.user.status != 'admin') { %> 
+                                        <a href="/portfolio/profile" class="nav-link">
+                                        <% if(locals.user.status == 'membership') { %> <i class="fas fa-crown"></i> <% } %>
+                                        <% if(locals.user.status == 'general user') { %> <i class="fas fa-user"></i> <% } %>
+                                        &nbsp;&nbsp;<%= currentUser.username %></a>
+                                    <% } %>
+
+                                    <% if(locals.user.status == 'admin') { %> 
+                                        <a href="#" class="nav-link">
+                                        <i class="fas fa-user-cog"></i> 
+                                        &nbsp;&nbsp;<%= currentUser.username %></a>
+                                    <% } %>
+                                    <br>
                                 </div>
                                 <div class="col">
                                     <a href="/" class="nav-link">Home</a>
                                 </div>
+                                
                                 <div class="col">
                                     <a href="/portfolio/about" class="nav-link">About</a>
                                 </div>
+                                
                                 <div class="col">
                                     <a href="/portfolio/template" class="nav-link">Template</a>
                                 </div>
                                 <div class="col">
                                     <a href="/portfolio/contact" class="nav-link">Contact</a>
                                 </div>
-                                <div class="col">
-                                    <a href="/portfolio/profile" class="nav-link">My Profile</a>
-                                </div>
-                                <div class="col">
-                                    <a href="/portfolio/setting" class="nav-link">Edit Profile</a>
-                                </div>
+                                <% if(locals.user.status == 'admin') { %>
+                                    <div class="col">
+                                        <a href="/admin/" class="nav-link">Menu Manager</a>
+                                    </div>
+                                <% } %>
+                                <% if(locals.user.status != 'admin') { %>
+                                    <div class="col">
+                                        <a href="/portfolio/profile" class="nav-link">My Profile</a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="/portfolio/setting" class="nav-link">Edit Profile</a>
+                                    </div>
+                                <% } %>
                                 <div class="col">
                                     <a href="/" class="nav-link">Sign Out</a>
                                 </div>

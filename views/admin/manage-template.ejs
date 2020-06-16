@@ -1,0 +1,63 @@
+<%- include("../partials/userheader") %>
+<head>
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+</head>
+        <div class="content">
+            <div class="manage-heading">
+                <div class="singleform">
+                    <h1>MANAGE TEMPLATE</h1>
+                    <table>
+                        <h1>ADD TEMPLATE</h1>
+                        <tr>
+                            <th>URL BACKGROUND</th>
+                            <td class="form-box">
+                                <input type="text" placeholder="Status">
+                            </td>
+                        </tr>
+                    </table>   
+                    <div class="footer-form">
+                        <a href="homepage.html" class="btn-setting">ADD TEMPLATE</a>
+                    </div>
+                    <table>
+                        <h1>DELETE TEMPLATE</h1>
+                        <tr>
+                            <th>NO.</th>
+                            <th>TEMPLATE</th>
+                            <th>DELETE</th>
+                        </tr>
+                        <tr>
+                            <td>01</td>
+                            <td>WINTER</td>
+                            <td>
+                                <button class="btn-admin">DELETE</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>SPRING</td>
+                            <td>
+                                <button class="btn-admin">DELETE</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>SUMMER</td>
+                            <td>
+                                <button class="btn-admin">DELETE</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>AUTUMN</td>
+                            <td>
+                                <button class="btn-admin">DELETE</button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+
+        <%- include("../partials/copyright") %>
+<%- include("../partials/indexfooter") %>

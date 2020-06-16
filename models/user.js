@@ -5,8 +5,14 @@ let UserSchema = new mongoose.Schema({
     status: String,
     firstname: String,
     lastname: String,
-    email: String,
-    username: String,
+    email: {
+        type: String,
+        unique: true
+    },
+    username: {
+        type: String,
+        unique: true
+    },
     password: String,
 });
 

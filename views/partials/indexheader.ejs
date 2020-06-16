@@ -26,24 +26,36 @@
                         <div class="col">
                             <a href="/" class="nav-link">Home</a>
                         </div>
+                        <% if(locals.user){ %> 
+                            <% if(locals.user.status == 'admin') { %>
+                                <div class="col">
+                                    <a href="/admin/" class="nav-link">Menu Manager</a>
+                                </div>
+                            <% } %>
+                        <% } %>
                         <div class="col">
                             <a href="/#index-about" class="nav-link">About</a>
                         </div>
                         <div class="col">
                             <a href="/#index-temp" class="nav-link">Template</a>
                         </div>
-                        <% if(locals.user) { %> 
-                        <div class="col">
-                            <a href="/portfolio/" class="nav-link">Project</a>
-                        </div>
+                        <% if(locals.user){ %>  
+                            <% if(locals.user.status != 'admin') { %> 
+                                <div class="col">
+                                    <a href="/portfolio/" class="nav-link">Project</a>
+                                </div>
+                            <% } %> 
                         <% } %> 
                         <div class="col">
                             <a href="/#index-cont" class="nav-link">Contact</a>
                         </div>
-                        <% if(locals.user) { %> 
-                            <div class="col">
-                                <a href="/portfolio/setting" class="nav-link">Setting</a>
-                            </div>
+                        
+                        <% if(locals.user){ %> 
+                            <% if(locals.user.status != 'admin') { %> 
+                                <div class="col">
+                                    <a href="/portfolio/setting" class="nav-link">Setting</a>
+                                </div>
+                            <% } %>
                             <div class="col">
                                 <a href="/signout" class="nav-link">Sign Out</a>
                             </div>

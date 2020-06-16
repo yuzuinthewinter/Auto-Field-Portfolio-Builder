@@ -13,6 +13,7 @@ const   express = require("express"),
         indexRouter = require('./routes/index'),
         portfolioRouter = require('./routes/portfolio'),
         userRouter = require('./routes/user');
+        adminRouter = require('./routes/admin');
         // templateRouter = require('./routes/template');
         
 
@@ -64,6 +65,7 @@ app.get("*",function(req,res,next){
 app.use('/',indexRouter);
 app.use('/portfolio',portfolioRouter);
 app.use('/user',userRouter);
+app.use('/admin',adminRouter);
 // app.use('/template',templateRouter);
 
 //start server

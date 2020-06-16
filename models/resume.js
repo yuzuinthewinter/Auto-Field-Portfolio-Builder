@@ -2,7 +2,12 @@ const   mongoose = require('mongoose'),
         passportLocalMongoose = require('passport-local-mongoose');
 
 let resumeSchema = new mongoose.Schema({
+    iduser: String,
     nameproject: String,
+    created: {
+        type: Date,
+        default: Date.now
+    },
     Fname: String,
     Lname: String,
     position: String, 

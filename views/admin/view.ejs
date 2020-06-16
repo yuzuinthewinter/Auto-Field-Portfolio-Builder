@@ -1,0 +1,72 @@
+<%- include("../partials/userheader") %>
+    <head>
+        <link rel="stylesheet" href="/stylesheets/admin.css">
+    </head>
+        <div class="content">
+            <div class="form">
+                <div class="profile-heading">
+                    <br><br>
+                    <h1 style="text-transform: uppercase;"><%= users.username %></h1> 
+                    <img src="https://cdn0.iconfinder.com/data/icons/professional-avatar-5/48/manager_male_avatar_men_character_professions-512.png" alt="Avatar">
+                    <br> <br>
+
+                    <table class="my-profile">
+                        <tr>
+                            <th>ID</th>
+                            <td style="text-transform: uppercase;"><span id="pf-first"><%= users._id %></span></td>
+                        </tr>
+                        <tr>
+                            <th>Name</th>
+                            <td style="text-transform: uppercase;"><span id="pf-first"><%= users.firstname %></span>&nbsp;&nbsp;<span id="pf-last"><%= users.lastname %></span></td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td id="pf-status" style="text-transform: uppercase;"><% if(users.status == 'membership') { %> <i class="fas fa-crown"></i> <% } %><% if(users.status != 'membership') { %> <i class="fas fa-user"></i> <% } %>&nbsp;&nbsp;<%= users.status %></td>
+                        </tr>
+                        <tr>
+                            <th>Username</th>
+                            <td id="pf-username" style="text-transform: uppercase;"><%= users.username %></td>
+                        </tr>
+                        <tr>
+                            <th>Email address</th>
+                            <td id="pf-email" style="text-transform: uppercase;"><%= users.email %></td>
+                        </tr>
+                    </table><br><br>
+                    
+                    
+                    <a href="/admin/manage-user"><i class="fas fa-chevron-left"></i>  BACK</a>
+                    <a href="/admin/view/<%= users._id %>">REFRESH</a>
+
+                    <% if(users.status != 'admin') { %>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                            DELETE
+                        </button>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body">
+                                ...
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <a href="/admin/delete/<%= users._id %>">DELETE</a>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    <% } %>
+                    <br><br><br>
+                </div>
+            </div>
+        </div>
+
+        <%- include("../partials/copyright") %>
+<%- include("../partials/indexfooter") %>
