@@ -18,27 +18,37 @@
                             <a href="#">MEMBERSHIP</a>
                             <a href="#">ALL USER</a>
                         </div>
+
+                        <colgroup>
+                          <col style="width: 0%;">
+                          <col style="width: 80px;">
+                          <col style="width: 100px;">
+                          <col style="width: 50px;">
+                          <col style="width: 50px;">
+                          <col style="width: 50px;">
+                        </colgroup>
+
                         <tr>
-                            <th class="col1">NO.</th>
+                            <th class="col1" style="text-align: center;">NO.</th>
                             <th class="col2">USERNAME</th>
                             <th class="col3">EMAIL</th>
                             <th class="col4">STATUS</th>
-                            <th>VIEW</th>
-                            <th>DELETE</th>
+                            <th style="text-align: center;">VIEW</th>
+                            <th style="text-align: center;">DELETE</th>
                         </tr> 
                         
-                        <% for(var i=0; i<users.length;i++) { %>
+                        <% for(var i=1; i<users.length;i++) { %>
                             <tr>
-                                <td><%= i %></td>
-                                <td><%= users[i].username %></td>
-                                <td><%= users[i].email %></td>
-                                <td><%= users[i].status %></td>
-                                <td>
-                                    <a href="/admin/view/<%= users[i]._id %>" class="btn-admin">VIEW</a>
+                                <td style="width: 0px; text-align: center;"><%= i %></td>
+                                <td style="width: 0px; "><%= users[i].username.charAt(0).toUpperCase()+ users[i].username.slice(1) %></td>
+                                <td style="width: 0px;"><%= users[i].email %></td>
+                                <td style="width: 0px;"><%= users[i].status.charAt(0).toUpperCase()+ users[i].status.slice(1) %></td>
+                                <td style="width: 0px; text-align: center;">
+                                    <a href="/admin/view/<%= users[i]._id %>" class="btn-admin"><i class="fas fa-eye"></i></a>
                                 </td>
 
                                 <% if(users[i].status != 'admin') { %>
-                                <td>
+                                <td style="width: 0px; text-align: center;">
                                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                                         <a href="/admin/delete/<%= users[i]._id %>">DELETE</a>
                                     </button>

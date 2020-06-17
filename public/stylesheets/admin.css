@@ -1,3 +1,20 @@
 .manage-heading h1{
     font-family: 'Francois One', sans-serif;
 }
+.content .manage-heading .singleform table{
+    width: 100%;
+    justify-content: center;
+    margin: auto;
+}
+.content .manage-heading .singleform table tr{
+    padding: 1% 2%;
+}
+.content .manage-heading .singleform table th{
+    padding: 1.5% 1%;
+    width: 1%;
+    font-size: 18px;
+}
+.content .manage-heading .singleform table td{
+    padding: 1.5% 0%;
+    width: 70%;
+}

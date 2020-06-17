@@ -20,7 +20,7 @@ router.get('/manage-user', middleware.isLoggedIn, function(req, res, next) {
         if (err) {
             console.log(err);
         } else {
-            res.render('admin/manage-user', { users: users, title: 'Project'});
+            res.render('admin/manage-user', { users: users, title: 'Manage User'});
             console.log(users);
         }
     });

@@ -17,19 +17,19 @@
                         </tr>
                         <tr>
                             <th>Name</th>
-                            <td style="text-transform: uppercase;"><span id="pf-first"><%= users.firstname %></span>&nbsp;&nbsp;<span id="pf-last"><%= users.lastname %></span></td>
+                            <td><span id="pf-first"><%= users.firstname.charAt(0).toUpperCase()+ users.firstname.slice(1) %></span>&nbsp;&nbsp;<span id="pf-last"><%= users.lastname.charAt(0).toUpperCase()+ users.lastname.slice(1) %></span></td>
                         </tr>
                         <tr>
                             <th>Status</th>
-                            <td id="pf-status" style="text-transform: uppercase;"><% if(users.status == 'membership') { %> <i class="fas fa-crown"></i> <% } %><% if(users.status != 'membership') { %> <i class="fas fa-user"></i> <% } %>&nbsp;&nbsp;<%= users.status %></td>
+                            <td id="pf-status"><% if(users.status == 'membership') { %> <i class="fas fa-crown"></i> <% } %><% if(users.status != 'membership') { %> <i class="fas fa-user"></i> <% } %>&nbsp;&nbsp;<%= users.status.charAt(0).toUpperCase()+ users.status.slice(1) %></td>
                         </tr>
                         <tr>
                             <th>Username</th>
-                            <td id="pf-username" style="text-transform: uppercase;"><%= users.username %></td>
+                            <td id="pf-username"><%= users.username.charAt(0).toUpperCase()+ users.username.slice(1) %></td>
                         </tr>
                         <tr>
                             <th>Email address</th>
-                            <td id="pf-email" style="text-transform: uppercase;"><%= users.email %></td>
+                            <td id="pf-email"><%= users.email %></td>
                         </tr>
                     </table><br><br>
                     

@@ -29,6 +29,9 @@
                     <div class="nav-links">
                         <ul>
                             <a href="/"><li>HOME</li></a>
+                            <% if(locals.user.status == 'admin') { %>
+                                <a href="/admin/"><li>MENU</li></a>
+                            <% } %>
                             <a href="/portfolio/about"><li>ABOUT</li></a>
                             <% if(locals.user.status != 'admin') { %>
                                 <a href="/portfolio/"><li>PROJECT</li></a>
