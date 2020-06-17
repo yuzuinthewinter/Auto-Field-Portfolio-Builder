@@ -154,11 +154,11 @@ router.get('/myproject', middleware.isLoggedIn, function(req, res, next) {
     res.render('user/port-comp', { title: 'Portfolio Website' });
 });
 
-router.get('/build-a-project', middleware.isLoggedIn, function(req, res, next) {
-    res.render('user/buildproject', { title: 'Build a project' });
+router.get('/form-field', middleware.isLoggedIn, function(req, res, next) {
+    res.render('user/form-project', { title: 'Build a project' });
 });
 
-router.post('/build-a-project', middleware.isLoggedIn, async function(req,res)
+router.post('/form-field', middleware.isLoggedIn, async function(req,res)
 {
     try {
         const resume = await Resume.create(req.body)

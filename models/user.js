@@ -9,6 +9,13 @@ let UserSchema = new mongoose.Schema({
         type: String,
         unique: true
     },
+    profileimg: {
+        filename:{
+            type: String
+        },
+        data: Buffer,
+        contentType: String
+    },
     username: {
         type: String,
         unique: true
