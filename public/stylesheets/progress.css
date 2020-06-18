@@ -1,5 +1,5 @@
 #stepProgressBar  {
-	padding-left: 12%;
+	padding-left: 20%;
 	display:  flex;
 	justify-content:  space-between;
 	align-items:  flex-end;
@@ -43,10 +43,10 @@
 .bullet.completed::after {
 	content: '';
 	position: absolute;
-	right: -700%;
+	right: -900%;
 	bottom: 40%;
 	height: 20%;
-	width: 700%;
+	width: 900%;
     background-color: #28a745;
 }
 

@@ -2,12 +2,12 @@ const   mongoose = require('mongoose'),
         passportLocalMongoose = require('passport-local-mongoose');
 
 let resumeSchema = new mongoose.Schema({
-    iduser: String,
     nameproject: String,
     created: {
         type: Date,
         default: Date.now
     },
+    
     Fname: String,
     Lname: String,
     position: String, 
@@ -19,10 +19,12 @@ let resumeSchema = new mongoose.Schema({
     major: String,
     gpax: String,
     
-    skill: String,
+    skill: Array,
+    level: Array,
 
-    exp: String,
-    year: String,
+    exp: Array,
+    place: Array,
+    year: Array,
 
     email: String,
     fb: String,
@@ -30,6 +32,13 @@ let resumeSchema = new mongoose.Schema({
     line: String,
     twitter: String,
 
+    author: {
+        id: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'User'
+        },
+        username: String
+    }
 });
 
 module.exports = mongoose.model('resume', resumeSchema);

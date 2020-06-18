@@ -15,19 +15,24 @@ const express = require('express'),
 
 router.get('/', middleware.isLoggedIn, function(req,res) {    
     const projects = [{
-        nameproject: 'Test project',
-        createdAt: new Date()
-    },
-    {
-        nameproject: 'Test project2',
-        createdAt: new Date()
-    },
-    {
-        nameproject: 'Test project3',
-        createdAt: new Date()
-    }
-    ]
+        nameproject: '',
+        created: new Date(),
+
+    }]
     res.render('user/project', { projects: projects, title: 'Project'});
+});
+
+router.post('/',middleware.isLoggedIn, async function(req,res){
+    try {
+        const resume = await Resume.create(req.body)
+        let result = {
+          ...resume
+        }
+        console.log(result)
+        res.redirect('/portfolio/form-field');
+      } catch(err) {
+        console.log(err)
+      }
 });
 
 //=========================================================
@@ -160,16 +165,16 @@ router.get('/form-field', middleware.isLoggedIn, function(req, res, next) {
 
 router.post('/form-field', middleware.isLoggedIn, async function(req,res)
 {
-    try {
-        const resume = await Resume.create(req.body)
-        let result = {
-          ...resume
-        }
-        // console.log(result)
-        res.redirect('/portfolio/myproject');
-      } catch(err) {
-        console.log(err)
-      }
+  try {
+    const resume = await Resume.updateMany(req.body)
+    let result = {
+      ...resume
+    }
+    console.log(result)
+    res.redirect('/portfolio/myproject');
+  } catch(err) {
+    console.log(err)
+  }
 });
 
 

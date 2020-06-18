@@ -6,16 +6,14 @@ const  more  =  document.getElementById('moreBtn');
 const  bullets  =  [...document.querySelectorAll('.bullet')];
 
 const  profile  =  document.getElementById('profile-form');
-const  purpose =  document.getElementById('purpose-form');
 const  upload =  document.getElementById('upload-form');
 const  template =  document.getElementById('template-form');
 
 const heading1 = document.getElementById('heading1');
 const heading2 = document.getElementById('heading2');
 const heading3 = document.getElementById('heading3');
-const heading4 = document.getElementById('heading4');
     
-const MAX_STEPS = 4;
+const MAX_STEPS = 3;
 let currentStep = 1;
 
 previousBtn.disabled  =  true;
@@ -32,10 +30,8 @@ nextBtn.addEventListener('click',  ()  =>  {
 
         heading1.hidden = true;
         heading2.hidden = true;
-        heading3.hidden = true;
-        heading4.hidden = false;
+        heading3.hidden = false;
 
-        purpose.hidden = true;
         profile.hidden = true;
         upload.hidden = true;
         template.hidden = false;
@@ -44,10 +40,8 @@ nextBtn.addEventListener('click',  ()  =>  {
         heading1.hidden = false;
         heading2.hidden = true;
         heading3.hidden = true;
-        heading4.hidden = true;
         
-        purpose.hidden = false;
-        profile.hidden = true;
+        profile.hidden = false;
         upload.hidden = true;
         template.hidden = true;
     }
@@ -55,20 +49,7 @@ nextBtn.addEventListener('click',  ()  =>  {
         heading1.hidden = true;
         heading2.hidden = false;
         heading3.hidden = true;
-        heading4.hidden = true;
         
-        purpose.hidden = true;
-        profile.hidden = false;
-        upload.hidden = true;
-        template.hidden = true;
-    }
-    if  (currentStep  ===  3)   {
-        heading1.hidden = true;
-        heading2.hidden = true;
-        heading3.hidden = false;
-        heading4.hidden = true; 
-        
-        purpose.hidden = true;
         profile.hidden = true;
         upload.hidden = false;
         template.hidden = true;
@@ -87,10 +68,8 @@ previousBtn.addEventListener('click',  ()  =>  {
         heading1.hidden = false;
         heading2.hidden = true;
         heading3.hidden = true;
-        heading4.hidden = true;
         
-        purpose.hidden = false;
-        profile.hidden = true;
+        profile.hidden = false;
         upload.hidden = true;
         template.hidden = true;
     }
@@ -98,34 +77,19 @@ previousBtn.addEventListener('click',  ()  =>  {
         heading1.hidden = true;
         heading2.hidden = false;
         heading3.hidden = true;
-        heading4.hidden = true;
         
-        purpose.hidden = true;
-        profile.hidden = false;
-        upload.hidden = true;
+        profile.hidden = true;
+        upload.hidden = false;
         template.hidden = true;
     }
     if  (currentStep  ===  3)   {
         heading1.hidden = true;
         heading2.hidden = true;
         heading3.hidden = false;
-        heading4.hidden = true; 
-        
-        purpose.hidden = true;
+
         profile.hidden = true;
         upload.hidden = false;
         template.hidden = true;
-    }
-    if  (currentStep  ===  4)   {
-        heading1.hidden = true;
-        heading2.hidden = true;
-        heading3.hidden = true;
-        heading4.hidden = false;
-
-        purpose.hidden = true;
-        profile.hidden = true;
-        upload.hidden = true;
-        template.hidden = false;
     }
 });
 

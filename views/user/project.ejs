@@ -9,35 +9,35 @@
                                     <i class="fas fa-plus-circle"></i>
                                 </button>
                             </div>
-                        <form action="/portfolio/addnewresume" method="POST">    
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-
-                                        <div class="modal-header">
-                                          <h5 class="modal-title" id="exampleModalLabel">New Project : Name Project</h5>
-                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                          </button>
-                                        </div>
-
-                                        <div class="modal-body">
-                                          <form>
-                                            <div class="form-group">
-                                              <input type="text" class="form-control" id="nameproject" name="nameproject" style="font-size: 14px;">
+                            <form action="/portfolio/" method="POST">    
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+    
+                                            <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">New Project : Name Project</h5>
+                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                              </button>
                                             </div>
-                                          </form>
+    
+                                            <div class="modal-body">
+                                              <form>
+                                                <div class="form-group">
+                                                  <input type="text" class="form-control" id="nameproject" name="nameproject" style="font-size: 14px;" required>
+                                                </div>
+                                              </form>
+                                            </div>
+                                            
+                                            <div class="modal-footer">
+                                              <button type="button" class="btn btn-secondary" data-dismiss="modal" style="color: #16162d;">Close</button>
+                                              <button type="submit" class="btn btn-primary" style="color: #16162d;">save</button>
+                                            </div>
+    
                                         </div>
-                                        
-                                        <div class="modal-footer">
-                                          <button type="button" class="btn btn-secondary" data-dismiss="modal" style="color: #16162d;">Close</button>
-                                          <button type="button" class="btn btn-primary" style="color: #16162d;"><a href="/portfolio/form-field" class="build-project" >Save</a></button>
-                                        </div>
-
                                     </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
                     </div>
                 </div>
 
@@ -47,7 +47,7 @@
                             <div class="projectfield">
                                 <img src="http://www.baltana.com/files/wallpapers-20/Pixel-Art-Background-Wallpapers-49560.jpg" alt="Avatar" style="width:80%">
                                 <p><%= project.nameproject %></p>
-                                <p style="font-size: 12px; color: lightslategray;">Create at : <%= project.createdAt.toLocaleDateString('en-GB') %></p>
+                                <p style="font-size: 12px; color: lightslategray;">Create at : <%= project.created.toLocaleDateString('en-GB') %></p>
                                 <a href="/portfolio/" class="btn">Open</a> 
                                 <a href="/portfolio/form-field" class="btn">Edit</a>
                                 <a class="btn">Delete</a>
