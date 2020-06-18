@@ -904,17 +904,17 @@ body{
     display: none;
 }
 
-.template .winter:hover{
+.template .def1:hover{
     color: #eee;
-    background: url(http://www.baltana.com/files/wallpapers-20/Beautiful-Pixel-Art-HD-Wallpapers-49302.jpg);
+    background: url(https://66.media.tumblr.com/e8daf59f89fc423ef99bbe91b63a6996/tumblr_o6m579MZLo1u01kfzo1_1280.png);
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
     transition: 0.1s;
 }
-.template .spring:hover{
+.template .def2:hover{
     color: #eee;
-    background: url(http://www.baltana.com/files/wallpapers-20/Aesthetic-Pixel-Art-Wallpapers-Full-HD-49288.jpg);
+    background: url(https://66.media.tumblr.com/105ceb23d8741e0a84eef8ad1994f06e/tumblr_ohvmeqouTm1u01kfzo1_1280.png);
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
