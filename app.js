@@ -11,6 +11,7 @@ const   express = require("express"),
         Resume = require('./models/resume'),
         // ------------------------------------------------
         indexRouter = require('./routes/index'),
+        projectRouter = require('./routes/project');
         portfolioRouter = require('./routes/portfolio'),
         userRouter = require('./routes/user');
         adminRouter = require('./routes/admin');
@@ -41,6 +42,7 @@ app.use(passport.session());
 
 app.use(function(req,res,next){
     res.locals.currentUser = req.user;
+    res.locals.messages = require('express-messages')(req, res);
     next();
 });
 
@@ -63,6 +65,7 @@ app.get("*",function(req,res,next){
 
 //routes
 app.use('/',indexRouter);
+app.use('/project',projectRouter);
 app.use('/portfolio',portfolioRouter);
 app.use('/user',userRouter);
 app.use('/admin',adminRouter);

@@ -42,7 +42,7 @@ router.post('/signup',function(req,res)
     }
 
     User.register(new User({
-        status: 'general user',
+        status: 'user',
         username: req.body.username,
         email: req.body.email,
         firstname: req.body.firstname,

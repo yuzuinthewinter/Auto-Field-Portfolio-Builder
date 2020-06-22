@@ -21,10 +21,10 @@ nextBtn.disabled  =  false;
 finishBtn.disabled  =  true;
 
 nextBtn.addEventListener('click',  ()  =>  {
-	bullets[currentStep  -  1].classList.add('completed');
+	bullets[currentStep - 1].classList.add('completed');
 	currentStep  +=  1;
 	previousBtn.disabled  =  false;
-	if  (currentStep  ===  MAX_STEPS)  {
+	if  (currentStep  ===  3)  {
 		nextBtn.disabled  =  true;
         finishBtn.disabled  =  false;
 
@@ -93,9 +93,6 @@ previousBtn.addEventListener('click',  ()  =>  {
     }
 });
 
-finishBtn.addEventListener('click',  ()  =>  {
-	location.reload();
-});
 
 $(document).ready(function() {
     var wrapper1 = $(".upload-item");

@@ -22,7 +22,7 @@
                         </tr>
                         <tr>
                             <th>Status</th>
-                            <td id="pf-status" style="text-transform: uppercase;"><% if(locals.user.status == 'membership') { %> <i class="fas fa-crown"></i> <% } %><% if(locals.user.status != 'membership') { %> <i class="fas fa-user"></i> <% } %>&nbsp;&nbsp;<%= currentUser.status %></td>
+                            <td id="pf-status" style="text-transform: uppercase;"><% if(locals.user.status == 'user') { %> <i class="fas fa-user"></i> <% } %>&nbsp;&nbsp;<%= currentUser.status %></td>
                         </tr>
                         <tr>
                             <th>Username</th>
@@ -34,7 +34,6 @@
                         </tr>
                     </table><br><br>
                     
-                    <a href="/portfolio/membership"><% if(locals.user.status != 'membership') { %> <i class="fas fa-crown"></i> To be Membership<% } %><% if(locals.user.status == 'membership') { %> <i class="fas fa-user"></i> To be General User<% } %></a>
                     <a href="/portfolio/setting"><i class="fas fa-edit"></i>  Edit you profile</a>
                     
                     <br><br><br>

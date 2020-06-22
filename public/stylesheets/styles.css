@@ -754,20 +754,6 @@ body{
     justify-content: center;
 }
 
-#main button{
-    border-radius: 3px;
-    border-width: 0.5px;
-    border-color: #16162d;
-    color: #16162d;
-    background-color: transparent;
-    padding: 1% 5%;
-    
-}
-#main button:hover{
-    color: #eee;
-    background: #16162d;
-    text-decoration: none;
-}
 .content .profile-heading{
     margin: auto;
     justify-content: center;

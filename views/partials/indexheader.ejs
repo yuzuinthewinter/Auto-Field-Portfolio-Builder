@@ -51,7 +51,7 @@
                         </div>
                         
                         <% if(locals.user){ %> 
-                            <% if(locals.user.status != 'admin') { %> 
+                            <% if(locals.user.status == 'user') { %> 
                                 <div class="col">
                                     <a href="/portfolio/setting" class="nav-link">Setting</a>
                                 </div>

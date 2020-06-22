@@ -29,11 +29,11 @@
                     <div class="nav-links">
                         <ul>
                             <a href="/"><li>HOME</li></a>
-                            <% if(locals.user.status == 'admin') { %>
+                            <% if(currentUser.status == 'admin') { %>
                                 <a href="/admin/"><li>MENU</li></a>
                             <% } %>
                             <a href="/portfolio/about"><li>ABOUT</li></a>
-                            <% if(locals.user.status != 'admin') { %>
+                            <% if(currentUser.status == 'user') { %>
                                 <a href="/portfolio/"><li>PROJECT</li></a>
                             <% } %>
                             <a href="/portfolio/template"><li>TEMPLATE</li></a>
@@ -42,22 +42,20 @@
                     </div>
 
                     <div class="greet">
-                        <p><% if(locals.user.status == 'membership') { %> <i class="fas fa-crown"></i> <% } %>
-                            <% if(locals.user.status == 'general user') { %> <i class="fas fa-user"></i> <% } %>
-                            <% if(locals.user.status == 'admin') { %> <i class="fas fa-user-cog"></i> <% } %>&nbsp;<%= currentUser.username %> </p> 
+                        <p><% if(currentUser.status == 'user') { %> <i class="fas fa-user"></i> <% } %>
+                            <% if(currentUser.status == 'admin') { %> <i class="fas fa-user-cog"></i> <% } %>&nbsp;<%= currentUser.username %> </p> 
                     </div>
                     
                     <div class="dropdown">
                         <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"></button>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <% if(locals.user.status != 'admin') { %>
+                                <% if(currentUser.status == 'user') { %>
                                     <a class="dropdown-item" href="/portfolio/">My Project</a>
-                                    <a class="dropdown-item" href="/portfolio/membership">Membership</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="/portfolio/profile">My Profile</a>
                                     <a class="dropdown-item" href="/portfolio/setting">Edit Profile</a>
                                 <% } %>
-                                <% if(locals.user.status == 'admin') { %>
+                                <% if(currentUser.status == 'admin') { %>
                                     <a class="dropdown-item" href="/admin/">Menu</a>
                                     <a class="dropdown-item" href="/admin/manage-user">Manage User</a>
                                     <a class="dropdown-item" href="/admin/manage-template">Manage Template</a>
@@ -80,14 +78,12 @@
                                     <img src="https://cdn0.iconfinder.com/data/icons/professional-avatar-5/48/manager_male_avatar_men_character_professions-512.png" alt="Avatar" style="width:50%">
                                 </div>
                                 <div class="col"><br><br>
-                                    <% if(locals.user.status != 'admin') { %> 
+                                    <% if(currentUser.status == 'user') { %> 
                                         <a href="/portfolio/profile" class="nav-link">
-                                        <% if(locals.user.status == 'membership') { %> <i class="fas fa-crown"></i> <% } %>
-                                        <% if(locals.user.status == 'general user') { %> <i class="fas fa-user"></i> <% } %>
-                                        &nbsp;&nbsp;<%= currentUser.username %></a>
+                                        <i class="fas fa-user"></i>&nbsp;&nbsp;<%= currentUser.username %></a>
                                     <% } %>
 
-                                    <% if(locals.user.status == 'admin') { %> 
+                                    <% if(currentUser.status == 'admin') { %> 
                                         <a href="#" class="nav-link">
                                         <i class="fas fa-user-cog"></i> 
                                         &nbsp;&nbsp;<%= currentUser.username %></a>
@@ -108,12 +104,12 @@
                                 <div class="col">
                                     <a href="/portfolio/contact" class="nav-link">Contact</a>
                                 </div>
-                                <% if(locals.user.status == 'admin') { %>
+                                <% if(currentUser.status == 'admin') { %>
                                     <div class="col">
                                         <a href="/admin/" class="nav-link">Menu Manager</a>
                                     </div>
                                 <% } %>
-                                <% if(locals.user.status != 'admin') { %>
+                                <% if(currentUser.status == 'user') { %>
                                     <div class="col">
                                         <a href="/portfolio/profile" class="nav-link">My Profile</a>
                                     </div>

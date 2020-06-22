@@ -1,6 +1,6 @@
 <%- include("../partials/projectheader") %>
 <head>
-    <link rel="stylesheet" href="/stylesheets/default1.css">
+    <link rel="stylesheet" href="/stylesheets/<%= resume.template %>.css">
 </head>
         <div class="outer-wrapper">
             <div class="wrapper">
@@ -22,21 +22,19 @@
                                     <div class="portfolio-description">
                                         <h1>Hi,</h1>
                                         <div class="group-name">
-                                            <div id="name">I'm (qwerty)(qwerty),</div>
+                                            <div id="name">I'm <%= resume.Fname %>&nbsp;<%= resume.Lname %>,</div>
                                         </div>
                                         <div class="group-details">
-                                            <div id="job">(student),</div>
+                                            <div id="job"><%= resume.position %>,</div>
                                         </div>
                                         <div class="group-details">
-                                            <div id="nation">I'm (qwerty).</div>
+                                            <div id="nation">I'm <%= resume.nationality %>.</div>
                                         </div>
                                         <div class="group-details">
-                                            <div id="introduce">qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty<br>222qwertyqwertyqwertyqwerty</div>
+                                            <div id="introduce"><%= resume.introduce %></div>
                                         </div>
                                     </div>
                                 </div>
-                            
-
                         </div>
                     </div>
                 </div>
@@ -50,20 +48,20 @@
                             <div class="front">
                                 <div class="portfolio-education">
                                     <div class="group-spread">
-                                        <div id="school"><i class="fas fa-plane"></i>&nbsp;qwertyqwerty school</div>
+                                        <div id="school"><i class="fas fa-plane"></i>&nbsp;<%= resume.highschool %></div>
                                     </div>
                                     <div class="group-spread">
-                                        <div id="college"><i class="fas fa-plane"></i>&nbsp;King mongkut's university of technology thonburi</div>
+                                        <div id="college"><i class="fas fa-plane"></i>&nbsp;<%= resume.college %></div>
                                     </div>
                                     <div class="group-spread">
-                                    <div id="major"><i class="fas fa-plane"></i>&nbsp;Applied computer science</div>
+                                    <div id="major"><i class="fas fa-plane"></i>&nbsp;<%= resume.major %></div>
                                     </div>
                                     
                                 </div>
                             </div>
 
                             <div class="back">
-                                <div id="gpax"><span>“</span>&nbsp;4.00&nbsp;<span>”</span></div>
+                                <div id="gpax"><span>“</span>&nbsp;<%= resume.gpax %>&nbsp;<span>”</span></div>
                             </div>
 
                         </div>
@@ -71,8 +69,8 @@
                 </div>
 
                 <div id="slidethree">
-                    <div class="slide three">
-                        <div class="header-port"><span>“</span>&nbsp;SKILLS</div>
+                    <div class="slide three"><!--&nbsp;SKILLS-->
+                        <div class="header-port"><span>“</span>SKILLS</div>
 
                         <div class="portfolio-contents">
                             <div class="front">
@@ -213,7 +211,7 @@
                     <div class="slide five">
                         <div class="header-port"><span>“</span>&nbsp;CONTACT ME<br>
                             <div id="email">
-                                <i class="far fa-envelope"></i>&nbsp;qwerty@qwerty
+                                <i class="far fa-envelope"></i>&nbsp;<%= resume.email %>
                             </div>
                         </div>
                         
@@ -221,10 +219,10 @@
                             
                             <div class="portfolio-contact">
                                 <ul>
-                                    <li><div id="facebook"><a href="#"><i class="fab fa-facebook-square"></i></a></div></li>
-                                    <li><div id="line"><a href="#"><i class="fab fa-line"></i></a></div></li>
-                                    <li><div id="instagram"><a href="#"><i class="fab fa-instagram"></i></a></div></li>
-                                    <li><div id="twitter"><a href="#"><i class="fab fa-twitter-square"></i></a></div></li>
+                                    <li><div id="facebook"><a href="<%= resume.fb %>"><i class="fab fa-facebook-square"></i></a></div></li>
+                                    <li><div id="line"><a href="<%= resume.line %>"><i class="fab fa-line"></i></a></div></li>
+                                    <li><div id="instagram"><a href="<%= resume.ig %>"><i class="fab fa-instagram"></i></a></div></li>
+                                    <li><div id="twitter"><a href="<%= resume.twitter %>"><i class="fab fa-twitter-square"></i></a></div></li>
                                 </ul>
                                 <!--it's gonna be icon click link-->
                             </div>

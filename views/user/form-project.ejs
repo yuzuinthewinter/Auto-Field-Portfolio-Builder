@@ -28,14 +28,15 @@
                     <br> 
                 </div>
                 
-            <form action="/portfolio/form-field" method="POST" id="profile-form">
+            <form action="/project/form-field/<%= _id %>" method="POST" class="form-field">
+                <div id="profile-form">
                 <table>
                         <p>(PART : 1) PERSONAL</p>
                         <tr>
                             <th>NAME</th>
                             <td class="form-box"> 
                                 <div class="input-group">
-                                    <input type="text" name="Fname" placeholder="Firstname">&nbsp;&nbsp;
+                                    <input type="text" name="Fname" placeholder="Firstname" value="">&nbsp;&nbsp;
                                     <input type="text" name="Lname" placeholder="Lastname">
                                 </div>
                             </td>
@@ -176,90 +177,91 @@
                             </td>
                         </tr> 
                         
-                    </table><br>
+                    </table></div><br>
 
-                    <div class="btn">
-                        <input type="submit"><br><br>
-                    </div>
-                </form>
-                
-                <form action="GET" id="upload-form" hidden>
-                    <div id="add-upload-form">
-                        <div class="upload-item">
-                            <table> <br>
-                                <tr>
-                                    <th><p>Profile</p></th>
-                                    <td>
-                                        <input type="file" id="myFile" name="filename" accept="image/*">
-                                        <input type="submit" id="submitBtn"><br><br>
-                                    </td>
-                                </tr>
-                               
-                                <% if(locals.user.status == 'member') { %>
-                                <tr>
-                                    <th><p>Part 2</p></th>
-                                    <td>
-                                        <input type="file" id="myFile" name="filename" accept="image/*">
-                                        <input type="submit" id="submitBtn"><br><br>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><p>Part 3</p></th>
-                                    <td>
-                                        <input type="file" id="myFile" name="filename" accept="image/*">
-                                        <input type="submit" id="submitBtn"><br><br>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><p>Part 4</p></th>
-                                    <td>
-                                        <input type="file" id="myFile" name="filename" accept="image/*">
-                                        <input type="submit" id="submitBtn"><br><br>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th><p>Part 5</p></th>
-                                    <td>
-                                        <input type="file" id="myFile" name="filename" accept="image/*">
-                                        <input type="submit" id="submitBtn"><br><br>
-                                    </td>
-                                </tr>
-                                <% } %>
-                            </table>
-                            
+                    <div id="upload-form" hidden>
+                        <div id="add-upload-form">
+                            <div class="upload-item">
+                                <table> <br>
+                                    <tr>
+                                        <th><p>Profile</p></th>
+                                        <td>
+                                            <input type="file" id="myFile" name="filename" accept="image/*">
+                                            <input type="submit" id="submitBtn"><br><br>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><p>Part 2</p></th>
+                                        <td>
+                                            <input type="file" id="myFile" name="filename" accept="image/*">
+                                            <input type="submit" id="submitBtn"><br><br>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><p>Part 3</p></th>
+                                        <td>
+                                            <input type="file" id="myFile" name="filename" accept="image/*">
+                                            <input type="submit" id="submitBtn"><br><br>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><p>Part 4</p></th>
+                                        <td>
+                                            <input type="file" id="myFile" name="filename" accept="image/*">
+                                            <input type="submit" id="submitBtn"><br><br>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><p>Part 5</p></th>
+                                        <td>
+                                            <input type="file" id="myFile" name="filename" accept="image/*">
+                                            <input type="submit" id="submitBtn"><br><br>
+                                        </td>
+                                    </tr>
+                                </table>
+                                
+                            </div>
                         </div>
                     </div>
-                    <% if(locals.user.status != 'member') { %>
-                        <p>If you want to upload more, click here to be membership <i class="fas fa-chevron-down"></i></p>
-                        <a href="/portfolio/membership"><i class="fas fa-crown"></i> To be Membership</a>
-                    <% } %>
-                </form>
 
-                <div class="template" id="template-form" hidden>
-                    <label>
-                        <input type="radio" name="season"/>
-                        <div class="def1 pp">
-                            <span>DEFAULT 1</span>
-                        </div>
-                    </label>
+                    <div class="template" id="template-form" hidden>
+                        <label>
+                            <input type="radio" name="template" value="default1" required="required"/>
+                            <div class="def1 pp">
+                                <span>DEFAULT 1</span>
+                            </div>
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="template" value="default2" required="required"/>
+                            <div class="def2 pp">
+                                <span>DEFAULT 2</span>
+                            </div>
+                        </label>
+
+                        <label>
+                            <input type="radio" name="template" value="default3" required="required"/>
+                            <div class="def3 pp">
+                                <span>DEFAULT 3</span>
+                            </div>
+                        </label>
+                        <!--
+                        <label>
+                            <input type="radio" name="template" value="default4" required="required"/>
+                            <div class="def4 pp">
+                                <span>DEFAULT 4</span>
+                            </div>
+                        </label>-->
+                    </div>
                     
-                    <label>
-                        <input type="radio" name="season"/>
-                        <div class="def2 pp">
-                            <span>DEFAULT 2</span>
-                        </div>
-                    </label>
-
-                </div>
-
-                <div id="main"> 
-                    <button id="previousBtn"><i class="fas fa-angle-left"></i> <span>Previous</span></button>
-                    <button id="finishBtn">Finish</button>
-                    <button id="nextBtn"><span>Next</span> <i class="fas fa-angle-right"></i></button>
-                </div>
-                
-            </div>
+                    <div id="main"> 
+                        <a id="previousBtn"><i class="fas fa-angle-left"></i> <span>Previous</span></a>
+                        <input id="finishBtn" type="submit" value="Finish"></input>
+                        <a id="nextBtn"><span>Next</span> <i class="fas fa-angle-right"></i></a>
+                    </div>
+            </form>
         </div>
+    </div>
     </div>
         <%- include("../partials/copyright") %>
 <%- include("../partials/indexfooter") %>

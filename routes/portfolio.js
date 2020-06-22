@@ -13,26 +13,33 @@ const express = require('express'),
       bcrypt = require('bcryptjs');
 
 
-router.get('/', middleware.isLoggedIn, function(req,res) {    
-    const projects = [{
+router.get('/', middleware.isLoggedIn, function(req,res) {  
+  User.findById(req.params.id, function(err, user){
+    Resume.find({},(err, resume) => {
+      res.render('user/project', {
         nameproject: '',
-        created: new Date(),
-
-    }]
-    res.render('user/project', { projects: projects, title: 'Project'});
+        resume: resume,          
+        title: 'Project'
+      });
+    });
+  });
 });
 
-router.post('/',middleware.isLoggedIn, async function(req,res){
-    try {
-        const resume = await Resume.create(req.body)
-        let result = {
-          ...resume
-        }
-        console.log(result)
-        res.redirect('/portfolio/form-field');
-      } catch(err) {
-        console.log(err)
-      }
+router.post('/newproject',middleware.isLoggedIn, async function(req,res) {
+    
+        let resume = new Resume({
+          nameproject: req.body.nameproject,
+          userid: req.user._id
+        });
+        
+        resume.save(function(err){
+          if(err){
+            console.log(err);
+            return;
+          } else {
+            res.redirect('/portfolio');
+          }
+        });
 });
 
 //=========================================================
@@ -48,64 +55,6 @@ router.get('/template', middleware.isLoggedIn, function(req, res, next) {
 router.get('/contact', middleware.isLoggedIn, function(req, res, next) {
     res.render('user/contact', { title: 'Contact us' });
 });
-
-
-//-------------------------------------------------------------------------
-//----------------------------change status--------------------------------
-router.get('/membership', middleware.isLoggedIn, function(req, res, next) {
-    res.render('user/membership', { title: 'Membership' });
-});
-router.get('/changetomember/:id', middleware.isLoggedIn, function(req, res){
-    User.findById(req.params.id, function(err, user){
-        if(user._id != req.params.id){
-            res.redirect('/portfolio/profile/');
-        }
-        res.render('/changetomember', {user:user});
-    });
-});
-router.post('/changetomember/:id', middleware.isLoggedIn, function(req, res){
-    let user = {};
-    user.status = 'membership'
-
-    let query = {_id:req.params.id}
-
-    User.updateOne(query, user, function(err){
-      if(err){
-        console.log(err);
-        return;
-      } else {
-        res.redirect('/portfolio/profile');
-      }
-    });
-});
-
-router.get('/changetouser/:id', middleware.isLoggedIn, function(req, res){
-    User.findById(req.params.id, function(err, user){
-        if(user._id != req.params.id){
-            res.redirect('/portfolio/profile/');
-        }
-        res.render('/changetouser', {user:user});
-    });
-});
-router.post('/changetouser/:id', middleware.isLoggedIn, function(req, res){
-    let user = {};
-    user.status = 'general user'
-
-    let query = {_id:req.params.id}
-
-    User.updateOne(query, user, function(err){
-      if(err){
-        console.log(err);
-        return;
-      } else {
-        res.redirect('/portfolio/profile');
-      }
-    });
-});
-//-----------------------------------------------------------------------
-//-----------------------------------------------------------------------
-
-
 
 //----------------------update profile picture---------------------------
 router.get('/profile', middleware.isLoggedIn, function(req, res, next) {
@@ -152,34 +101,6 @@ router.post('/edit-profile/:id', middleware.isLoggedIn, function(req, res){
     });
 });
 //--------------------------------update user profile---------------------------------
-
-
-//--------------------------------------------------------------------------------------
-router.get('/myproject', middleware.isLoggedIn, function(req, res, next) {
-    res.render('user/port-comp', { title: 'Portfolio Website' });
-});
-
-router.get('/form-field', middleware.isLoggedIn, function(req, res, next) {
-    res.render('user/form-project', { title: 'Build a project' });
-});
-
-router.post('/form-field', middleware.isLoggedIn, async function(req,res)
-{
-  try {
-    const resume = await Resume.updateMany(req.body)
-    let result = {
-      ...resume
-    }
-    console.log(result)
-    res.redirect('/portfolio/myproject');
-  } catch(err) {
-    console.log(err)
-  }
-});
-
-
-  
-
 //=========================================================
 
 module.exports = router;

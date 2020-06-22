@@ -55,19 +55,21 @@
 	display:  none;
 }
  
-#addexpBtn, #addskillBtn  {
+#addexpBtn, #addskillBtn, #btn-submit-form {
 	padding:  5px  10px;
 	border:  1px  solid  black;
 	transition:  250ms background-color;
 }
 
-#addexpBtn:hover, #addskillBtn:hover  {
+#addexpBtn:hover, #addskillBtn:hover ,#btn-submit-form:hover{
 	color:  white;
 	cursor:  pointer;
 	background-color:  black;
 	
 }
-#addexpBtn:hover:disabled:hover , #addskillBtn:hover:disabled:hover  {
+#addexpBtn:hover:disabled:hover , 
+#addskillBtn:hover:disabled:hover  ,
+#btn-submit-form:hover:disabled:hover{
 	opacity:  0.6;
 	cursor:  not-allowed;
 }
@@ -101,6 +103,20 @@
 	width: 100%;
 }
 
+#main a, #finishBtn{
+    border-radius: 3px;
+    border-width: 0.5px;
+    border-color: #16162d;
+    color: #16162d;
+    background-color: transparent;
+    padding: 1% 5%;
+    cursor: pointer;
+}
+#main a:hover, #finishBtn:hover{
+    color: #eee;
+    background: #16162d;
+    text-decoration: none;
+}
 @media screen and (max-width: 1500px){
 	
 }

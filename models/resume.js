@@ -2,6 +2,11 @@ const   mongoose = require('mongoose'),
         passportLocalMongoose = require('passport-local-mongoose');
 
 let resumeSchema = new mongoose.Schema({
+    id: String,
+    userid: {     
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    },   
     nameproject: String,
     created: {
         type: Date,
@@ -32,13 +37,8 @@ let resumeSchema = new mongoose.Schema({
     line: String,
     twitter: String,
 
-    author: {
-        id: {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: 'User'
-        },
-        username: String
-    }
+    template: String
+    
 });
 
 module.exports = mongoose.model('resume', resumeSchema);

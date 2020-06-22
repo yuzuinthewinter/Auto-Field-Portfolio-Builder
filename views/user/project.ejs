@@ -1,4 +1,5 @@
 <%- include("../partials/userheader") %>
+
         <div class="content">
             <div class="project row">
 
@@ -9,7 +10,7 @@
                                     <i class="fas fa-plus-circle"></i>
                                 </button>
                             </div>
-                            <form action="/portfolio/" method="POST">    
+                            <form action="/portfolio/newproject" method="POST">    
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
@@ -24,14 +25,14 @@
                                             <div class="modal-body">
                                               <form>
                                                 <div class="form-group">
-                                                  <input type="text" class="form-control" id="nameproject" name="nameproject" style="font-size: 14px;" required>
+                                                  <input type="text" class="form-control" id="nameproject" name="nameproject" style="font-size: 14px;" required autofocus>
                                                 </div>
                                               </form>
                                             </div>
                                             
                                             <div class="modal-footer">
                                               <button type="button" class="btn btn-secondary" data-dismiss="modal" style="color: #16162d;">Close</button>
-                                              <button type="submit" class="btn btn-primary" style="color: #16162d;">save</button>
+                                              <button type="submit" class="btn btn-primary" style="color: #16162d;">Create</button>
                                             </div>
     
                                         </div>
@@ -40,24 +41,26 @@
                             </form>
                     </div>
                 </div>
-
-                <% projects.forEach(function(project){ %>
+                <% for(let i=0 ; i < resume.length; i++){ %>
+                    <% var userid1 = currentUser._id.toString(); var userid2 = resume[i].userid.toString(); %>
+                    <% if( userid1 === userid2 ){%>
                     <div class="col-12 col-md-4">
                         <div class="single-blog">
                             <div class="projectfield">
                                 <img src="http://www.baltana.com/files/wallpapers-20/Pixel-Art-Background-Wallpapers-49560.jpg" alt="Avatar" style="width:80%">
-                                <p><%= project.nameproject %></p>
-                                <p style="font-size: 12px; color: lightslategray;">Create at : <%= project.created.toLocaleDateString('en-GB') %></p>
-                                <a href="/portfolio/" class="btn">Open</a> 
-                                <a href="/portfolio/form-field" class="btn">Edit</a>
-                                <a class="btn">Delete</a>
+                                <p><%= resume[i].nameproject %></p>
+                                <p style="font-size: 12px; color: lightslategray;">Create at : <%= resume[i].created.toLocaleDateString('en-TH') %></p>
+                                <a href="/project/<%= resume[i]._id %>" class="btn">Open</a> 
+                                <a href="/project/form-field/<%= resume[i]._id %>" class="btn">Edit</a>
+                                <a class="btn" href="/project/deleteproject/<%= resume[i]._id %>">Delete</a>
                             </div>
                         </div>
                     </div>
-                <% }) %>
+                <% }} %>
                 <!--
                     -->
             </div>
         </div>
+
         <%- include("../partials/copyright") %>
 <%- include("../partials/indexfooter") %>
