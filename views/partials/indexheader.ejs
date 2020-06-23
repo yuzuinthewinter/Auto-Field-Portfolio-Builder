@@ -40,18 +40,10 @@
                             <a href="/#index-temp" class="nav-link">Template</a>
                         </div>
                         <% if(locals.user){ %>  
-                            <% if(locals.user.status != 'admin') { %> 
+                            <% if(locals.user.status == 'user') { %> 
                                 <div class="col">
                                     <a href="/portfolio/" class="nav-link">Project</a>
                                 </div>
-                            <% } %> 
-                        <% } %> 
-                        <div class="col">
-                            <a href="/#index-cont" class="nav-link">Contact</a>
-                        </div>
-                        
-                        <% if(locals.user){ %> 
-                            <% if(locals.user.status == 'user') { %> 
                                 <div class="col">
                                     <a href="/portfolio/setting" class="nav-link">Setting</a>
                                 </div>
