@@ -12,6 +12,22 @@ const express = require('express'),
       fs = require('fs-extra'),
       bcrypt = require('bcryptjs');
 
+      const storage = multer.diskStorage({
+        destination: './public/uploads',
+        filename: function(req, file, cb) {
+            cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+        }
+    });
+    
+    const imageFilter = function(req, file, cb){
+        var ext = path.extname(file.originalname);
+        if(ext !== '.png' && ext !== '.gif' && ext !== '.jpg' && ext !== '.jpeg'){
+            return cb(new Error('Only image is allowed'), false)
+            }
+            cb(null, true);
+    };
+    
+    const upload = multer({storage: storage, fileFilter: imageFilter})
 
 router.get('/', middleware.isLoggedIn, function(req,res) {  
   User.findById(req.params.id, function(err, user){
@@ -110,6 +126,7 @@ router.get('/edit-profile/:id', middleware.isLoggedIn, function(req, res){
     });
 });
 router.post('/edit-profile/:id', middleware.isLoggedIn, function(req, res){
+  
     let user = {};
     user.firstname = req.body.firstname;
     user.lastname = req.body.lastname;

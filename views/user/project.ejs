@@ -41,30 +41,30 @@
                             </form>
                     </div>
                 </div>
-                <% for(let i=0 ; i < resume.length; i++){ %>
-                    <% var userid1 = currentUser._id.toString(); var userid2 = resume[i].userid.toString(); %>
+                <% resume.reverse().forEach(function(resume) { %>
+                    <% var userid1 = currentUser._id.toString(); var userid2 = resume.userid.toString(); %>
                     <% if( userid1 === userid2 ){%>
                     <div class="col-12 col-md-4">
                         <div class="single-blog">
                             <div class="projectfield">
-                                <% if (resume[i].template == 'default1') { %>
+                                <% if (resume.template == 'default1') { %>
                                     <img src="https://wallpaperaccess.com/full/398864.jpg" alt="Avatar" style="width:80%;">
                                 <% } %>
-                                <% if (resume[i].template == 'default2') { %>
+                                <% if (resume.template == 'default2') { %>
                                     <img src="https://cdn.wallpapersafari.com/9/46/exr8gI.jpg" alt="Avatar" style="width:80%;">
                                 <% } %>
-                                <% if (resume[i].template == 'default3') { %>
+                                <% if (resume.template == 'default3') { %>
                                     <img src="https://mocah.org/uploads/posts/4515299-japan-tokyo-street-building-bicycle-crosswalk-digital-art-house-sign-clouds-sky-car-stores-sunset.jpg" alt="Avatar" style="width:80%">
                                 <% } %>
-                                <p><%= resume[i].nameproject %></p>
-                                <p style="font-size: 12px; color: lightslategray;">Create at : <%= resume[i].created.toLocaleDateString('en-TH') %></p>
-                                <a href="/project/<%= resume[i]._id %>" class="btn">Open</a> 
-                                <a href="/project/form-field/<%= resume[i]._id %>" class="btn">Edit</a>
-                                <a class="btn" href="/project/deleteproject/<%= resume[i]._id %>">Delete</a>
+                                <p><%= resume.nameproject %></p>
+                                <p style="font-size: 12px; color: lightslategray;">Create at : <%= resume.created.toLocaleDateString('en-TH') %></p>
+                                <a href="/project/<%= resume._id %>" class="btn">Open</a> 
+                                <a href="/project/form-field/<%= resume._id %>" class="btn">Edit</a>
+                                <a class="btn" href="/project/deleteproject/<%= resume._id %>">Delete</a>
                             </div>
                         </div>
                     </div>
-                <% }} %>
+                <% }}) %>
                 <!--
                     -->
             </div>
