@@ -29,7 +29,33 @@ router.post('/newproject',middleware.isLoggedIn, async function(req,res) {
     
         let resume = new Resume({
           nameproject: req.body.nameproject,
-          userid: req.user._id
+          userid: req.user._id,
+
+          Fname: '',
+          Lname: '',
+          position: '', 
+          nationality: '',
+          introduce: '',
+          
+          highschool: '',
+          college: '',
+          major: '',
+          gpax: '',
+          
+          skill: '',
+          level: '',
+
+          exp: '',
+          place: '',
+          year: '',
+
+          email: '',
+          fb: '',
+          ig: '',
+          line: '',
+          twitter: '',
+
+          template: 'default1'
         });
         
         resume.save(function(err){

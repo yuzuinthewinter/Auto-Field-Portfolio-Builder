@@ -36,27 +36,27 @@
                             <th>NAME</th>
                             <td class="form-box"> 
                                 <div class="input-group">
-                                    <input type="text" name="Fname" placeholder="Firstname" value="">&nbsp;&nbsp;
-                                    <input type="text" name="Lname" placeholder="Lastname">
+                                    <input type="text" name="Fname" placeholder="Firstname" value="<%= resume.Fname %>">&nbsp;&nbsp;
+                                    <input type="text" name="Lname" placeholder="Lastname" value="<%= resume.Lname %>">
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <th>Position</th>
                             <td class="form-box">
-                                <input type="text" name="position" placeholder="Student, Designer etc.">
+                                <input type="text" name="position" placeholder="Student, Designer etc." value="<%= resume.position %>">
                             </td>
                         </tr>
                         <tr>
                             <th>NATIONALITY</th>
                             <td class="form-box">
-                                <input type="text" name="nationality" placeholder="Nationality">
+                                <input type="text" name="nationality" placeholder="Nationality" value="<%= resume.nationality %>">
                             </td>
                         </tr>
                         <tr>
                             <th><label for="introduce">Introduce</label></th>
                             <td class="form-radio">
-                                <textarea id="introduce" name="introduce" rows="4" cols="60" style="font-size: 14px; padding: 2% 2%;" placeholder="Applied Computer Science, &#10;Department of Mathematics, &#10;Faculty of Science, KMUTT"></textarea>
+                                <textarea value="<%= resume.introduce %>" id="introduce" name="introduce" rows="4" cols="60" style="font-size: 14px; padding: 2% 2%;" placeholder="Applied Computer Science, &#10;Department of Mathematics, &#10;Faculty of Science, KMUTT"></textarea>
                             </td>
                         </tr>
                     </table><br>
@@ -67,26 +67,26 @@
                             <th>HIGH SCHOOL</th>
                             <td class="form-box"> 
                                 <div class="input-group">
-                                    <input type="text" name="highschool" placeholder="HIGH SCHOOL">
+                                    <input type="text" name="highschool" placeholder="HIGH SCHOOL" value="<%= resume.highschool %>">
                                 </div>
                             </td>
                         </tr> 
                         <tr>
                             <th>COLLEGE / UNIVERSITY</th>
                             <td class="form-box">
-                                <input type="text" name="college" placeholder="College / University">
+                                <input type="text" name="college" placeholder="College / University" value="<%= resume.college %>">
                             </td>
                         </tr>
                         <tr>
                             <th>MAJOR</th>
                             <td class="form-box">
-                                <input type="text" name="major" placeholder="Major">
+                                <input type="text" name="major" placeholder="Major" value="<%= resume.major %>">
                             </td>
                         </tr>
                         <tr>
                             <th>GPAX</th>
                             <td class="form-box">
-                                <input type="text" name="gpax" placeholder="GPAX (max : 4.00)">
+                                <input type="text" name="gpax" placeholder="GPAX (max : 4.00)" value="<%= resume.gpax %>">
                             </td>
                         </tr>
                     </table><br>
@@ -96,7 +96,7 @@
                         <tr>
                             <td class="form-box"> 
                                 <div class="input-group">
-                                    <input type="text"name="skill" placeholder="skill">&nbsp;&nbsp;
+                                    <input type="text" name="skill" placeholder="skill">&nbsp;&nbsp;
                                     <input type="number" min="1" max="5" placeholder="level (max : 5)">
                                 </div>
                             </td>
@@ -140,7 +140,7 @@
                             <th>EMAIL</th>
                             <td class="form-box"> 
                                 <div class="input-group">
-                                    <input type="email" placeholder="example@mail.com">
+                                    <input type="email" placeholder="example@mail.com"  value="<%= resume.email %>">
                                 </div>
                             </td>
                         </tr>
@@ -148,7 +148,7 @@
                             <th>FACEBOOK</th>
                             <td class="form-box"> 
                                 <div class="input-group">
-                                    <input type="url" name="fb" placeholder="url">
+                                    <input type="url" name="fb" placeholder="url"  value="<%= resume.fb %>">
                                 </div>
                             </td>
                         </tr> 
@@ -156,7 +156,7 @@
                             <th>LINE</th>
                             <td class="form-box"> 
                                 <div class="input-group">
-                                    <input type="url" name="ig" placeholder="url">
+                                    <input type="url" name="ig" placeholder="url"  value="<%= resume.line %>">
                                 </div>
                             </td>
                         </tr> 
@@ -164,7 +164,7 @@
                             <th>INSTAGRAM</th>
                             <td class="form-box"> 
                                 <div class="input-group">
-                                    <input type="url"name="line" placeholder="url">
+                                    <input type="url"name="line" placeholder="url"  value="<%= resume.ig %>">
                                 </div>
                             </td>
                         </tr> 
@@ -172,7 +172,7 @@
                             <th>TWITTER</th>
                             <td class="form-box"> 
                                 <div class="input-group">
-                                    <input type="url" name="twitter" placeholder="url">
+                                    <input type="url" name="twitter" placeholder="url"  value="<%= resume.twitter %>">
                                 </div>
                             </td>
                         </tr> 
@@ -225,8 +225,9 @@
                     </div>
 
                     <div class="template" id="template-form" hidden>
+                        
                         <label>
-                            <input type="radio" name="template" value="default1" required="required"/>
+                            <input type="radio" name="template" value="default1" required="required" checked>
                             <div class="def1 pp">
                                 <span>DEFAULT 1</span>
                             </div>
@@ -252,6 +253,7 @@
                                 <span>DEFAULT 4</span>
                             </div>
                         </label>-->
+                        
                     </div>
                     
                     <div id="main"> 

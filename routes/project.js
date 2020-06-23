@@ -23,9 +23,9 @@ router.get('/:id', middleware.isLoggedIn, async function(req, res, next) {
 });
 
 router.get('/form-field/:id', middleware.isLoggedIn, function(req, res, next) {
-    Resume.findById(req.body,function(err,resume){
+    Resume.findById(req.params.id,function(err,resume){
         console.log(resume)
-        res.render('user/form-project', { title: 'Edit Project', _id:req.params.id});
+        res.render('user/form-project', { title: 'Edit Project', _id:req.params.id, resume:resume});
     });
 });
 
