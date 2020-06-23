@@ -28,7 +28,7 @@
                     <br> 
                 </div>
                 
-            <form action="/project/form-field/<%= _id %>" method="POST" class="form-field">
+            <form action="/project/form-field/<%= _id %>" method="POST" class="form-field" enctype="multipart/form-data">
                 <div id="profile-form">
                 <table>
                         <p>(PART : 1) PERSONAL</p>
@@ -186,8 +186,7 @@
                                     <tr>
                                         <th><p>Profile</p></th>
                                         <td>
-                                            <input type="file" id="myFile" name="filename" accept="image/*">
-                                            <input type="submit" id="submitBtn"><br><br>
+                                            <input type="file" id="myFile" name="picprofile" accept="image/*">
                                         </td>
                                     </tr>
                                     <!--

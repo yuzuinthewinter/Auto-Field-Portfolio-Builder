@@ -1,16 +1,37 @@
 const { query } = require('express');
+const image = require('../models/image');
 
 const express = require('express'),
       router = express.Router(),
       passport = require('passport'),
-
+      mongoose = require("mongoose"),
       middleware = require('../middleware'),
+
       User = require('../models/user'),
       Resume = require('../models/resume'),
+      Image = require('../models/image'),
 
+      path = require('path'),
       multer = require('multer'),
       fs = require('fs-extra'),
       bcrypt = require('bcryptjs');
+
+
+const storage = multer.diskStorage({
+  destination: './public/uploads',
+  filename:function(req,file,cb){
+    cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    }
+});      
+      
+const imageFilter = function(req,file,cb){
+    var ext = path.extname(file.originalname);
+    if(ext != '.png' && ext != '.gif' && ext != '.jpg' && ext != '.jpeg'){
+    return cb(new Error('only image is allowed'), false)
+    }
+    cb(null,true);  
+}
+const upload = multer({storage: storage,fileFilter:imageFilter})
 
 //--------------------------------------------------------------------------------------
 router.get('/:id', middleware.isLoggedIn, async function(req, res, next) {
@@ -30,22 +51,41 @@ router.get('/form-field/:id', middleware.isLoggedIn, function(req, res, next) {
 });
 
 router.post('/form-field/:id', middleware.isLoggedIn, async function(req, res){
-
-    let query = {_id:req.params.id}
-
-    const resume = await Resume.updateOne(query, req.body)
-        let result = {
-          ...resume
+    resume.findByIdAndUpdate(req.params.id, req.body, function(error,update){
+        if(error){
+            console.log(error)
+        }else{
+            res.redirect('/project/'+req.params.id)
         }
-
-    Resume.updateMany(query, resume, function(err,resume){
-        if(err){
-            console.log(err);
-            return;
-          } else {
-            res.redirect('/project/'+req.params.id);
+    })
+    let response = await image.aggregate([
+        {
+            $lookup:
+            {
+                localField: "projectid",
+                from: "resumes",
+                foreignField: "_id",
+                as: "projectid"
+            }
+        },
+        {
+            $unwind: "$projectid"
+        },
+        {
+          $match: {
+            "projectid._id" : mongoose.Types.ObjectId(req.params.id)
           }
-    });
+        },
+      ])
+    console.log(response)
+    console.log(req.params.id)
+    image.findByIdAndUpdate(response[0]._id, {picprofile: req.file.filename}, function(error,update){
+        if(error){
+            console.log(error)
+        }else{
+            console.log("update")
+        }
+    })
 });
 
 router.post('/form-field/:id', middleware.isLoggedIn,  function(req,res)

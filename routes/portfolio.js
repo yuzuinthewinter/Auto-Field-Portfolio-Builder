@@ -83,6 +83,20 @@ router.post('/newproject',middleware.isLoggedIn, async function(req,res) {
             res.redirect('/portfolio');
           }
         });
+
+        let response = await Resume.aggregate([
+          {
+            $match: {
+              nameproject : req.body.nameproject
+            }
+          },
+        ])
+
+        console.log(response)
+        image.create({
+          projectid: response[0]._id,
+          picprofile: ""
+        })
 });
 
 //=========================================================
