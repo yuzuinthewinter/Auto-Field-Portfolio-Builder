@@ -7,7 +7,7 @@
                     <div class="single-blog">
                             <div id="btn-plus">
                                 <button type="button" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
-                                    <i class="fas fa-plus-circle"></i>
+                                    <i class="fas fa-plus-circle" style="width: 100%; height: 160px;"></i>
                                 </button>
                             </div>
                             <form action="/portfolio/newproject" method="POST">    
@@ -47,7 +47,15 @@
                     <div class="col-12 col-md-4">
                         <div class="single-blog">
                             <div class="projectfield">
-                                <img src="http://www.baltana.com/files/wallpapers-20/Pixel-Art-Background-Wallpapers-49560.jpg" alt="Avatar" style="width:80%">
+                                <% if (resume[i].template == 'default1') { %>
+                                    <img src="https://wallpaperaccess.com/full/398864.jpg" alt="Avatar" style="width:80%;">
+                                <% } %>
+                                <% if (resume[i].template == 'default2') { %>
+                                    <img src="https://cdn.wallpapersafari.com/9/46/exr8gI.jpg" alt="Avatar" style="width:80%;">
+                                <% } %>
+                                <% if (resume[i].template == 'default3') { %>
+                                    <img src="https://mocah.org/uploads/posts/4515299-japan-tokyo-street-building-bicycle-crosswalk-digital-art-house-sign-clouds-sky-car-stores-sunset.jpg" alt="Avatar" style="width:80%">
+                                <% } %>
                                 <p><%= resume[i].nameproject %></p>
                                 <p style="font-size: 12px; color: lightslategray;">Create at : <%= resume[i].created.toLocaleDateString('en-TH') %></p>
                                 <a href="/project/<%= resume[i]._id %>" class="btn">Open</a> 

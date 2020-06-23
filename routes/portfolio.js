@@ -17,6 +17,7 @@ router.get('/', middleware.isLoggedIn, function(req,res) {
   User.findById(req.params.id, function(err, user){
     Resume.find({},(err, resume) => {
       res.render('user/project', {
+        template: '',
         nameproject: '',
         resume: resume,          
         title: 'Project'
