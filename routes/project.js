@@ -1,4 +1,5 @@
 const { query } = require('express');
+const resume = require('../models/resume');
 const image = require('../models/image');
 
 const express = require('express'),
@@ -6,7 +7,6 @@ const express = require('express'),
       passport = require('passport'),
       mongoose = require("mongoose"),
       middleware = require('../middleware'),
-
       User = require('../models/user'),
       Resume = require('../models/resume'),
       Image = require('../models/image'),
@@ -32,7 +32,6 @@ const imageFilter = function(req,file,cb){
     cb(null,true);  
 }
 const upload = multer({storage: storage,fileFilter:imageFilter})
-
 //--------------------------------------------------------------------------------------
 router.get('/:id', middleware.isLoggedIn, async function(req, res, next) {
     Resume.findById(req.params.id, function(err, resume){
@@ -45,13 +44,14 @@ router.get('/:id', middleware.isLoggedIn, async function(req, res, next) {
 
 router.get('/form-field/:id', middleware.isLoggedIn, function(req, res, next) {
     Resume.findById(req.params.id,function(err,resume){
-        console.log(resume)
+        // console.log(resume)
         res.render('user/form-project', { title: 'Edit Project', _id:req.params.id, resume:resume});
     });
 });
 
-router.post('/form-field/:id', middleware.isLoggedIn, async function(req, res){
-    resume.findByIdAndUpdate(req.params.id, req.body, function(error,update){
+router.post('/form-field/:id', middleware.isLoggedIn, upload.single('picprofile'), async function(req, res){
+
+    resume.findByIdAndUpdate(req.params.id, req.body, function(error, update){
         if(error){
             console.log(error)
         }else{
@@ -79,7 +79,7 @@ router.post('/form-field/:id', middleware.isLoggedIn, async function(req, res){
       ])
     console.log(response)
     console.log(req.params.id)
-    image.findByIdAndUpdate(response[0]._id, {picprofile: req.file.filename}, function(error,update){
+    image.findByIdAndUpdate(response[0]._id, {picprofile: req.file.picprofile}, function(error,update){
         if(error){
             console.log(error)
         }else{

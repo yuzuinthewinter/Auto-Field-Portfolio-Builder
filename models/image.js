@@ -6,7 +6,11 @@ let imageSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Resume'
     },
-    picprofile: String
+    picprofile: String,
+    pic2: String,
+    pic3: String,
+    pic4: String,
+    pic5: String
     
 });
 imageSchema.plugin(passportLocalMongoose);

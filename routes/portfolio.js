@@ -1,4 +1,5 @@
 const { create } = require('../models/user');
+const image = require('../models/image');
 
 const express = require('express'),
       router = express.Router(),
@@ -12,22 +13,6 @@ const express = require('express'),
       fs = require('fs-extra'),
       bcrypt = require('bcryptjs');
 
-      const storage = multer.diskStorage({
-        destination: './public/uploads',
-        filename: function(req, file, cb) {
-            cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-        }
-    });
-    
-    const imageFilter = function(req, file, cb){
-        var ext = path.extname(file.originalname);
-        if(ext !== '.png' && ext !== '.gif' && ext !== '.jpg' && ext !== '.jpeg'){
-            return cb(new Error('Only image is allowed'), false)
-            }
-            cb(null, true);
-    };
-    
-    const upload = multer({storage: storage, fileFilter: imageFilter})
 
 router.get('/', middleware.isLoggedIn, function(req,res) {  
   User.findById(req.params.id, function(err, user){
@@ -44,59 +29,62 @@ router.get('/', middleware.isLoggedIn, function(req,res) {
 
 router.post('/newproject',middleware.isLoggedIn, async function(req,res) {
     
-        let resume = new Resume({
-          nameproject: req.body.nameproject,
-          userid: req.user._id,
+  let resume = new Resume({
+    nameproject: req.body.nameproject,
+    userid: req.user._id,
 
-          Fname: '',
-          Lname: '',
-          position: '', 
-          nationality: '',
-          introduce: '',
-          
-          highschool: '',
-          college: '',
-          major: '',
-          gpax: '',
-          
-          skill: '',
-          level: '',
+    Fname: '',
+    Lname: '',
+    position: '', 
+    nationality: '',
+    introduce: '',
+    
+    highschool: '',
+    college: '',
+    major: '',
+    gpax: '',
+    
+    skill: ['','','','',''],
+    level: ['','','','',''],
 
-          exp: '',
-          place: '',
-          year: '',
+    exp: ['','','','',''],
+    place: ['','','','',''],
+    year: ['','','','',''],
 
-          email: '',
-          fb: '',
-          ig: '',
-          line: '',
-          twitter: '',
+    email: '',
+    fb: '',
+    ig: '',
+    line: '',
+    twitter: '',
 
-          template: 'default1'
-        });
+    template: 'default1'
+  });
         
-        resume.save(function(err){
-          if(err){
-            console.log(err);
-            return;
-          } else {
-            res.redirect('/portfolio');
-          }
-        });
-
-        let response = await Resume.aggregate([
-          {
-            $match: {
-              nameproject : req.body.nameproject
-            }
-          },
-        ])
-
-        console.log(response)
-        image.create({
-          projectid: response[0]._id,
-          picprofile: ""
-        })
+  resume.save(function(err){
+    if(err){
+      console.log(err);
+      return;
+    } else {
+      res.redirect('/portfolio');
+    }
+  });
+  let response = await Resume.aggregate([
+    {
+      $match: {
+        nameproject : req.body.nameproject
+        
+      }
+    },
+  ])
+  console.log(response)
+  image.create({
+    projectid: response[0]._id,
+    picprofile: "",
+    pic2: "",
+    pic3: "",
+    pic4: "",
+    pic5: "" 
+  })
 });
 
 //=========================================================
@@ -140,7 +128,6 @@ router.get('/edit-profile/:id', middleware.isLoggedIn, function(req, res){
     });
 });
 router.post('/edit-profile/:id', middleware.isLoggedIn, function(req, res){
-  
     let user = {};
     user.firstname = req.body.firstname;
     user.lastname = req.body.lastname;

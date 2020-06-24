@@ -21,6 +21,7 @@ router.get('/manage-user', middleware.isLoggedIn, function(req, res, next) {
             console.log(err);
         } else {
             res.render('admin/manage-user', { users: users, title: 'Manage User'});
+            console.log(users);
         }
     });
 });   
@@ -41,28 +42,6 @@ router.get('/view/:id', middleware.isLoggedIn, function(req, res, next) {
     });
 }); 
 
-router.get('/show/:id', middleware.isLoggedIn, function(req, res, next) {
-    let query = {_id:req.params.id}
-    User.findById(query, function(err, user){
-        Resume.find({},(err, resume) => {
-            res.render('admin/show', { 
-                resume: resume, 
-                user:user, 
-                title: user.username.toUpperCase()
-            });
-        });
-    });
-});
-
-router.get('/showproject/:id', middleware.isLoggedIn, async function(req, res, next) {
-    Resume.findById(req.params.id, function(err, resume){
-        if(resume._id != req.params.id){
-            res.redirect('/show'+req.params.id);
-        }
-        res.render('admin/showproject', { title: 'Portfolio Website', resume:resume});
-    });
-});
-
 router.get('/delete/:id', middleware.isLoggedIn, function(req, res) {
     User.findByIdAndRemove(req.params.id, function(err, project) {
         if (err) {
@@ -73,22 +52,4 @@ router.get('/delete/:id', middleware.isLoggedIn, function(req, res) {
     });
 });
 
-router.get('/search',middleware.isLoggedIn, function(req,res){
-    if(req.query.search){
-        var keyword = req.query.search;
-        const regax = new RegExp(escapeRegex(req.query.search), 'gi');
-        User.find({username: regax}, function(err, user){
-            if(err){
-                console.log(err);
-            } else {
-                res.render('admin/manage-user', { users:user, title: 'Manage User'});
-            }
-        })
-    }
-});
-
 module.exports = router;
-
-function escapeRegex(string) {
-    return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-}
