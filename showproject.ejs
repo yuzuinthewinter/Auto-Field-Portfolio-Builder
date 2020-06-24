@@ -1,0 +1,235 @@
+<%- include("../partials/indexheader") %>
+<head>
+    <link rel="stylesheet" href="/stylesheets/<%= resume.template %>.css">
+</head>
+        <div class="outer-wrapper">
+            <div class="wrapper">
+
+                <div id="slideone">
+                    <div class="slide one">
+                        
+                        <div class="header-port"><span>“</span>&nbsp; PERSONAL PARTICULAR</div>
+
+                        <div class="portfolio-items">
+                            
+                                <div class="front">
+                                    <div class="portfolio-img">
+                                        <div class="profile-pic"><img src="https://cdn0.iconfinder.com/data/icons/professional-avatar-5/48/manager_male_avatar_men_character_professions-512.png" alt="Avatar"></div>
+                                    </div> 
+                                </div>
+
+                                <div class="back">
+                                    <div class="portfolio-description">
+                                        <h1>Hi,</h1>
+                                        <div class="group-name">
+                                            <div id="name">I'm <%= resume.Fname %>&nbsp;<%= resume.Lname %>,</div>
+                                        </div>
+                                        <div class="group-details">
+                                            <div id="job"><%= resume.position %>,</div>
+                                        </div>
+                                        <div class="group-details">
+                                            <div id="nation">I'm <%= resume.nationality %>.</div>
+                                        </div>
+                                        <div class="group-details">
+                                            <div id="introduce"><%= resume.introduce %></div>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="slidetwo">
+                    <div class="slide two">
+                        <div class="header-port"><span>“</span>&nbsp;EDUCATION BACKGROUND</div>
+
+                        <div class="portfolio-contents">
+                            
+                            <div class="front">
+                                <div class="portfolio-education">
+                                    <div class="group-spread">
+                                        <div id="school"><i class="fas fa-plane"></i>&nbsp;<%= resume.highschool %></div>
+                                    </div>
+                                    <div class="group-spread">
+                                        <div id="college"><i class="fas fa-plane"></i>&nbsp;<%= resume.college %></div>
+                                    </div>
+                                    <div class="group-spread">
+                                    <div id="major"><i class="fas fa-plane"></i>&nbsp;<%= resume.major %></div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="back">
+                                <div id="gpax"><span>“</span>&nbsp;<%= resume.gpax %>&nbsp;<span>”</span></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="slidethree">
+                    <div class="slide three"><!--&nbsp;SKILLS-->
+                        <div class="header-port"><span>“</span>SKILLS</div>
+
+                        <div class="portfolio-contents">
+                            <div class="front">
+                                <div class="portfolio-skills">
+                                    <h1 style="text-align: right;">SKILLS</h1> <br>
+                                    <ul>
+                                        <li>
+                                            <div class="nameskill">
+                                                <div id="skill1">html</div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="nameskill">
+                                                <div id="skill2">css</div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="nameskill">
+                                                <div id="skill3">javascript</div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="nameskill">
+                                                <div id="skill4">c/c++</div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="nameskill">
+                                                <div id="skill5">python</div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <!--another skill use js-->
+                                </div>
+                            </div>
+
+                            <div class="back">
+                                <div class="portfolio-skill-level">
+                                    <h1>LEVEL</h1><br>
+                                    <ul>
+                                        <li>
+                                            <div class="levelskill">
+                                                <div id="level1"><i class="fas fa-cube"></i>&nbsp;<i class="fas fa-cube"></i>&nbsp;<i class="fas fa-cube"></i></div>
+                                            </div>
+                                        </li>
+                                        <li>    
+                                            <div class="levelskill">
+                                                <div id="level2"><i class="fas fa-cube"></i>&nbsp;<i class="fas fa-cube"></i>&nbsp;<i class="fas fa-cube"></i>&nbsp;<i class="fas fa-cube"></i></div>
+                                            </div>
+                                        </li>  
+                                        <li>
+                                            <div class="levelskill">
+                                                <div id="level3"><i class="fas fa-cube"></i>&nbsp;<i class="fas fa-cube"></i></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="levelskill">
+                                                <div id="level3"><i class="fas fa-cube"></i></div>
+                                            </div>
+                                        </li>  
+                                        <li>
+                                            <div class="levelskill">
+                                                    <div id="level3"><i class="fas fa-cube"></i>&nbsp;<i class="fas fa-cube"></i>&nbsp;<i class="fas fa-cube"></i></div>
+                                            </div>
+                                        </li> 
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="slidefour">
+                    <div class="slide four">
+                        <div class="header-port"><span>“</span>&nbsp;EXPERIENCE</div>
+
+                        <div class="portfolio-contents">
+                            
+                            <div class="portfolio-exp">
+                                <table>
+                                    <colgroup>
+                                        <col style="width: 350px;">
+                                        <col style="width: 300px;">
+                                        <col style="width: 150px;">
+                                    </colgroup>
+                                    <tr>
+                                        <th class="expstyle">EXPERIENCE</th>
+                                        <th>PLACE</th>
+                                        <th>YEAR</th>
+                                    </tr>
+                                    <tr>
+                                        <div class="groupexp1">
+                                            <td><div id="exp1" class="expstyle">PROGRAMMER</div></td>
+                                            <td><div id="place1">GOOGLE</div></td>
+                                            <td><div id="year1">10</div></td>
+                                        </div>
+                                    </tr>
+                                    <tr>
+                                        <div class="groupexp2">
+                                            <td><div id="exp2" class="expstyle">COMPUTER ENGINEER</div></td>
+                                            <td><div id="place">NASA</div></td>
+                                            <td><div id="year">5</div></td>
+                                        </div>
+                                    </tr>
+                                    <tr>
+                                        <div class="groupexp3">
+                                            <td><div id="exp3" class="expstyle">SCIENCTIST</div></td>
+                                            <td><div id="place3">UN</div></td>
+                                            <td><div id="year3">2</div></td>
+                                        </div>
+                                    </tr>
+                                    <tr>
+                                        <div class="groupexp4">
+                                            <td><div id="exp4" class="expstyle">FULL-STACK DEV.</div></td>
+                                            <td><div id="place4">GOOGLE</div></td>
+                                            <td><div id="year4">20</div></td>
+                                        </div>
+                                    </tr>
+                                    <tr>
+                                        <div class="groupexp5">
+                                            <td><div id="exp5" class="expstyle">MUSICIAN</div></td>
+                                            <td><div id="place5">FREELANCE</div></td>
+                                            <td><div id="year5">7</div></td>
+                                        </div>
+                                    </tr>
+                                    
+                                    <!--another experience use js-->
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="slidefive">
+                    <div class="slide five">
+                        <div class="header-port"><span>“</span>&nbsp;CONTACT ME<br>
+                            <div id="email">
+                                <i class="far fa-envelope"></i>&nbsp;<%= resume.email %>
+                            </div>
+                        </div>
+                        
+                        <div class="portfolio-contents">
+                            
+                            <div class="portfolio-contact">
+                                <ul>
+                                    <li><div id="facebook"><a href="<%= resume.fb %>"><i class="fab fa-facebook-square"></i></a></div></li>
+                                    <li><div id="line"><a href="<%= resume.line %>"><i class="fab fa-line"></i></a></div></li>
+                                    <li><div id="instagram"><a href="<%= resume.ig %>"><i class="fab fa-instagram"></i></a></div></li>
+                                    <li><div id="twitter"><a href="<%= resume.twitter %>"><i class="fab fa-twitter-square"></i></a></div></li>
+                                </ul>
+                                <!--it's gonna be icon click link-->
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<%- include("../partials/indexfooter") %>

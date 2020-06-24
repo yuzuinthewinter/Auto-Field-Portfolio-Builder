@@ -1,0 +1,220 @@
+.slide{
+    width: 100vw;
+    height: 100vh;
+}
+.front{
+    width: 50vw;
+}
+.back{
+    width: 50vw;
+    margin-top: 2%;
+}
+.outer-wrapper{
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.one{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.9)),url(https://images.pexels.com/photos/4397919/pexels-photo-4397919.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+    position: relative;
+}
+.three{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.89),rgba(0, 0, 0, 0.4)),url(https://images.pexels.com/photos/4397783/pexels-photo-4397783.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+    position: relative;
+}
+.four{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.8)),url(https://images.pexels.com/photos/4397904/pexels-photo-4397904.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+    position: relative;
+}
+.two{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url(https://images.pexels.com/photos/4397760/pexels-photo-4397760.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+    position: relative;
+}
+.five{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.3)),url(https://images.pexels.com/photos/4397910/pexels-photo-4397910.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/*first page scrolling*/
+.portfolio-items{
+    width: 100%;
+    font-size: 18px;
+    padding: 5% 0%;
+    padding-top: 5%;
+    border-radius: 10px;
+    margin: auto;
+    display: flex;
+}
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@1,700&display=swap');
+.header-port{
+    font-size: 32px;
+    font-style: italic;
+    font-family: 'PT Serif', serif;
+    margin-top: 5%;
+    margin-left: 12%;
+}
+.header-port span{
+    font-size: 60px;
+    font-family: 'PT Serif', serif;
+}
+/*pic*/
+.portfolio-items .portfolio-img{
+    text-align: center;
+}
+.portfolio-items .portfolio-img img{
+    width: 40%;
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0))  ;
+    border-radius: 50%;
+}
+/*pic*/
+/*data*/
+.portfolio-items .portfolio-description{
+    width: 70%;
+    height: 40vh;
+    margin-left: 15%;
+    margin-right: 5%;
+}
+.portfolio-items .portfolio-description h1{
+    font-size: 60px;
+    font-style: italic;
+    font-family: 'PT Serif', serif;
+}
+.portfolio-items .portfolio-description .group-name{
+    font-size: 35px;
+    font-family: 'PT Serif', serif;
+    line-height: 40px;
+    padding-bottom: 3%;
+}
+.portfolio-items .portfolio-description .group-details{
+    font-size: 20px;
+    font-family: 'PT Serif', serif;
+}
+
+.portfolio-contents{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    display: flex;
+}
+
+/*slide two*/
+.portfolio-contents .portfolio-education{
+    margin-top: 20%;
+    font-size: 35px;
+    text-align: left;
+}
+.portfolio-contents .portfolio-education .group-spread{
+    line-height: 60px;
+}
+.portfolio-contents .portfolio-education i{
+    font-size: 24px;
+}
+.portfolio-contents #gpax{
+    margin-top: 25%;
+    font-size: 50px;
+}
+/*slide two*/
+/*----------------------------------------------------*/
+/*slide three*/
+.portfolio-contents .portfolio-skills{
+    margin-top: 5%;
+    margin-right: 10%;
+    font-size: 40px;
+    text-transform: uppercase;
+    line-height: 60px;
+}
+.portfolio-contents .portfolio-skills h1{
+    font-size: 50px;
+}
+.portfolio-contents .portfolio-skills ul{
+    text-align: right;
+    display: block;
+}
+.portfolio-contents .portfolio-skills ul li{
+    text-align: right;
+    display: block;
+}
+.portfolio-contents .portfolio-skill-level{
+    margin-top: 1%;
+    margin-left: 10%;
+    text-align: left;
+    font-size: 40px;
+    line-height: 60px;
+}
+.portfolio-contents .portfolio-skill-level h1{
+    font-size: 50px;
+}
+.portfolio-contents .portfolio-skill-level ul li{
+    display: block;
+}
+/*slide three*/
+/*----------------------------------------------------*/
+/*slide four*/
+.portfolio-contents .portfolio-exp{
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+}
+.portfolio-contents .portfolio-exp table{
+    margin-top: 10%;
+    width: 100%;
+}
+.portfolio-contents .portfolio-exp table th{
+    font-size: 40px;
+}
+.portfolio-contents .portfolio-exp table td{
+    line-height: 55px;
+    font-size: 28px;
+}
+.portfolio-contents .portfolio-exp table .expstyle{
+    text-align: left;
+}
+/*slide four*/
+/*----------------------------------------------------*/
+/*slide five*/
+.header-port #email{
+    margin-left: 7%;
+    font-family: 'PT Serif', serif;
+    font-size: 25px;
+    line-height: 55px;
+}
+.portfolio-contents .portfolio-contact{
+    margin-left: 30%;
+    margin-top: 12%;
+    text-align: center;
+}
+.portfolio-contents .portfolio-contact ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.portfolio-contents .portfolio-contact ul li{
+    float: left;
+}
+.portfolio-contents .portfolio-contact ul li i{
+    display: block;
+    color: white;
+    font-size: 80px;
+    text-align: center;
+    cursor: pointer;
+  }

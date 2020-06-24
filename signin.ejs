@@ -1,0 +1,15 @@
+<%- include("partials/indexheader") %>
+
+        <div class="center-container">
+            <div class="form-container">
+                <form action="/signin" method="POST">
+                    <h2>Sign in</h2>
+                    <input type="text" placeholder="Username" id="username" name="username" required>
+                    <input type="password" placeholder="Password" id="password" name="password" required>
+                    <button class="button">Sign in</button>
+                    <h6>Create an account. <a href="signup">Sign up</a> </h6>
+                </form>
+            </div>
+        </div>
+    </header>
+<%- include("partials/indexfooter") %>

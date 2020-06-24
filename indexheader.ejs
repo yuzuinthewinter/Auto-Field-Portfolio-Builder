@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title><%= title %></title>
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Francois+One&family=Roboto:wght@700&family=Galada&family=Martel:wght@700&family=Parisienne&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link rel='stylesheet' href='/stylesheets/styles.css' />
+        <link rel='stylesheet' href='/stylesheets/template.css' />
+        <link rel='stylesheet' href='/stylesheets/main.css' />
+        <link rel='stylesheet' href='/stylesheets/index.css' />
+    </head>
+    
+    <body>
+            <div class="menu-toggler">
+                <div class="bar half start"></div>
+                <div class="bar"></div>
+                <div class="bar half end"></div>
+            </div>
+            <nav class="top-nav">
+                <div class="nav-list container">
+                    <div class="row">
+                        <div class="col">
+                            <a href="/" class="nav-link">Home</a>
+                        </div>
+                        <% if(locals.user){ %> 
+                            <% if(locals.user.status == 'admin') { %>
+                                <div class="col">
+                                    <a href="/admin/" class="nav-link">Menu Manager</a>
+                                </div>
+                            <% } %>
+                        <% } %>
+                        <div class="col">
+                            <a href="/#index-about" class="nav-link">About</a>
+                        </div>
+                        <div class="col">
+                            <a href="/#index-temp" class="nav-link">Template</a>
+                        </div>
+                        <% if(locals.user){ %>  
+                            <% if(locals.user.status == 'user') { %> 
+                                <div class="col">
+                                    <a href="/portfolio/" class="nav-link">Project</a>
+                                </div>
+                                <div class="col">
+                                    <a href="/portfolio/setting" class="nav-link">Setting</a>
+                                </div>
+                            <% } %>
+                            <div class="col">
+                                <a href="/signout" class="nav-link">Sign Out</a>
+                            </div>
+                        <% } %> 
+                        <% if(!locals.user){ %> 
+                            <div class="col">
+                                <a href="/signin" class="nav-link">Sign in</a>
+                            </div>
+                        <% } %> 
+                        
+                        
+                    </div>
+                </div>
+            </nav>
+        
+        
+        
