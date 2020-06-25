@@ -21,7 +21,7 @@ const   express = require("express"),
 
 let app = express();
 
-mongoose.connect('mongodb://localhost:27017/portfolio', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb+srv://dnazzx:10259290@cluster0-vxqfa.mongodb.net/portfolio?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
 mongoose.set('useUnifiedTopology',true);
 mongoose.set('useCreateIndex',true);
 mongoose.set('useFindAndModify',false);
@@ -75,10 +75,15 @@ app.use('/user',userRouter);
 app.use('/admin',adminRouter);
 // app.use('/template',templateRouter);
 
+const port = process.env.PORT || 3000
+
 //start server
-app.listen(3000,function(req,res){
+app.listen(port, function(req,res){
     console.log('Portfolio has started!');
 });
+
+
+
 
 
 
