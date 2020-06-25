@@ -5,6 +5,7 @@ const   express = require("express"),
         passportLocal = require('passport-local'),
         passportLocalMongoose = require('passport-local-mongoose'),
         methodOverride = require('method-override'),
+        flash = require('connect-flash');
         path = require('path'),
         // ----------------Model----------------------
         User = require('./models/user'),
@@ -30,6 +31,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(flash());
 
 app.use(require('express-session')({
     secret: 'portfolio',
@@ -41,6 +43,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(function(req,res,next){
+    res.locals.error = req.flash('error');
+    res.locals.success = req.flash('success');
     res.locals.currentUser = req.user;
     res.locals.messages = require('express-messages')(req, res);
     next();

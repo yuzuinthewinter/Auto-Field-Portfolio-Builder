@@ -2,13 +2,6 @@
     width: 100vw;
     height: 100vh;
 }
-.wrapper{
-    display: flex;
-    flex-direction: row;
-    width: 500vw;
-    transform: rotate(90deg) translateY(-100vh);
-    transform-origin: top left;
-}
 .front{
     width: 50vw;
 }
@@ -16,17 +9,13 @@
     width: 50vw;
     margin-top: 2%;
 }
+.outer-wrapper{
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
 .one{
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.2)),url(https://images.pexels.com/photos/2313070/pexels-photo-2313070.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
-    background-position: center;
-    background-size: cover;
-    overflow-x: hidden;
-    position: relative;
-}
-.two{
-    height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 0.2)),url(https://images.pexels.com/photos/733475/pexels-photo-733475.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.9)),url(https://images.pexels.com/photos/4397919/pexels-photo-4397919.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
     background-position: center;
     background-size: cover;
     overflow-x: hidden;
@@ -34,7 +23,7 @@
 }
 .three{
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 1),rgba(0, 0, 0, 0.4)),url(https://images.pexels.com/photos/1175136/pexels-photo-1175136.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.89),rgba(0, 0, 0, 0.4)),url(https://images.pexels.com/photos/4397783/pexels-photo-4397783.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
     background-position: center;
     background-size: cover;
     overflow-x: hidden;
@@ -42,7 +31,15 @@
 }
 .four{
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 1),rgba(0, 0, 0, 0.3)),url(https://images.pexels.com/photos/2565420/pexels-photo-2565420.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.8)),url(https://images.pexels.com/photos/4397904/pexels-photo-4397904.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-position: center;
+    background-size: cover;
+    overflow-x: hidden;
+    position: relative;
+}
+.two{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7)),url(https://images.pexels.com/photos/4397760/pexels-photo-4397760.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
     background-position: center;
     background-size: cover;
     overflow-x: hidden;
@@ -50,30 +47,13 @@
 }
 .five{
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.9),rgba(0, 0, 0, 0.2)),url(https://images.pexels.com/photos/3801516/pexels-photo-3801516.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.3)),url(https://images.pexels.com/photos/4397910/pexels-photo-4397910.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
     background-position: center;
     background-size: cover;
     overflow-x: hidden;
     position: relative;
 }
-.outer-wrapper{
-    width: 100vh;
-    height: 100vw;
-    transform: rotate(-90deg) translateX(-100vh);
-    transform-origin: top left;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    position: absolute;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
 
-::-webkit-scrollbar{
-    display: none;
-}
-/**/
-/**/
-/**/
 /*first page scrolling*/
 .portfolio-items{
     width: 100%;

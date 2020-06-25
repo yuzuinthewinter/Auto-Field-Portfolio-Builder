@@ -194,6 +194,9 @@ body{
 }
 
 /* footer*/
+footer{
+    position: relative;
+}
 .copyright{
     position: absolute;
     bottom: 0;
@@ -892,7 +895,7 @@ body{
 
 .template .def1:hover{
     color: #eee;
-    background: url(https://66.media.tumblr.com/e8daf59f89fc423ef99bbe91b63a6996/tumblr_o6m579MZLo1u01kfzo1_1280.png);
+    background: url(https://images.pexels.com/photos/533923/pexels-photo-533923.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
@@ -900,23 +903,23 @@ body{
 }
 .template .def2:hover{
     color: #eee;
-    background: url(https://66.media.tumblr.com/105ceb23d8741e0a84eef8ad1994f06e/tumblr_ohvmeqouTm1u01kfzo1_1280.png);
+    background: url(https://images.pexels.com/photos/1175136/pexels-photo-1175136.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
     transition: 0.1s;
 }
-.template .summer:hover{
+.template .def3:hover{
     color: #eee;
-    background: url(http://www.baltana.com/files/wallpapers-20/Beautiful-Pixel-Art-Widescreen-Wallpaper-49308.jpg);
+    background: url(https://images.pexels.com/photos/2343170/pexels-photo-2343170.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
     transition: 0.1s;
 }
-.template .autumn:hover{
+.template .def4:hover{
     color: #eee;
-    background: url(http://www.baltana.com/files/wallpapers-20/Aesthetic-Pixel-Art-High-Definition-Wallpaper-49284.gif);
+    background: url(https://images.pexels.com/photos/4397919/pexels-photo-4397919.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;

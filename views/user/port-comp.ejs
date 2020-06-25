@@ -14,7 +14,7 @@
                             
                                 <div class="front">
                                     <div class="portfolio-img">
-                                        <div class="profile-pic"><img src="https://cdn0.iconfinder.com/data/icons/professional-avatar-5/48/manager_male_avatar_men_character_professions-512.png" alt="Avatar"></div>
+                                        <div class="profile-pic"><img src="../uploads/<%= resume.picprofile %>" alt="Avatar" style="height: 100%;"></div>
                                     </div> 
                                 </div>
 
@@ -79,27 +79,27 @@
                                     <ul>
                                         <li>
                                             <div class="nameskill">
-                                                <div id="skill1">html</div>
+                                                <div id="skill1"><%= resume.skill[0] %></div>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="nameskill">
-                                                <div id="skill2">css</div>
+                                                <div id="skill2"><%= resume.skill[1] %></div>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="nameskill">
-                                                <div id="skill3">javascript</div>
+                                                <div id="skill3"><%= resume.skill[2] %></div>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="nameskill">
-                                                <div id="skill4">c/c++</div>
+                                                <div id="skill4"><%= resume.skill[3] %></div>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="nameskill">
-                                                <div id="skill5">python</div>
+                                                <div id="skill5"><%= resume.skill[4] %></div>
                                             </div>
                                         </li>
                                     </ul>
@@ -111,36 +111,19 @@
                                 <div class="portfolio-skill-level">
                                     <h1>LEVEL</h1><br>
                                     <ul>
+                                        <% for(let j = 0; j < 5; j++) { %>
                                         <li>
                                             <div class="levelskill">
-                                                <div id="level1"><i class="fas fa-cube"></i>&nbsp;<i class="fas fa-cube"></i>&nbsp;<i class="fas fa-cube"></i></div>
+                                                <% let level = resume.level[j] %>
+                                                <% for(let i = 1; i <= level; i++) { %>
+                                                    <i class="fas fa-cube"></i>&nbsp;
+                                                <% } %>
                                             </div>
                                         </li>
-                                        <li>    
-                                            <div class="levelskill">
-                                                <div id="level2"><i class="fas fa-cube"></i>&nbsp;<i class="fas fa-cube"></i>&nbsp;<i class="fas fa-cube"></i>&nbsp;<i class="fas fa-cube"></i></div>
-                                            </div>
-                                        </li>  
-                                        <li>
-                                            <div class="levelskill">
-                                                <div id="level3"><i class="fas fa-cube"></i>&nbsp;<i class="fas fa-cube"></i></div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="levelskill">
-                                                <div id="level3"><i class="fas fa-cube"></i></div>
-                                            </div>
-                                        </li>  
-                                        <li>
-                                            <div class="levelskill">
-                                                    <div id="level3"><i class="fas fa-cube"></i>&nbsp;<i class="fas fa-cube"></i>&nbsp;<i class="fas fa-cube"></i></div>
-                                            </div>
-                                        </li> 
+                                        <% } %>
                                     </ul>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                 </div>
@@ -163,42 +146,15 @@
                                         <th>PLACE</th>
                                         <th>YEAR</th>
                                     </tr>
+                                    <% for(let i = 0; i < 5; i++) { %>
                                     <tr>
                                         <div class="groupexp1">
-                                            <td><div id="exp1" class="expstyle">PROGRAMMER</div></td>
-                                            <td><div id="place1">GOOGLE</div></td>
-                                            <td><div id="year1">10</div></td>
+                                            <td><div id="exp" class="expstyle"><%= resume.exp[i] %></td>
+                                            <td><div id="place"><%= resume.place[i] %></div></td>
+                                            <td><div id="year"><%= resume.year[i] %></div></td>
                                         </div>
                                     </tr>
-                                    <tr>
-                                        <div class="groupexp2">
-                                            <td><div id="exp2" class="expstyle">COMPUTER ENGINEER</div></td>
-                                            <td><div id="place">NASA</div></td>
-                                            <td><div id="year">5</div></td>
-                                        </div>
-                                    </tr>
-                                    <tr>
-                                        <div class="groupexp3">
-                                            <td><div id="exp3" class="expstyle">SCIENCTIST</div></td>
-                                            <td><div id="place3">UN</div></td>
-                                            <td><div id="year3">2</div></td>
-                                        </div>
-                                    </tr>
-                                    <tr>
-                                        <div class="groupexp4">
-                                            <td><div id="exp4" class="expstyle">FULL-STACK DEV.</div></td>
-                                            <td><div id="place4">GOOGLE</div></td>
-                                            <td><div id="year4">20</div></td>
-                                        </div>
-                                    </tr>
-                                    <tr>
-                                        <div class="groupexp5">
-                                            <td><div id="exp5" class="expstyle">MUSICIAN</div></td>
-                                            <td><div id="place5">FREELANCE</div></td>
-                                            <td><div id="year5">7</div></td>
-                                        </div>
-                                    </tr>
-                                    
+                                    <% } %>
                                     <!--another experience use js-->
                                 </table>
                             </div>
@@ -211,7 +167,7 @@
                     <div class="slide five">
                         <div class="header-port"><span>“</span>&nbsp;CONTACT ME<br>
                             <div id="email">
-                                <i class="far fa-envelope"></i>&nbsp;<%= resume.email %>
+                                <i class="far fa-envelope"></i>&nbsp;<%= user.email %>
                             </div>
                         </div>
                         

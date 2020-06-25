@@ -4,10 +4,12 @@
 </head>
     <div class="content">
         <div class="form">
+            <center></div></center>
             <div class="singleform">
-                <div id="heading1" ><p>PROFILE PARTICULARS</p></div>
-                <div id="heading2" hidden><p>UPLOAD YOUR FILE</p></div>
-                <div id="heading3" hidden><p>CHOOSE YOUR TEMPLATE WEBSITE</p></div>
+                <div style="text-transform: uppercase; font-size: 30px; line-height: 20px; color: black; padding-top: 2%;"><p>Name Project : <%= resume.nameproject %></p></div>
+                <div id="heading1" style="line-height: 20px; padding-bottom: 3%;"><p>PROFILE PARTICULARS</p></div>
+                <div id="heading2" style="line-height: 20px; padding-bottom: 3%;" hidden><p>UPLOAD YOUR FILE</p></div>
+                <div id="heading3" style="line-height: 20px; padding-bottom: 3%;" hidden><p>CHOOSE YOUR TEMPLATE WEBSITE</p></div>
 
                 <div id="stepProgressBar">
                     <div class="step">
@@ -42,7 +44,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <th>Position</th>
+                            <th>POSITION</th>
                             <td class="form-box">
                                 <input type="text" name="position" placeholder="Student, Designer etc." value="<%= resume.position %>">
                             </td>
@@ -54,7 +56,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <th><label for="introduce">Introduce</label></th>
+                            <th><label for="introduce">INTRODUCE</label></th>
                             <td class="form-radio">
                                 <textarea value="<%= resume.introduce %>" id="introduce" name="introduce" rows="4" cols="60" style="font-size: 14px; padding: 2% 2%;" placeholder="Applied Computer Science, &#10;Department of Mathematics, &#10;Faculty of Science, KMUTT"></textarea>
                             </td>
@@ -91,47 +93,47 @@
                         </tr>
                     </table><br>
 
-                    <table>
+                    <center>
+                    <table style="margin-left: 15%;">
                         <p>(PART : 3) SKILLS</p>
+                        <h5 style="font-family: 'Francois One', sans-serif;">* At least one field</h5>
+                        <% for(let i = 0; i < 5; i++) { %>
                         <tr>
                             <td class="form-box"> 
-                                <div class="input-group">
-                                    <input type="text" name="skill" placeholder="skill">&nbsp;&nbsp;
-                                    <input type="number" min="1" max="5" placeholder="level (max : 5)">
+                                <div class="input-group"><%= i+1 %>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="text" name="skill" placeholder="skill" value="<%= resume.skill[i] %>">&nbsp;&nbsp;
+                                        <input type="number" min="1" max="5" name="level" placeholder="level (max : 5)" value="<%= resume.level[i] %>" style="width: 25%;">
                                 </div>
                             </td>
                         </tr>
-                        <tr id="add-skill"></tr>
+                        <% } %>
                     </table>
 
-                    <div class="btn">
-                        <button id="addskillBtn">ADD SKILL</button>
-                    </div><br>
-
-                    <table>
+                    <table style="margin-left: 10%;">
                         <p>(PART : 4) EXPERIENCE</p>
-                        <tr>
-                            <td class="form-box"> 
-                                <div class="input-group">
-                                    <input type="text" placeholder="experience">&nbsp;&nbsp;
-                                    <input type="text" name="exp" placeholder="place">
-                                </div>
-                            </td>
-                            <td class="form-box"> 
-                                <div class="input-group">
-                                    <input type="text" name="year" placeholder="year">
-                                </div>
-                            </td>                                
-                        </tr> 
+                        <h5 style="font-family: 'Francois One', sans-serif;">* At least one field</h5>
+                        <% for(let i = 0; i < 5; i++) { %>
+                            <tr>
+                                <td class="form-box"> 
+                                    <div class="input-group">
+                                            <%= i+1 %>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <input type="text" placeholder="experience" name="exp" value="<%= resume.exp[i] %>">&nbsp;&nbsp;
+                                            <input type="text" placeholder="place" name="place" value="<%= resume.place[i] %>">
+                                        
+                                    </div>
+                                </td>
+                                <td class="form-box"> 
+                                    <div class="input-group">
+                                        <input type="text" name="year" placeholder="year" name="year" value="<%= resume.year[i] %>">
+                                    </div>
+                                </td>                                
+                            </tr> 
+                        <% } %>
                         <tr id="add-exp">
                             <td class="form-box" id="expfield"></td> 
                             <td class="form-box" id="yearfield"></td> 
                         </tr>
                     </table>   
-                    
-                    <div class="btn">
-                        <button id="addexpBtn">ADD EXPERIENCE</button>
-                    </div><br>
                     
 
                     <table>
@@ -140,7 +142,7 @@
                             <th>EMAIL</th>
                             <td class="form-box"> 
                                 <div class="input-group">
-                                    <input type="email" placeholder="example@mail.com"  value="<%= resume.email %>">
+                                    <input type="email" name="email" placeholder="example@mail.com"  value="<%= resume.email %>">
                                 </div>
                             </td>
                         </tr>
@@ -179,89 +181,60 @@
                         
                     </table></div><br>
 
-                    <div id="upload-form" >
+                    <div id="upload-form" hidden>
                         <div id="add-upload-form">
                             <div class="upload-item">
+                                <center><img src="/uploads/<%= resume.picprofile %>" alt="Profile Picture" style="width: 50%;"></center>
+                                
                                 <table> <br>
                                     <tr>
                                         <th><p>Profile</p></th>
                                         <td>
-                                            <input type="file" id="myFile" name="picprofile" accept="image/*">
-                                            <!-- <input type="submit" id="submitBtn"><br><br> -->
+                                            <input type="file" id="myFile" name="picprofile" accept="image/*" value="<%= resume.picprofile %>">
                                         </td>
                                     </tr>
-                                    <!-- <tr>
-                                        <th><p>Part 2</p></th>
-                                        <td>
-                                            <input type="file" id="myFile" name="pic2" accept="image/*">
-                                            <input type="submit" id="submitBtn"><br><br>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th><p>Part 3</p></th>
-                                        <td>
-                                            <input type="file" id="myFile" name="pic3" accept="image/*">
-                                            <input type="submit" id="submitBtn"><br><br>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th><p>Part 4</p></th>
-                                        <td>
-                                            <input type="file" id="myFile" name="pic4" accept="image/*">
-                                            <input type="submit" id="submitBtn"><br><br>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th><p>Part 5</p></th>
-                                        <td>
-                                            <input type="file" id="myFile" name="pic5" accept="image/*">
-                                            <input type="submit" id="submitBtn"><br><br>
-                                        </td>
-                                    </tr> -->
                                 </table>
                                 
                             </div>
                         </div>
                     </div>
 
-                    <div class="template" id="template-form" >
+                    <div class="template" id="template-form" hidden>
                         
                         <label>
                             <input type="radio" name="template" value="default1" required="required" checked>
                             <div class="def1 pp">
-                                <span>DEFAULT 1</span>
+                                <span>SEA SALT</span>
                             </div>
                         </label>
                         
                         <label>
                             <input type="radio" name="template" value="default2" required="required"/>
                             <div class="def2 pp">
-                                <span>DEFAULT 2</span>
+                                <span>STARRY NIGHT</span>
                             </div>
                         </label>
 
                         <label>
                             <input type="radio" name="template" value="default3" required="required"/>
                             <div class="def3 pp">
-                                <span>DEFAULT 3</span>
+                                <span>DARK NATURE</span>
                             </div>
                         </label>
-                        <!--
                         <label>
                             <input type="radio" name="template" value="default4" required="required"/>
                             <div class="def4 pp">
-                                <span>DEFAULT 4</span>
+                                <span>FRUIT VIBE</span>
                             </div>
-                        </label>-->
                         
                     </div>
                     
                     <div id="main"> 
                         <a id="previousBtn"><i class="fas fa-angle-left"></i> <span>Previous</span></a>
-                        <input id="finishBtn" type="submit" value="Finish"></input>
+                        <button id="finishBtn" type="submit" value="Finish">Submit</button>
                         <a id="nextBtn"><span>Next</span> <i class="fas fa-angle-right"></i></a>
                     </div>
-                    <button type="submit">submit</button>
+                    
             </form>
         </div>
     </div>

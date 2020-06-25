@@ -4,21 +4,13 @@
                 <div class="profile-heading">
                     <br><br>
                     <h1>MY PROFILE</h1> 
-                    <img src="https://cdn0.iconfinder.com/data/icons/professional-avatar-5/48/manager_male_avatar_men_character_professions-512.png" alt="Avatar">
-                    <br> <br> <br>
-                    <table class="table-input">
-                        <tr>
-                            <th><input type="file" id="myFile" name="filename"></th>
-                            <td><input type="submit" id="submitBtn"></td>
-                        </tr>
-                    </table>
-                    
-                    <br>
+                    <img src="/uploads/<%= user.profileimg %>" alt="Avatar">
+                    <br> <br> <br> <br>
                     
                     <table class="my-profile">
                         <tr>
                             <th>Name</th>
-                            <td style="text-transform: uppercase;"><span id="pf-first"><%= currentUser.firstname %></span>&nbsp;&nbsp;<span id="pf-last"><%= currentUser.lastname %></span></td>
+                            <td style="text-transform: uppercase;"><span id="pf-first"><%= user.firstname %></span>&nbsp;&nbsp;<span id="pf-last"><%= currentUser.lastname %></span></td>
                         </tr>
                         <tr>
                             <th>Status</th>
@@ -26,11 +18,11 @@
                         </tr>
                         <tr>
                             <th>Username</th>
-                            <td id="pf-username" style="text-transform: uppercase;"><%= currentUser.username %></td>
+                            <td id="pf-username" style="text-transform: uppercase;"><%= user.username %></td>
                         </tr>
                         <tr>
                             <th>Email address</th>
-                            <td id="pf-email" style="text-transform: uppercase;"><%= currentUser.email %></td>
+                            <td id="pf-email" style="text-transform: uppercase;"><%= user.email %></td>
                         </tr>
                     </table><br><br>
                     

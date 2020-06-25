@@ -12,6 +12,8 @@ let resumeSchema = new mongoose.Schema({
         type: Date,
         default: Date.now
     },
+
+    picprofile: String,
     
     Fname: String,
     Lname: String,

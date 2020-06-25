@@ -1,5 +1,5 @@
 <%- include("../partials/userheader") %>
-
+<div style="min-height: 100vh;">
         <div class="content">
             <div class="project row">
 
@@ -48,13 +48,16 @@
                         <div class="single-blog">
                             <div class="projectfield">
                                 <% if (resume.template == 'default1') { %>
-                                    <img src="https://wallpaperaccess.com/full/398864.jpg" alt="Avatar" style="width:80%;">
+                                    <img src="https://images.pexels.com/photos/533923/pexels-photo-533923.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Avatar" style="width:80%;">
                                 <% } %>
                                 <% if (resume.template == 'default2') { %>
-                                    <img src="https://cdn.wallpapersafari.com/9/46/exr8gI.jpg" alt="Avatar" style="width:80%;">
+                                    <img src="https://images.pexels.com/photos/1175136/pexels-photo-1175136.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Avatar" style="width:80%;">
                                 <% } %>
                                 <% if (resume.template == 'default3') { %>
-                                    <img src="https://mocah.org/uploads/posts/4515299-japan-tokyo-street-building-bicycle-crosswalk-digital-art-house-sign-clouds-sky-car-stores-sunset.jpg" alt="Avatar" style="width:80%">
+                                    <img src="https://images.pexels.com/photos/2343170/pexels-photo-2343170.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Avatar" style="width:80%">
+                                <% } %>
+                                <% if (resume.template == 'default4') { %>
+                                    <img src="https://images.pexels.com/photos/4397919/pexels-photo-4397919.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Avatar" style="width:80%">
                                 <% } %>
                                 <p><%= resume.nameproject %></p>
                                 <p style="font-size: 12px; color: lightslategray;">Create at : <%= resume.created.toLocaleDateString('en-TH') %></p>
@@ -69,6 +72,6 @@
                     -->
             </div>
         </div>
-
+    </div>
         <%- include("../partials/copyright") %>
 <%- include("../partials/indexfooter") %>

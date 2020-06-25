@@ -18,7 +18,6 @@ let currentStep = 1;
 
 previousBtn.disabled  =  true;
 nextBtn.disabled  =  false;
-finishBtn.disabled  =  true;
 
 nextBtn.addEventListener('click',  ()  =>  {
 	bullets[currentStep - 1].classList.add('completed');
@@ -26,7 +25,6 @@ nextBtn.addEventListener('click',  ()  =>  {
 	previousBtn.disabled  =  false;
 	if  (currentStep  ===  3)  {
 		nextBtn.disabled  =  true;
-        finishBtn.disabled  =  false;
 
         heading1.hidden = true;
         heading2.hidden = true;
@@ -61,7 +59,6 @@ previousBtn.addEventListener('click',  ()  =>  {
 	bullets[currentStep  -  2].classList.remove('completed');
 	currentStep  -=  1;
 	nextBtn.disabled  =  false;
-	finishBtn.disabled  =  true;
 	if  (currentStep  ===  1)  {
         previousBtn.disabled  =  true;
 
@@ -104,22 +101,13 @@ $(document).ready(function() {
     var add_button3 = $("#addexpBtn");
 
     var x = 1;
-    $(add_button1).click(function(e) {
-        e.preventDefault();
-        if (x <= 2) {
-            x++;
-            $(wrapper1).append('<div><input type="file" id="myFile" name="filename" accept="image/*"><input type="submit"><button class="delete">Delete</button></div><br>'); //add input box
-        } else {
-            alert('You Reached the limits')
-        }
-    });
 
     var y = 1;
     $(add_button2).click(function(e) {
         e.preventDefault();
         if (y <= 4) {
             y++;
-            $(wrapper2).append('<div id="skill'+y+'"><tr><td class="form-box"><input type="text" placeholder="skill('+y+')">&nbsp;&nbsp;<input type="number" placeholder="level (max : 5)"><button class="delete">Delete</button></td></tr></div>'); //add input box
+            $(wrapper2).append('<div id="skill'+y+'"><tr><td class="form-box"><input type="text" name="skill" placeholder="skill('+y+')" value="">&nbsp;&nbsp;<input type="number" name="level" placeholder="level (max : 5)" value=""><button class="delete">Delete</button></td></tr></div>'); //add input box
         } else {
             alert('You Reached the limits')
         }
@@ -130,7 +118,7 @@ $(document).ready(function() {
         e.preventDefault();
         if (z <= 4) {
             z++;
-            $(wrapper3).append('<div id="exp'+z+'"><input type="text" placeholder="experience('+z+')">&nbsp;&nbsp;<input type="text" placeholder="place"><input type="text" placeholder="year" id="yearexp">&nbsp;&nbsp;<button class="delete">Delete</button></td></div>'); //add input box
+            $(wrapper3).append('<div id="exp'+z+'"><input type="text" name="exp" placeholder="experience('+z+')" value="">&nbsp;&nbsp;<input type="text" name="place" placeholder="place" value=""><input type="text" name="year" placeholder="year" id="yearexp" value="">&nbsp;&nbsp;<button class="delete">Delete</button></td></div>'); //add input box
         } else {
             alert('You Reached the limits')
         }

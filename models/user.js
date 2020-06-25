@@ -5,16 +5,12 @@ let UserSchema = new mongoose.Schema({
     status: String,
     firstname: String,
     lastname: String,
+
+    profileimg: String,
+    
     email: {
         type: String,
         unique: true
-    },
-    profileimg: {
-        filename:{
-            type: String
-        },
-        data: Buffer,
-        contentType: String
     },
     username: {
         type: String,

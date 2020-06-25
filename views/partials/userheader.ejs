@@ -42,8 +42,12 @@
                     </div>
 
                     <div class="greet">
-                        <p><% if(currentUser.status == 'user') { %> <i class="fas fa-user"></i> <% } %>
-                            <% if(currentUser.status == 'admin') { %> <i class="fas fa-user-cog"></i> <% } %>&nbsp;<%= currentUser.username %> </p> 
+                        <p>
+                            <a href="/portfolio/profile" style="text-decoration: none;">
+                                <% if(currentUser.status == 'user') { %> <i class="fas fa-user"></i> <% } %>
+                                <% if(currentUser.status == 'admin') { %> <i class="fas fa-user-cog"></i> <% } %>&nbsp;<%= currentUser.username %> 
+                            </a>
+                        </p> 
                     </div>
                     
                     <div class="dropdown">
@@ -58,7 +62,6 @@
                                 <% if(currentUser.status == 'admin') { %>
                                     <a class="dropdown-item" href="/admin/">Menu</a>
                                     <a class="dropdown-item" href="/admin/manage-user">Manage User</a>
-                                    <a class="dropdown-item" href="/admin/manage-template">Manage Template</a>
                                 <% } %>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/signout">Sign Out</a>

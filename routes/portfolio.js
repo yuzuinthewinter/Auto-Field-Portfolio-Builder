@@ -1,5 +1,4 @@
 const { create } = require('../models/user');
-const image = require('../models/image');
 
 const express = require('express'),
       router = express.Router(),
@@ -8,11 +7,28 @@ const express = require('express'),
       middleware = require('../middleware'),
       User = require('../models/user'),
       Resume = require('../models/resume'),
+      Image = require('../models/image'),
 
+      path = require('path'),
       multer = require('multer'),
       fs = require('fs-extra'),
       bcrypt = require('bcryptjs');
 
+const storage = multer.diskStorage({
+  destination: './public/uploads',
+  filename:function(req,file,cb){
+    cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname));
+    }
+});      
+      
+const imageFilter = function(req,file,cb){
+    var ext = path.extname(file.originalname);
+    if(ext != '.png' && ext != '.gif' && ext != '.jpg' && ext != '.jpeg'){
+    return cb(new Error('only image is allowed'), false)
+    }
+    cb(null,true);  
+}
+const upload = multer({storage: storage,fileFilter:imageFilter})
 
 router.get('/', middleware.isLoggedIn, function(req,res) {  
   User.findById(req.params.id, function(err, user){
@@ -32,6 +48,7 @@ router.post('/newproject',middleware.isLoggedIn, async function(req,res) {
   let resume = new Resume({
     nameproject: req.body.nameproject,
     userid: req.user._id,
+    picprofile: 'profile.png',
 
     Fname: '',
     Lname: '',
@@ -44,12 +61,12 @@ router.post('/newproject',middleware.isLoggedIn, async function(req,res) {
     major: '',
     gpax: '',
     
-    skill: ['','','','',''],
-    level: ['','','','',''],
+    skill: [],
+    level: [],
 
-    exp: ['','','','',''],
-    place: ['','','','',''],
-    year: ['','','','',''],
+    exp: [],
+    place: [],
+    year: [],
 
     email: '',
     fb: '',
@@ -65,26 +82,10 @@ router.post('/newproject',middleware.isLoggedIn, async function(req,res) {
       console.log(err);
       return;
     } else {
+      req.flash('success','Create success');
       res.redirect('/portfolio');
     }
   });
-  let response = await Resume.aggregate([
-    {
-      $match: {
-        nameproject : req.body.nameproject
-        
-      }
-    },
-  ])
-  console.log(response)
-  image.create({
-    projectid: response[0]._id,
-    picprofile: "",
-    pic2: "",
-    pic3: "",
-    pic4: "",
-    pic5: "" 
-  })
 });
 
 //=========================================================
@@ -97,6 +98,13 @@ router.get('/about', middleware.isLoggedIn, function(req, res, next) {
 router.get('/template', middleware.isLoggedIn, function(req, res, next) {
     res.render('user/template', { title: 'Template' });
 });
+router.get('/showtemplate', middleware.isLoggedIn, function(req, res, next) {
+  res.render('user/showtemplate', { title: 'Example Template', template:'default1'});
+});
+router.post('/showtemplate', middleware.isLoggedIn, function(req, res, next) {
+  res.render('user/showtemplate', { title: 'Example Template' });
+});
+
 router.get('/contact', middleware.isLoggedIn, function(req, res, next) {
     res.render('user/contact', { title: 'Contact us' });
 });
@@ -105,14 +113,6 @@ router.get('/contact', middleware.isLoggedIn, function(req, res, next) {
 router.get('/profile', middleware.isLoggedIn, function(req, res, next) {
     res.render('user/profile', { title: 'Edit Profile' });
 });
-/*
-<div id="image"><img src="data:image/jpeg;base64, <%= (users.image.data).toString('base64') %>" class="mx-auto d-block w-100 rounded"></div>
-router.post('/profile', uploadimg.upload.single('image'), function(req, res, next) {
-    var editfile = uploadimg.upIMG(req, res);
-    if(editfile != false){
-        user.image = editfile;
-    }
-});*/
 //----------------------update profile picture---------------------------
 router.get('/setting', middleware.isLoggedIn, function(req, res, next) {
     res.render('user/setting', { title: 'Setting' });
@@ -127,48 +127,51 @@ router.get('/edit-profile/:id', middleware.isLoggedIn, function(req, res){
         res.render('/edit-profile', {user:user});
     });
 });
-router.post('/edit-profile/:id', middleware.isLoggedIn, function(req, res){
-    let user = {};
-    user.firstname = req.body.firstname;
-    user.lastname = req.body.lastname;
-    user.username = req.body.username;
-    user.email = req.body.email;
-  
-    let query = {_id:req.params.id}
-  
-    User.updateMany(query, user, function(err){
-      if(err){
-        console.log(err);
-        return;
-      } else {
-        res.redirect('/portfolio/profile');
-      }
+router.post('/edit-profile/:id', middleware.isLoggedIn, upload.single('profileimg'), function(req, res){
+    if(req.file) {
+      User.findById(req.params.id, function(err, re){
+          if(err){
+              console.log(err);
+              res.redirect('/setting');
+          } else{
+              const imagePath = './public/uploads/' + re.profileimg;
+              fs.unlink(imagePath, function(err){
+                  if(err){
+                      console.log(err);
+                      res.redirect('/setting');
+                  }
+              });
+          }
+      });
+      var user = {
+          profileimg: req.file.filename,
+          firstname: req.body.firstname,
+          lastname: req.body.lastname,
+          username: req.body.username,
+          status: req.body.status,
+          email: req.body.email
+      };
+    } else {
+        var user = {
+          firstname: req.body.firstname,
+          lastname: req.body.lastname,
+          username: req.body.username,
+          status: req.body.status,
+          email: req.body.email
+        };
+    }
+    console.log(user)
+    User.findByIdAndUpdate(req.params.id, user, function(error,update){
+        console.log(req.body)
+        if(error){
+            console.log(error);
+        }else{
+            req.flash('success','Update success');
+            res.redirect('/portfolio/profile/');
+        }
     });
 });
 //--------------------------------update user profile---------------------------------
 //=========================================================
 
 module.exports = router;
-
-/*,
-age: req.body.username,
-date: req.body.username,   
-nationality: req.body.username,
-gender: req.body.username,
-status: req.body.username,
-
-highschool: req.body.username,
-college: req.body.username,
-major: req.body.username,
-gpax: req.body.username,
-
-skill: req.body.username,
-
-exp: req.body.username,
-year: req.body.username,
-
-email: req.body.username,
-fb: req.body.username,
-ig: req.body.username,
-line: req.body.username,
-twitter: req.body.username*/
