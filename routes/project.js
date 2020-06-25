@@ -7,7 +7,7 @@ const express = require('express'),
       middleware = require('../middleware'),
       User = require('../models/user'),
       Resume = require('../models/resume'),
-      Image = require('../models/image'),
+      image = require('../models/image'),
 
       path = require('path'),
       multer = require('multer'),

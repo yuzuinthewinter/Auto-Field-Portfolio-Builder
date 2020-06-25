@@ -5,8 +5,8 @@ body{
     background-size: cover;
     overflow-x: hidden;
 }
-.templateslide{
-    margin-top: 0%;
+.template{
+    margin-top: -7%;
 }
 .slide{
     margin: 0;
@@ -53,35 +53,34 @@ body{
     cursor: pointer;
 }
 .box{
-    margin-top: -1.5%;
     position: absolute;
     width: 100%;
     height: 100%;
     background: url("http://lollipopgamesfree.xyz/img/sitebg.jpg" ) no-repeat center fixed;
 }
 .slide ul li:nth-child(1):hover ~ .box{
-    background: url(https://images.pexels.com/photos/533923/pexels-photo-533923.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background: url(http://www.baltana.com/files/wallpapers-20/Beautiful-Pixel-Art-HD-Wallpapers-49302.jpg);
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
     transition: 0.1s;
 }
 .slide ul li:nth-child(2):hover ~ .box{
-    background: url(https://images.pexels.com/photos/1175136/pexels-photo-1175136.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background: url(http://www.baltana.com/files/wallpapers-20/Aesthetic-Pixel-Art-Wallpapers-Full-HD-49288.jpg);
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
     transition: 0.1s;
 }
 .slide ul li:nth-child(3):hover ~ .box{
-    background: url(https://images.pexels.com/photos/2343170/pexels-photo-2343170.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background: url(http://www.designlovefest.com/wp-content/uploads/downloads/2016/08/tropical.jpg);
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
     transition: 0.1s;
 }
 .slide ul li:nth-child(4):hover ~ .box{
-    background: url(https://images.pexels.com/photos/4397919/pexels-photo-4397919.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background: url(http://www.baltana.com/files/wallpapers-20/Aesthetic-Pixel-Art-High-Definition-Wallpaper-49284.gif);
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;

@@ -48,7 +48,7 @@ router.post('/newproject',middleware.isLoggedIn, async function(req,res) {
   let resume = new Resume({
     nameproject: req.body.nameproject,
     userid: req.user._id,
-    picprofile: 'profile.png',
+    picprofile: '',
 
     Fname: '',
     Lname: '',
@@ -82,7 +82,6 @@ router.post('/newproject',middleware.isLoggedIn, async function(req,res) {
       console.log(err);
       return;
     } else {
-      req.flash('success','Create success');
       res.redirect('/portfolio');
     }
   });
@@ -98,19 +97,12 @@ router.get('/about', middleware.isLoggedIn, function(req, res, next) {
 router.get('/template', middleware.isLoggedIn, function(req, res, next) {
     res.render('user/template', { title: 'Template' });
 });
-router.get('/showtemplate', middleware.isLoggedIn, function(req, res, next) {
-  res.render('user/showtemplate', { title: 'Example Template', template:'default1'});
-});
-router.post('/showtemplate', middleware.isLoggedIn, function(req, res, next) {
-  res.render('user/showtemplate', { title: 'Example Template' });
-});
-
 router.get('/contact', middleware.isLoggedIn, function(req, res, next) {
     res.render('user/contact', { title: 'Contact us' });
 });
 
 //----------------------update profile picture---------------------------
-router.get('/profile', middleware.isLoggedIn, function(req, res, next) {
+router.get('/profile/:id', middleware.isLoggedIn, function(req, res, next) {
     res.render('user/profile', { title: 'Edit Profile' });
 });
 //----------------------update profile picture---------------------------
@@ -128,6 +120,7 @@ router.get('/edit-profile/:id', middleware.isLoggedIn, function(req, res){
     });
 });
 router.post('/edit-profile/:id', middleware.isLoggedIn, upload.single('profileimg'), function(req, res){
+
     if(req.file) {
       User.findById(req.params.id, function(err, re){
           if(err){
@@ -144,12 +137,12 @@ router.post('/edit-profile/:id', middleware.isLoggedIn, upload.single('profileim
           }
       });
       var user = {
-          profileimg: req.file.filename,
-          firstname: req.body.firstname,
-          lastname: req.body.lastname,
-          username: req.body.username,
-          status: req.body.status,
-          email: req.body.email
+        profileimg: req.file.filename,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
+        username: req.body.username,
+        status: req.body.status,
+        email: req.body.email
       };
     } else {
         var user = {
@@ -166,8 +159,7 @@ router.post('/edit-profile/:id', middleware.isLoggedIn, upload.single('profileim
         if(error){
             console.log(error);
         }else{
-            req.flash('success','Update success');
-            res.redirect('/portfolio/profile/');
+            res.redirect('/portfolio/profile/'+req.params.id);
         }
     });
 });

@@ -43,7 +43,7 @@
 
                     <div class="greet">
                         <p>
-                            <a href="/portfolio/profile" style="text-decoration: none;">
+                            <a href="/portfolio/profile/<%= user._id %>" style="text-decoration: none;">
                                 <% if(currentUser.status == 'user') { %> <i class="fas fa-user"></i> <% } %>
                                 <% if(currentUser.status == 'admin') { %> <i class="fas fa-user-cog"></i> <% } %>&nbsp;<%= currentUser.username %> 
                             </a>
@@ -56,12 +56,13 @@
                                 <% if(currentUser.status == 'user') { %>
                                     <a class="dropdown-item" href="/portfolio/">My Project</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="/portfolio/profile">My Profile</a>
+                                    <a class="dropdown-item" href="/portfolio/profile/<%= user._id %>">My Profile</a>
                                     <a class="dropdown-item" href="/portfolio/setting">Edit Profile</a>
                                 <% } %>
                                 <% if(currentUser.status == 'admin') { %>
                                     <a class="dropdown-item" href="/admin/">Menu</a>
                                     <a class="dropdown-item" href="/admin/manage-user">Manage User</a>
+                                    <a class="dropdown-item" href="/admin/manage-template">Manage Template</a>
                                 <% } %>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/signout">Sign Out</a>
